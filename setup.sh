@@ -518,12 +518,15 @@ else
     exit 1;
 fi
 
+clear;
+
 # ══════════════════════════════
 # // Memasang alat bantuan skrip
 # ══════════════════════════════
 wget -q -O /root/requirement.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/requirement.sh";
 chmod +x requirement.sh;
 ./requirement.sh;
+clear;
 
 # ═══════════════════════════
 # // Memasang SSH & Websocket
@@ -531,6 +534,7 @@ chmod +x requirement.sh;
 wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
+clear;
 
 # ═════════════════
 # // Memasang Nginx
@@ -538,6 +542,7 @@ chmod +x ssh-ssl.sh;
 wget -q -O /root/nginx.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/nginx.sh";
 chmod +x nginx.sh;
 ./nginx.sh;
+clear;
 
 # ═════════════════════
 # // Memasang XRay Mini
@@ -545,6 +550,7 @@ chmod +x nginx.sh;
 wget -q -O /root/xray-mini.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/xray-mini.sh";
 chmod +x xray-mini.sh;
 ./xray-mini.sh;
+clear;
 
 # ═════════════════════
 # // Memasang SSH & SSL
@@ -559,6 +565,7 @@ chmod +x ssh-ssl.sh;
 wget -q -O /root/ovpn.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ovpn.sh";
 chmod +x ovpn.sh;
 ./ovpn.sh;
+clear;
 
 # ═════════════════════
 # // Memasang Wireguard
@@ -566,6 +573,7 @@ chmod +x ovpn.sh;
 wget -q -O /root/wg-set.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/wg-set.sh";
 chmod +x wg-set.sh;
 ./wg-set.sh;
+clear;
 
 # ════════════════════════
 # // Memasang ShadowsocksR
@@ -573,6 +581,7 @@ chmod +x wg-set.sh;
 wget -q -O /root/ssr.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssr.sh";
 chmod +x ssr.sh;
 ./ssr.sh;
+clear;
 
 # ════════════════
 # // Memasang Menu
@@ -580,6 +589,7 @@ chmod +x ssr.sh;
 wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/menu/menu-setup.sh";
 chmod +x menu-setup.sh;
 ./menu-setup.sh;
+clear;
 
 # ══════════
 # // Selesai
