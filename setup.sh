@@ -439,133 +439,155 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}           [ Setting Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "[ * ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?";
-echo -e "[ * ] 1. Saya ingin menggunakan domain saya sendiri";
-echo -e "[ * ] 2. Saya ingin menggunakan domain yang disediakan oleh KaizenVPN";
+echo -e "[ ${GREEN}INFO${NC} ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?";
+echo -e "[ ${YELLOW}*${NC} ] 1. Saya ingin menggunakan domain saya sendiri";
+echo -e "[ ${YELLOW}*${NC} ] 2. Saya ingin menggunakan domain yang disediakan oleh KaizenVPN";
+echo -e "";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo "";
-read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
+read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda${NC} (${YELLOW}1/2${NC}) :" )" choose_domain
 
+# ══════════════════════════════════════════════
 # // Mengesahkan pilihan domain, samada 1 atau 2
-if [[ $choose_domain == "2" ]]; then # // Using Automatic Domain
-
-echo -e "${OKEY} Starting Generating Certificate";
+# ══════════════════════════════════════════════
+if [[ $choose_domain == "2" ]]; then # // Menggunakan domain KaizenVPN
+clear;
+echo -e "${OKEY} Mulai membuat certificate";
 rm -rf /root/.acme.sh;
 mkdir -p /root/.acme.sh;
-wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/sshwsvpn/settings/main/acme.sh";
+wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
 chmod +x /root/.acme.sh/acme.sh;
-sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@sshwsvpn.me;
+sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
 sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
 
-# // Success
-echo -e "${OKEY} Your Domain : $domain";
+# ══════════════════
+# // Maklumat Domain
+# ══════════════════
+clear;
+echo "";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "";
+echo -e "${OKEY} Domain anda : $domain";
 sleep 2;
 clear;
 
-# // ELif For Selection 1
+# ═════════════════════════════
+# // Menggunakan domain sendiri
+# ═════════════════════════════
 elif [[ $choose_domain == "1" ]]; then
-
-# // Clear
 clear;
-echo -e "${GREEN}Indonesian Language${NC}";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo -e "Silakan Pointing Domain Anda Ke IP VPS";
-echo -e "Untuk Caranya Arahkan NS Domain Ke Cloudflare";
-echo -e "Kemudian Tambahkan A Record Dengan IP VPS";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo "";
-echo -e "${GREEN}Indonesian Language${NC}";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo -e "Please Point Your Domain To IP VPS";
-echo -e "For Point NS Domain To Cloudflare";
-echo -e "Change NameServer On Domain To Cloudflare";
-echo -e "Then Add A Record With IP VPS";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo "";
-echo "";
-
-# // Reading Your Input
-read -p "Input Your Domain : " domain
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "${WBBG}           [ Setting Domain ]             ${NC}";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "";
+read -p "Sila masukkan Domain anda : " domain
 domain=$( echo $domain | sed 's/ //g' );
 if [[ $domain == "" ]]; then
     clear;
-    echo -e "${ERROR} No Input Detected !";
+    echo -e "${ERROR} Tiada input dikesan, sila taip domain anda !";
     exit 1;
 fi
-
-# // Input Domain To VPS
-echo "$domain" > /etc/sshwsvpn/domain.txt;
-domain=$( cat /etc/sshwsvpn/domain.txt );
-
-# // Making Certificate
+echo "$domain" > /etc/kaizenvpn/domain.txt;
+domain=$( cat /etc/kaizenvpn/domain.txt );
 clear;
 echo -e "${OKEY} Starting Generating Certificate";
 rm -rf /root/.acme.sh;
 mkdir -p /root/.acme.sh;
-wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/sshwsvpn/settings/main/acme.sh";
+wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
 chmod +x /root/.acme.sh/acme.sh;
 sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@sshwsvpn.me;
 sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
 
-# // Success
-echo -e "${OKEY} Your Domain : $domain";
+# ══════════════════
+# // Maklumat Domain
+# ══════════════════
+clear;
+echo "";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "";
+echo -e "${OKEY} Domain anda : $domain";
 sleep 2;
 clear;
 
-# // Else Do
 else
-    echo -e "${ERROR} Please Choose 1 & 2 Only !";
+    echo -e "${ERROR} Sila pilih 1 atau 2 sahaja !";
     exit 1;
 fi
 
-# // Installing Requirement
+# ══════════════════════════════
+# // Memasang alat bantuan skrip
+# ══════════════════════════════
 wget -q -O /root/requirement.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/requirement.sh";
 chmod +x requirement.sh;
 ./requirement.sh;
 
-# // SSH & WebSocket Install
+# ═══════════════════════════
+# // Memasang SSH & Websocket
+# ═══════════════════════════
 wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
 
-# // Nginx Install
+# ═════════════════
+# // Memasang Nginx
+# ═════════════════
 wget -q -O /root/nginx.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/nginx.sh";
 chmod +x nginx.sh;
 ./nginx.sh;
 
-# // XRay-Mini Install
+# ═════════════════════
+# // Memasang XRay Mini
+# ═════════════════════
 wget -q -O /root/xray-mini.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/xray-mini.sh";
 chmod +x xray-mini.sh;
 ./xray-mini.sh;
 
-# // SSH & SSL Install
+# ═════════════════════
+# // Memasang SSH & SSL
+# ═════════════════════
 wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
 
-# // OpenVPN Install
+# ═══════════════════
+# // Memasang OpenVPN
+# ═══════════════════
 wget -q -O /root/ovpn.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ovpn.sh";
 chmod +x ovpn.sh;
 ./ovpn.sh;
 
-# // Wireguard Install
+# ═════════════════════
+# // Memasang Wireguard
+# ═════════════════════
 wget -q -O /root/wg-set.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/wg-set.sh";
 chmod +x wg-set.sh;
 ./wg-set.sh;
 
-# // ShadowsocksR Install
+# ════════════════════════
+# // Memasang ShadowsocksR
+# ════════════════════════
 wget -q -O /root/ssr.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssr.sh";
 chmod +x ssr.sh;
 ./ssr.sh;
 
-# // Installing Menu
+# ════════════════
+# // Memasang Menu
+# ════════════════
 wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/menu/menu-setup.sh";
 chmod +x menu-setup.sh;
 ./menu-setup.sh;
 
-# // Done
+# ══════════
+# // Selesai
+# ══════════
 clear;
 echo -e "${OKEY} Script Successfull Installed";
 
-# // Remove Not Used File
+# ═════════════════════════════════════
+# // Membuang fail yang tidak digunakan
+# ═════════════════════════════════════
 rm -rf /root/setup.sh
