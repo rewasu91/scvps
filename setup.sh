@@ -608,13 +608,6 @@ chmod +x xray-mini.sh;
 ./xray-mini.sh;
 clear;
 
-# ═════════════════════
-# // Memasang SSH & SSL
-# ═════════════════════
-wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ssh-ssl.sh";
-chmod +x ssh-ssl.sh;
-./ssh-ssl.sh;
-
 # ═══════════════════
 # // Memasang OpenVPN
 # ═══════════════════
