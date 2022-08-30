@@ -188,12 +188,12 @@ export TIME_NYA="$TIMEZONE";
 # // Exporting Banner
 # ═══════════════════
 clear
-echo -e "${YELLOW}═══════════════════════════════════════════════════${NC}
+echo -e "${CYAN}═══════════════════════════════════════════════════${NC}
    Selamat Datang ke KaizenVPN Skrip V1.0 Stable
 Skrip ini akan memasang server vpn secara automatik
-                Author : ${GREEN}KaizenVPN${NC}
+                 Owner : ${GREEN}KaizenVPN${NC}
         © Copyright 2022-2023 By ${GREEN}KaizenVpn${NC}
-${YELLOW}═══════════════════════════════════════════════════${NC}";
+${CYAN}═══════════════════════════════════════════════════${NC}";
 
 # ═════════════
 # // Pengesahan
@@ -497,7 +497,7 @@ rm -rf /root/.acme.sh;
 mkdir -p /root/.acme.sh;
 wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
 chmod +x /root/.acme.sh/acme.sh;
-sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@sshwsvpn.me;
+sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
 sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
 
 # ══════════════════
@@ -523,7 +523,7 @@ clear;
 # ══════════════════════════════
 # // Memasang alat bantuan skrip
 # ══════════════════════════════
-wget -q -O /root/requirement.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/requirement.sh";
+wget -q -O /root/requirement.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/requirement.sh";
 chmod +x requirement.sh;
 ./requirement.sh;
 clear;
@@ -531,7 +531,7 @@ clear;
 # ═══════════════════════════
 # // Memasang SSH & Websocket
 # ═══════════════════════════
-wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssh-ssl.sh";
+wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
 clear;
@@ -539,7 +539,7 @@ clear;
 # ═════════════════
 # // Memasang Nginx
 # ═════════════════
-wget -q -O /root/nginx.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/nginx.sh";
+wget -q -O /root/nginx.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/nginx.sh";
 chmod +x nginx.sh;
 ./nginx.sh;
 clear;
@@ -547,7 +547,7 @@ clear;
 # ═════════════════════
 # // Memasang XRay Mini
 # ═════════════════════
-wget -q -O /root/xray-mini.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/xray-mini.sh";
+wget -q -O /root/xray-mini.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/xray-mini.sh";
 chmod +x xray-mini.sh;
 ./xray-mini.sh;
 clear;
@@ -555,14 +555,14 @@ clear;
 # ═════════════════════
 # // Memasang SSH & SSL
 # ═════════════════════
-wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssh-ssl.sh";
+wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
 
 # ═══════════════════
 # // Memasang OpenVPN
 # ═══════════════════
-wget -q -O /root/ovpn.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ovpn.sh";
+wget -q -O /root/ovpn.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ovpn.sh";
 chmod +x ovpn.sh;
 ./ovpn.sh;
 clear;
@@ -570,7 +570,7 @@ clear;
 # ═════════════════════
 # // Memasang Wireguard
 # ═════════════════════
-wget -q -O /root/wg-set.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/wg-set.sh";
+wget -q -O /root/wg-set.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/wg-set.sh";
 chmod +x wg-set.sh;
 ./wg-set.sh;
 clear;
@@ -578,7 +578,7 @@ clear;
 # ════════════════════════
 # // Memasang ShadowsocksR
 # ════════════════════════
-wget -q -O /root/ssr.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/setup/ssr.sh";
+wget -q -O /root/ssr.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ssr.sh";
 chmod +x ssr.sh;
 ./ssr.sh;
 clear;
@@ -586,7 +586,7 @@ clear;
 # ════════════════
 # // Memasang Menu
 # ════════════════
-wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/sshwsvpn/setup/main/menu/menu-setup.sh";
+wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/rewasu91/setup/main/menu/menu-setup.sh";
 chmod +x menu-setup.sh;
 ./menu-setup.sh;
 clear;
