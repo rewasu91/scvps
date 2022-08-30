@@ -235,10 +235,10 @@ mkdir -p /etc/kaizenvpn/squid;
 # ══════════════════════
 wget -q -O /usr/local/kaizenvpn/ohp-mini "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ohp-mini";
 chmod +x /usr/local/kaizenvpn/ohp-mini
-wget -q -O /etc/systemd/system/ohp-mini-1.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/ohp-mini-1_service"
-wget -q -O /etc/systemd/system/ohp-mini-2.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/ohp-mini-2_service"
-wget -q -O /etc/systemd/system/ohp-mini-3.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/ohp-mini-3_service"
-wget -q -O /etc/systemd/system/ohp-mini-4.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/ohp-mini-4_service"
+wget -q -O /etc/systemd/system/ohp-mini-1.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ohp-mini-1_service"
+wget -q -O /etc/systemd/system/ohp-mini-2.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ohp-mini-2_service"
+wget -q -O /etc/systemd/system/ohp-mini-3.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ohp-mini-3_service"
+wget -q -O /etc/systemd/system/ohp-mini-4.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ohp-mini-4_service"
 systemctl disable ohp-mini-1 > /dev/null 2>&1
 systemctl stop ohp-mini-1 > /dev/null 2>&1
 systemctl enable ohp-mini-1
@@ -259,17 +259,17 @@ systemctl start ohp-mini-4
 # ═════════════════════════════════════════════════════════════════
 # // Memasang Autokill Untuk Vmess Vless Trojan Shadowsocks dan SSH
 # ═════════════════════════════════════════════════════════════════
-wget -q -O /etc/systemd/system/ssh-kill.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/ssh-kill_service";
-wget -q -O /etc/systemd/system/vmess-kill.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/vmess-kill_service";
-wget -q -O /etc/systemd/system/vless-kill.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/vless-kill_service";
-wget -q -O /etc/systemd/system/trojan-kill.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/trojan-kill_service";
-wget -q -O /etc/systemd/system/ss-kill.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/ss-kill_service";
-wget -q -O /usr/local/kaizenvpn/vmess-auto-kill "https://raw.githubusercontent.com/rewasu91/setup/main/menu/pro/autokill/vmess-kill.sh"; chmod +x /usr/local/kaizenvpn/vmess-auto-kill;
-wget -q -O /usr/local/kaizenvpn/ssh-auto-kill "https://raw.githubusercontent.com/rewasu91/setup/main/menu/pro/autokill/ssh-kill.sh"; chmod +x /usr/local/kaizenvpn/ssh-auto-kill;
-wget -q -O /usr/local/kaizenvpn/vless-auto-kill "https://raw.githubusercontent.com/rewasu91/setup/main/menu/pro/autokill/vless-kill.sh"; chmod +x /usr/local/kaizenvpn/vless-auto-kill;
-wget -q -O /usr/local/kaizenvpn/trojan-auto-kill "https://raw.githubusercontent.com/rewasu91/setup/main/menu/pro/autokill/trojan-kill.sh"; chmod +x /usr/local/kaizenvpn/trojan-auto-kill;
-wget -q -O /usr/local/kaizenvpn/ss-auto-kill "https://raw.githubusercontent.com/rewasu91/setup/main/menu/pro/autokill/ss-kill.sh"; chmod +x /usr/local/kaizenvpn/ss-auto-kill;
-wget -q -O /etc/kaizenvpn/autokill.conf "https://raw.githubusercontent.com/rewasu91/setup/main/menu/pro/autokill/autokill_conf"; chmod +x /etc/kaizenvpn/autokill.conf;
+wget -q -O /etc/systemd/system/ssh-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ssh-kill_service";
+wget -q -O /etc/systemd/system/vmess-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/vmess-kill_service";
+wget -q -O /etc/systemd/system/vless-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/vless-kill_service";
+wget -q -O /etc/systemd/system/trojan-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/trojan-kill_service";
+wget -q -O /etc/systemd/system/ss-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ss-kill_service";
+wget -q -O /usr/local/kaizenvpn/vmess-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/vmess-kill.sh"; chmod +x /usr/local/kaizenvpn/vmess-auto-kill;
+wget -q -O /usr/local/kaizenvpn/ssh-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/ssh-kill.sh"; chmod +x /usr/local/kaizenvpn/ssh-auto-kill;
+wget -q -O /usr/local/kaizenvpn/vless-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/vless-kill.sh"; chmod +x /usr/local/kaizenvpn/vless-auto-kill;
+wget -q -O /usr/local/kaizenvpn/trojan-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/trojan-kill.sh"; chmod +x /usr/local/kaizenvpn/trojan-auto-kill;
+wget -q -O /usr/local/kaizenvpn/ss-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/ss-kill.sh"; chmod +x /usr/local/kaizenvpn/ss-auto-kill;
+wget -q -O /etc/kaizenvpn/autokill.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/autokill_conf"; chmod +x /etc/kaizenvpn/autokill.conf;
 systemctl enable vmess-kill;
 systemctl enable ssh-kill;
 systemctl enable vless-kill;
@@ -313,8 +313,8 @@ echo "autoexp && clear && infonya" >> /etc/profile
 # ════════════════════
 # // Memasang RC-Local
 # ════════════════════
-wget -q -O /etc/systemd/system/rc-local.service "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Service/rc-local_service";
-wget -q -O /etc/rc.local "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Config/rc-local_conf";
+wget -q -O /etc/systemd/system/rc-local.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/rc-local_service";
+wget -q -O /etc/rc.local "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/rc-local_conf";
 chmod +x /etc/rc.local
 systemctl enable rc-local
 systemctl start rc-local
