@@ -159,44 +159,54 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-# // Replace Pam.d password common
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Config/password";
+# ══════════════════════════════════
+# // Mengganti Pam.d password common
+# ══════════════════════════════════
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/password";
 chmod +x /etc/pam.d/common-password;
 
-# // Installing Dropbear
-wget -q -O /etc/ssh/sshd_config "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Config/sshd_config";
+# ════════════════════
+# // Memasang Dropbear
+# ════════════════════
+wget -q -O /etc/ssh/sshd_config "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/sshd_config";
 /etc/init.d/ssh restart;
 apt install dropbear -y;
-wget -q -O /etc/default/dropbear "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Config/dropbear_conf";
+wget -q -O /etc/default/dropbear "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/dropbear_conf";
 chmod +x /etc/default/dropbear;
 echo "/bin/false" >> /etc/shells;
 echo "/usr/sbin/nologin" >> /etc/shells;
-wget -q -O /etc/sshwsvpn/banner.txt "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Config/banner.txt";
+wget -q -O /etc/kaizenvpn/banner.txt "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/banner.txt";
 /etc/init.d/dropbear restart;
 
-# // Installing Stunnel4
+# ════════════════════
+# // Memasang Stunnel4
+# ════════════════════
 apt install stunnel4 -y
-wget -q -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Config/stunnel_conf";
-wget -q -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/sshwsvpn/setup/main/Data/stunnel_cert";
+wget -q -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/stunnel_conf";
+wget -q -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/rewasu91/scvps/main/Data/stunnel_cert";
 systemctl enable stunnel4;
 systemctl start stunnel4;
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart;
 
-# // Installing Ws-ePro
-wget -q -O /usr/local/sshwsvpn/ws-epro "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Core/ws-epro";
-chmod +x /usr/local/sshwsvpn/ws-epro;
-wget -q -O /etc/systemd/system/ws-epro.service "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Service/ws-epro_service";
+# ═══════════════════
+# // Memasang Ws-ePro
+# ═══════════════════
+wget -q -O /usr/local/kaizenvpn/ws-epro "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ws-epro";
+chmod +x /usr/local/kaizenvpn/ws-epro;
+wget -q -O /etc/systemd/system/ws-epro.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ws-epro_service";
 chmod +x /etc/systemd/system/ws-epro.service;
-wget -q -O /etc/sshwsvpn/ws-epro.conf "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Config/ws-epro_conf";
-chmod 644 /etc/sshwsvpn/ws-epro.conf;
+wget -q -O /etc/kaizenvpn/ws-epro.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/ws-epro_conf";
+chmod 644 /etc/kaizenvpn/ws-epro.conf;
 systemctl enable ws-epro;
 systemctl start ws-epro;
 systemctl restart ws-epro;
 
-# // Instaling SSLH
+# ════════════════
+# // Memasang SSLH
+# ════════════════
 apt install sslh -y;
-wget -q -O /lib/systemd/system/sslh.service "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Service/sslh_service"
+wget -q -O /lib/systemd/system/sslh.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/sslh_service"
 systemctl daemon-reload
 systemctl disable sslh > /dev/null 2>&1;
 systemctl stop sslh > /dev/null 2>&1;
@@ -204,9 +214,13 @@ systemctl enable sslh;
 systemctl start sslh;
 systemctl restart sslh;
 
-# // Remove not used file
+# ═════════════════════════════════════
+# // Membuang fail yang tidak digunakan
+# ═════════════════════════════════════
 rm -f /root/ssh-ssl.sh;
 
-# // Successfull
+# ══════════
+# // Selesai
+# ══════════
 clear;
-echo -e "${OKEY} Successfull Installed Stunnel & Dropbear";
+echo -e "${OKEY} Berjaya Memasang Servis Stunnel & Dropbear";
