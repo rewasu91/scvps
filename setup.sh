@@ -586,7 +586,7 @@ clear;
 # ════════════════
 # // Memasang Menu
 # ════════════════
-wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/menu-setup.sh";
+wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/menu-setup.sh";
 chmod +x menu-setup.sh;
 ./menu-setup.sh;
 clear;
