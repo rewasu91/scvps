@@ -34,6 +34,7 @@ export PENDING="[${YELLOW} PENDING ${NC}]";
 export SEND="[${YELLOW} SEND ${NC}]";
 export RECEIVE="[${YELLOW} RECEIVE ${NC}]";
 export RED_BG='\e[41m';
+export BG2='\e[1;47;30m';
 
 # ═══════════════
 # // Export Align
@@ -183,19 +184,25 @@ export CITY_NYA="$CITY";
 export COUNTRY_NYA="$COUNTRY";
 export TIME_NYA="$TIMEZONE";
 
+# ═══════════════════
 # // Exporting Banner
+# ═══════════════════
 clear
-echo -e "${YELLOW}---------------------------------------------------${NC}
+echo -e "${YELLOW}═══════════════════════════════════════════════════${NC}
    Selamat Datang ke KaizenVPN Skrip V1.0 Stable
 Skrip ini akan memasang server vpn secara automatik
                 Author : ${GREEN}KaizenVPN${NC}
         © Copyright 2022-2023 By ${GREEN}KaizenVpn${NC}
-${YELLOW}---------------------------------------------------${NC}";
+${YELLOW}═══════════════════════════════════════════════════${NC}";
 
+# ═════════════
 # // Pengesahan
+# ═════════════
 echo -e "${OKEY} Versi Skrip [ ${GREEN}${VERSION} ${EDITION}${NC} ]";
 
-# // Validating Architecture
+# ═══════════════════════════
+# // Mengesahkan Architecture
+# ═══════════════════════════
 if [[ $OS_ARCH == "x86_64" ]]; then
     echo -e "${OKEY} Architecture Supported [ $GREEN$OS_ARCH${NC} ]";
 else
@@ -203,7 +210,9 @@ else
     exit 1;
 fi
 
+# ═══════════════════════════════════════════
 # // Mengesahkan Sistem OS support atau tidak
+# ═══════════════════════════════════════════
 if [[ $OS_ID == "ubuntu" ]]; then
     # // Ubuntu Detected
     if [[ $OS_VERSION == "16.04" ]]; then
@@ -263,7 +272,9 @@ else
     exit 1;
 fi
 
+# ══════════════════════
 # // Menyemak IP Address
+# ══════════════════════
 if [[ $IP_NYA == "" ]]; then
     echo -e "${ERROR} IP Address tidak berjaya dikesan";
     exit 1;
@@ -271,7 +282,9 @@ else
     echo -e "${OKEY} IP Address berjaya dikesan [ ${GREEN}$IP_NYA${NC} ]";
 fi
 
+# ═══════════════
 # // Menyemak ISP
+# ═══════════════
 if [[ $ISP_NYA == "" ]]; then
     echo -e "${ERROR} ISP tidak berjaya dikesan";
     exit 1;
@@ -279,7 +292,9 @@ else
     echo -e "${OKEY} ISP berjaya dikesan [ ${GREEN}$ISP_NYA${NC} ]";
 fi
 
+# ══════════════════
 # // Menyemak Negara
+# ══════════════════
 if [[ $COUNTRY_NYA == "" ]]; then
     echo -e "${ERROR} Negara tidak berjaya dikesan";
     exit 1;
@@ -287,26 +302,31 @@ else
     echo -e "${OKEY} Negara berjaya dikesan [ ${GREEN}$COUNTRY_NYA${NC} ]";
 fi
 
+# ══════════════════
 # // Menyemak Negeri
+# ══════════════════
 if [[ $REGION_NYA == "" ]]; then
     echo -e "${ERROR} Negari tidak berjaya dikesan";
     exit 1;
 else
     echo -e "${OKEY} Negari berjaya dikesan [ ${GREEN}$REGION_NYA${NC} ]";
 fi
-
+# ══════════════════
 # // Menyemak Bandar
+# ══════════════════
 if [[ $CITY_NYA == "" ]]; then
     echo -e "${ERROR} Bandar tidak berjaya dikesan";
     exit 1;
 else
     echo -e "${OKEY} Bandar berjaya dikesan [ ${GREEN}$CITY_NYA${NC} ]";
 fi
-echo -e "${YELLOW}--------------------------------------------------${NC}"
+echo -e "${YELLOW}══════════════════════════════════════════════════${NC}"
 echo "";
 read -p "$(echo -e "${YELLOW} ~~~>${NC}") Sila masukkan lesen skrip anda : " lcn_key_inputed
 
+# ═══════════════
 # // Maklumat Ram
+# ═══════════════
 while IFS=":" read -r a b; do
     case $a in
         "MemTotal") ((mem_used+=${b/kB})); mem_total="${b/kB}" ;;
@@ -319,7 +339,9 @@ done < /proc/meminfo
 Ram_Usage="$((mem_used / 1024))";
 Ram_Total="$((mem_total / 1024))";
 
+# ══════════════════════════════
 # // Mendaftarkan pengguna skrip
+# ══════════════════════════════
 Username="script-$( </dev/urandom tr -dc 0-9 | head -c5 )";
 Password="$( </dev/urandom tr -dc 0-9 | head -c12 )";
 mkdir -p /home/script/;
@@ -327,18 +349,26 @@ useradd -r -d /home/script -s /bin/bash -M $Username;
 echo -e "$Password\n$Password\n"|passwd $Username > /dev/null 2>&1;
 usermod -aG sudo $Username > /dev/null 2>&1;
 
+# ══════════════════════════════════════
 # // Selamat Datang ke Proses Pemasangan
+# ══════════════════════════════════════
 clear && echo -e "${OKEY} Memulakan proses pemasangan skrip.";
 
+# ═══════════════════
 # // Info Versi Skrip
+# ═══════════════════
 printf 'VERSION=1.0\nPATCH="4"\nNAME=Stable\nVERSION_ID="KaizenV1"' > /etc/kaizenvpn/version
 
+# ════════════════════════════════════
 # // Membuang Apache / Nginx kalau ada
+# ════════════════════════════════════
 apt remove --purge nginx -y;
 apt remove --purge apache2 -y;
 apt autoremove -y;
 
+# ══════════════════════════════════════
 # // Memasang keperluan lain untuk skrip
+# ══════════════════════════════════════
 apt install jq -y;
 apt install net-tools -y;
 apt install netfilter-persistent -y;
@@ -347,46 +377,62 @@ apt install iptables -y;
 apt install iptables-persistent -y;
 apt autoremove -y;
 
+# ════════════════════
 # // Memasang BBR & FQ
+# ════════════════════
 cat > /etc/sysctl.conf << END
 # Sysctl Config By KaizenVPN
-# ============================================================
+# ════════════════════════════════════════════════════════════
 # Please do not try to change / modif this config
 # This file is for enable bbr & disable ipv6 
 # if you modifed this, bbr & ipv6 disable will error
-# ============================================================
+# ════════════════════════════════════════════════════════════
 # (C) Copyright 2022-2023 By KaizenVPN
 
+# ════════════════════════════
 # // Mengaktifkan IPv4 Forward
+# ════════════════════════════
 net.ipv4.ip_forward=1
 
+# ═════════════════
 # // Mematikan IPV6
+# ═════════════════
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 
+# ════════════════════════
 # // Mengaktifkan bbr & fq
+# ════════════════════════
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 END
 sysctl -p;
 
+# ════════════════════════════════════════════════════════════════
 # // Memasang Socat & membuang nginx & apache kalau sudah dipasang
+# ════════════════════════════════════════════════════════════════
 clear;
 apt install socat -y;
 apt install sudo -y;
 
+# ═════════════════════
 # // Mengentikan servis
+# ═════════════════════
 systemctl stop xray-mini@tls > /dev/null 2>&1
 systemctl stop xray-mini@nontls > /dev/null 2>&1
 systemctl stop nginx > /dev/null 2>&1
 systemctl stop apache2 > /dev/null 2>&1
 
+# ════════════════════════════════════════════════
 # // Mematikan port 80 & 443 kalau sudah digunakan
+# ════════════════════════════════════════════════
 lsof -t -i tcp:80 -s tcp:listen | xargs kill > /dev/null 2>&1
 lsof -t -i tcp:443 -s tcp:listen | xargs kill > /dev/null 2>&1
 
+# ═════════════════
 # // Setting Domain
+# ═════════════════
 clear;
 echo "";
 echo -e "${GREEN}Setting Domain${NC}";
@@ -399,10 +445,11 @@ echo -e "${YELLOW}-----------------------------------------------------${NC}";
 echo "";
 read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
 
+clear;
 echo -e ""
-echo -e "${E}══════════════════════════════════════════${R}"
-echo -e "${BG}           [ Setting Domain ]             ${R}"
-echo -e "${E}══════════════════════════════════════════${R}"
+echo -e "${YELLOW}══════════════════════════════════════════${NC}"
+echo -e "${RED_BG}           [ Setting Domain ]             ${NC}"
+echo -e "${YELLOW}══════════════════════════════════════════${NC}"
 echo -e ""
 echo -e "[ * ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?" 
 echo -e "[ * ] 1. Saya ingin menggunakan domain saya sendiri"
@@ -411,9 +458,12 @@ echo -e "${E}══════════════════════�
 read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
 
 
+echo -e "${E}══════════════════════════════════════════${R}"
+echo -e "${BG}     [ Proses Semakan Pengguna Root ]     ${R}"
+echo -e "${E}══════════════════════════════════════════${R}"
 
-
-
+E='\e[1;96m'
+BG='\e[1;47;30m'
 
 
 
