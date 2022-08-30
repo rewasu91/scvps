@@ -264,12 +264,12 @@ wget -q -O /etc/systemd/system/vmess-kill.service "https://raw.githubusercontent
 wget -q -O /etc/systemd/system/vless-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/vless-kill_service";
 wget -q -O /etc/systemd/system/trojan-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/trojan-kill_service";
 wget -q -O /etc/systemd/system/ss-kill.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/ss-kill_service";
-wget -q -O /usr/local/kaizenvpn/vmess-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/vmess-kill.sh"; chmod +x /usr/local/kaizenvpn/vmess-auto-kill;
-wget -q -O /usr/local/kaizenvpn/ssh-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/ssh-kill.sh"; chmod +x /usr/local/kaizenvpn/ssh-auto-kill;
-wget -q -O /usr/local/kaizenvpn/vless-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/vless-kill.sh"; chmod +x /usr/local/kaizenvpn/vless-auto-kill;
-wget -q -O /usr/local/kaizenvpn/trojan-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/trojan-kill.sh"; chmod +x /usr/local/kaizenvpn/trojan-auto-kill;
-wget -q -O /usr/local/kaizenvpn/ss-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/ss-kill.sh"; chmod +x /usr/local/kaizenvpn/ss-auto-kill;
-wget -q -O /etc/kaizenvpn/autokill.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/pro/autokill/autokill_conf"; chmod +x /etc/kaizenvpn/autokill.conf;
+wget -q -O /usr/local/kaizenvpn/vmess-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/vmess-kill.sh"; chmod +x /usr/local/kaizenvpn/vmess-auto-kill;
+wget -q -O /usr/local/kaizenvpn/ssh-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/ssh-kill.sh"; chmod +x /usr/local/kaizenvpn/ssh-auto-kill;
+wget -q -O /usr/local/kaizenvpn/vless-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/vless-kill.sh"; chmod +x /usr/local/kaizenvpn/vless-auto-kill;
+wget -q -O /usr/local/kaizenvpn/trojan-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/trojan-kill.sh"; chmod +x /usr/local/kaizenvpn/trojan-auto-kill;
+wget -q -O /usr/local/kaizenvpn/ss-auto-kill "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/ss-kill.sh"; chmod +x /usr/local/kaizenvpn/ss-auto-kill;
+wget -q -O /etc/kaizenvpn/autokill.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/autokill_conf"; chmod +x /etc/kaizenvpn/autokill.conf;
 systemctl enable vmess-kill;
 systemctl enable ssh-kill;
 systemctl enable vless-kill;
