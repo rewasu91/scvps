@@ -97,7 +97,9 @@ export CITY_NYA="$CITY";
 export COUNTRY_NYA="$COUNTRY";
 export TIME_NYA="$TIMEZONE";
 
-# // Installing Update
+# ══════════════════
+# // Memasang Update
+# ══════════════════
 apt update -y;
 apt upgrade -y;
 apt dist-upgrade -y;
@@ -105,7 +107,9 @@ apt remove --purge ufw firewalld exim4 -y;
 apt autoremove -y;
 apt clean -y;
 
-# // Install Requirement Tools
+# ══════════════════════════
+# // Memasang Alat Keperluan
+# ══════════════════════════
 apt install python -y;
 apt install make-guile -y;
 apt install make -y;
@@ -122,7 +126,9 @@ apt install gnupg1 -y;
 apt install bc -y;
 apt install jq -y;
 
-# // remove cache nd resume installing
+# ════════════════════════════════════════════════
+# // Membuang cache dan sambung memasang keperluan
+# ════════════════════════════════════════════════
 apt autoremove -y; 
 apt clean -y
 apt install apt-transport-https -y;
@@ -139,20 +145,28 @@ apt install libreadline-dev -y;
 apt install zlib1g-dev -y;
 apt install libssl-dev -y;
 
-# // Installing neofetch
-wget -q -O /usr/local/sbin/neofetch "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Core/neofetch"; chmod +x /usr/local/sbin/neofetch;
+# ════════════════════
+# // Memasang Neofetch
+# ════════════════════
+wget -q -O /usr/local/sbin/neofetch "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/core/neofetch"; chmod +x /usr/local/sbin/neofetch;
 
-# // Setting Time
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime;
+# ══════════════════
+# // Menetapkan masa
+# ══════════════════
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
 
-# // Getting Ip Route
+# ═══════════════════════
+# // Mendapatkan route IP
+# ═══════════════════════
 export NET=$(ip route show default | awk '{print $5}');
 export MYIP2="s/xxxxxxxxx/$IP_NYA/g";
 
-# // Installing Vnstat 2.9
+# ══════════════════════
+# // Memasang Vnstat 2.9
+# ══════════════════════
 apt install vnstat -y;
 /etc/init.d/vnstat stop;
-wget -q -O vnstat.zip "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Core/vnstat.zip";
+wget -q -O vnstat.zip "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/core/vnstat.zip";
 unzip -o vnstat.zip > /dev/null 2>&1;
 cd vnstat;
 chmod +x configure;
@@ -167,12 +181,14 @@ systemctl restart vnstat;
 rm -r -f vnstat;
 rm -f vnstat.zip;
 
-# // Installing UDP Mini
-wget -q -O /usr/local/sshwsvpn/udp-mini "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Core/udp-mini";
+# ════════════════════
+# // Memasang UDP mini
+# ════════════════════
+wget -q -O /usr/local/sshwsvpn/udp-mini "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/core/udp-mini";
 chmod +x /usr/local/sshwsvpn/udp-mini;
-wget -q -O /etc/systemd/system/udp-mini-1.service "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Service/udp-mini-1.service";
-wget -q -O /etc/systemd/system/udp-mini-2.service "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Service/udp-mini-2.service";
-wget -q -O /etc/systemd/system/udp-mini-3.service "https://raw.githubusercontent.com/sshwsvpn/setup/main/Resource/Service/udp-mini-3.service";
+wget -q -O /etc/systemd/system/udp-mini-1.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/udp-mini-1.service";
+wget -q -O /etc/systemd/system/udp-mini-2.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/udp-mini-2.service";
+wget -q -O /etc/systemd/system/udp-mini-3.service "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Service/udp-mini-3.service";
 systemctl disable udp-mini-1 > /dev/null 2>&1;
 systemctl stop udp-mini-1 > /dev/null 2>&1;
 systemctl enable udp-mini-1;
