@@ -1,10 +1,10 @@
 # Squid Proxy Config By KaizenVPN
-# ============================================================
+# ═══════════════════════════════════════════════════════════════════
 # Please do not try to change / modif this config
 # This config is connection to stunnel & openssh 
 # if you changes it maybe stunnel & openssh will error
-# ============================================================
-# (C) Copyright 2022-2023 By KaizenVPN
+# ═══════════════════════════════════════════════════════════════════
+# (C) Copyright 2022 By KaizenVPN
 
 # // Start Config
 acl manager proto cache_object
