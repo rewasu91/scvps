@@ -359,11 +359,12 @@ lsof -t -i tcp:443 -s tcp:listen | xargs kill > /dev/null 2>&1
 
 # // Setting Domain
 clear;
-echo -e "${GREEN}Bahasa Indonesia${NC}";
+echo "";
+echo -e "${GREEN}Setting Domain${NC}";
 echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo -e "Anda ingin Menggunakan Domain Peribadi ?";
+echo -e "Anda ingin Menggunakan Domain Sendiri ?";
 echo -e "Atau ingin Menggunakan Domain Automatik ?";
-echo -e "Jika ingin Menggunakan Domain Peribadi, sila taip ${GREEN}1${NC}";
+echo -e "Jika ingin Menggunakan Domain Sendiri, sila taip ${GREEN}1${NC}";
 echo -e "dan Jika Ingin menggunakan Domain Automatik, sila taip ${GREEN}2${NC}";
 echo -e "${YELLOW}-----------------------------------------------------${NC}";
 echo "";
