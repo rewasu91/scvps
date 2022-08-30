@@ -164,8 +164,8 @@ Skrip ini akan memasang server vpn secara automatik
         © Copyright 2022-2023 By ${GREEN}KaizenVpn${NC}
 ${YELLOW}---------------------------------------------------${NC}";
 
-# // Validating Result
-echo -e "${OKEY} Script Version [ ${GREEN}${VERSION} ${EDITION}${NC} ]";
+# // Pengesahan
+echo -e "${OKEY} Versi Skrip [ ${GREEN}${VERSION} ${EDITION}${NC} ]";
 
 # // Validating Architecture
 if [[ $OS_ARCH == "x86_64" ]]; then
@@ -175,7 +175,7 @@ else
     exit 1;
 fi
 
-# // Validating OS Support Or No
+# // Mengesahkan Sistem OS support atau tidak
 if [[ $OS_ID == "ubuntu" ]]; then
     # // Ubuntu Detected
     if [[ $OS_VERSION == "16.04" ]]; then
@@ -231,7 +231,7 @@ elif [[ $OS_ID == "debian" ]]; then
     fi
 else
     # // Operating Not Supported
-    echo -e "${ERROR} Sorry Only Supported Ubuntu & Debian";
+    echo -e "${ERROR} Maaf, hanya support sistem Debian & Ubuntu sahaja";
     exit 1;
 fi
 
