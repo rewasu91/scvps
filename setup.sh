@@ -523,7 +523,7 @@ clear;
 # ══════════════════════════════
 # // Memasang alat bantuan skrip
 # ══════════════════════════════
-wget -q -O /root/requirement.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/requirement.sh";
+wget -q -O /root/requirement.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/requirement.sh";
 chmod +x requirement.sh;
 ./requirement.sh;
 clear;
@@ -531,7 +531,7 @@ clear;
 # ═══════════════════════════
 # // Memasang SSH & Websocket
 # ═══════════════════════════
-wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ssh-ssl.sh";
+wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
 clear;
@@ -539,7 +539,7 @@ clear;
 # ═════════════════
 # // Memasang Nginx
 # ═════════════════
-wget -q -O /root/nginx.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/nginx.sh";
+wget -q -O /root/nginx.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/nginx.sh";
 chmod +x nginx.sh;
 ./nginx.sh;
 clear;
@@ -547,7 +547,7 @@ clear;
 # ═════════════════════
 # // Memasang XRay Mini
 # ═════════════════════
-wget -q -O /root/xray-mini.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/xray-mini.sh";
+wget -q -O /root/xray-mini.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/xray-mini.sh";
 chmod +x xray-mini.sh;
 ./xray-mini.sh;
 clear;
@@ -555,14 +555,14 @@ clear;
 # ═════════════════════
 # // Memasang SSH & SSL
 # ═════════════════════
-wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ssh-ssl.sh";
+wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ssh-ssl.sh";
 chmod +x ssh-ssl.sh;
 ./ssh-ssl.sh;
 
 # ═══════════════════
 # // Memasang OpenVPN
 # ═══════════════════
-wget -q -O /root/ovpn.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ovpn.sh";
+wget -q -O /root/ovpn.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ovpn.sh";
 chmod +x ovpn.sh;
 ./ovpn.sh;
 clear;
@@ -570,7 +570,7 @@ clear;
 # ═════════════════════
 # // Memasang Wireguard
 # ═════════════════════
-wget -q -O /root/wg-set.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/wg-set.sh";
+wget -q -O /root/wg-set.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/wg-set.sh";
 chmod +x wg-set.sh;
 ./wg-set.sh;
 clear;
@@ -578,7 +578,7 @@ clear;
 # ════════════════════════
 # // Memasang ShadowsocksR
 # ════════════════════════
-wget -q -O /root/ssr.sh "https://raw.githubusercontent.com/rewasu91/setup/main/setup/ssr.sh";
+wget -q -O /root/ssr.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ssr.sh";
 chmod +x ssr.sh;
 ./ssr.sh;
 clear;
@@ -586,7 +586,7 @@ clear;
 # ════════════════
 # // Memasang Menu
 # ════════════════
-wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/rewasu91/setup/main/menu/menu-setup.sh";
+wget -q -O /root/menu-setup.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/menu/menu-setup.sh";
 chmod +x menu-setup.sh;
 ./menu-setup.sh;
 clear;
