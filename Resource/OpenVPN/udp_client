@@ -1,0 +1,13 @@
+client
+dev tun
+proto udp
+remote xxxxxxxxx 1195
+setenv FRIENDLY_NAME "NamaFailKorang"
+resolv-retry infinite
+route-method exe
+nobind
+persist-key
+persist-tun
+auth-user-pass
+comp-lzo
+verb 3
