@@ -322,7 +322,7 @@ else
 fi
 echo -e "${YELLOW}══════════════════════════════════════════════════${NC}"
 echo "";
-read -p "$(echo -e "${YELLOW} ~~~>${NC}") Sila masukkan lesen skrip anda : " lcn_key_inputed
+read -p "$(echo -e "${YELLOW} ~~~>${NC}") Sila masukkan Lesen Skrip anda : " lcn_key_inputed
 
 # ═══════════════
 # // Maklumat Ram
