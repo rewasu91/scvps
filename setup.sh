@@ -1,6 +1,7 @@
 #!/bin/bash
+# ═══════════════════════════════════════════════════════════════════
 # (C) Copyright 2022 Oleh KaizenVPN
-# ===================================================================
+# ═══════════════════════════════════════════════════════════════════
 # Nama        : Autoskrip VPN
 # Info        : Memasang pelbagai jenis servis vpn didalam satu skrip
 # Dibuat Pada : 30-08-2022 ( 30 Ogos 2022 )
@@ -9,9 +10,11 @@
 # Telegram    : https://t.me/KaizenA
 # Github      : github.com/rewasu91
 # Lesen       : MIT License
-# ===================================================================
+# ═══════════════════════════════════════════════════════════════════
 
+# ══════════════════════════
 # // Export Warna & Maklumat
+# ══════════════════════════
 export RED='\033[0;31m';
 export GREEN='\033[0;32m';
 export YELLOW='\033[0;33m';
@@ -21,7 +24,9 @@ export CYAN='\033[0;36m';
 export LIGHT='\033[0;37m';
 export NC='\033[0m';
 
+# ════════════════════════════════
 # // Export Maklumat Status Banner
+# ════════════════════════════════
 export ERROR="[${RED} ERROR ${NC}]";
 export INFO="[${YELLOW} INFO ${NC}]";
 export OKEY="[${GREEN} OKEY ${NC}]";
@@ -30,19 +35,25 @@ export SEND="[${YELLOW} SEND ${NC}]";
 export RECEIVE="[${YELLOW} RECEIVE ${NC}]";
 export RED_BG='\e[41m';
 
+# ═══════════════
 # // Export Align
+# ═══════════════
 export BOLD="\e[1m";
 export WARNING="${RED}\e[5m";
 export UNDERLINE="\e[4m";
 
+# ════════════════════════════
 # // Export Maklumat Sistem OS
+# ════════════════════════════
 export OS_ID=$( cat /etc/os-release | grep -w ID | sed 's/ID//g' | sed 's/=//g' | sed 's/ //g' );
 export OS_VERSION=$( cat /etc/os-release | grep -w VERSION_ID | sed 's/VERSION_ID//g' | sed 's/=//g' | sed 's/ //g' | sed 's/"//g' );
 export OS_NAME=$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' );
 export OS_KERNEL=$( uname -r );
 export OS_ARCH=$( uname -m );
 
+# ═══════════════════════════════════
 # // String Untuk Membantu Pemasangan
+# ═══════════════════════════════════
 export VERSION="1.0";
 export EDITION="Stable";
 export AUTHER="KaizenVPN";
@@ -52,13 +63,17 @@ export SERVICE_DIRECTORY="/etc/systemd/system";
 export SCRIPT_SETUP_URL="https://raw.githubusercontent.com/rewasu91/scvps/main/setup.sh";
 export REPO_URL="https://github.com/rewasu91/scvps";
 
+# ═════════════════════════════════════════════════════════
 # // Semak kalau anda sudah running sebagai root atau belum
+# ═════════════════════════════════════════════════════════
 if [[ "${EUID}" -ne 0 ]]; then
 		echo -e " ${ERROR} Sila jalankan skrip ini sebagai root user";
 		exit 1
 fi
 
+# ══════════════════════════
 # // Membuat Directory Utama
+# ══════════════════════════
 if [[ -r /usr/local/kaizenvpn/ ]]; then
         echo -e "${ERROR} Skrip sudah dipasang !"
         sleep 3
@@ -84,17 +99,23 @@ else
         export passed=true # Script Not Detected
 fi
 
+# ═════════════════
 # // Membuat Folder
+# ═════════════════
 rm -rf /etc/kaizenvpn/;
 rm -rf /usr/local/kaizenvpn/;
 rm -rf /etc/v2ray/;
 rm -rf /etc/xray/;
 mkdir -p /etc/kaizenvpn/;
 
+# ══════════════════
 # // Menetapkan masa
+# ══════════════════
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
 
+# ════════════════════════
 # // Persetujuan peraturan
+# ════════════════════════
 wget -q -O /etc/kaizenvpn/Rules "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/rules.txt";
 clear;
 cat /etc/kaizenvpn/Rules;
@@ -115,7 +136,9 @@ else
     exit 1;
 fi 
 
-# // Create local folder
+# ═══════════════════════
+# // Membuat folder local
+# ═══════════════════════
 mkdir -p /usr/local/kaizenvpn/;
 mkdir -p /etc/kaizenvpn/bin/;
 mkdir -p /etc/kaizenvpn/local/;
@@ -127,7 +150,9 @@ mkdir -p /etc/kaizenvpn/addons-controller/;
 mkdir -p /etc/kaizenvpn/build/;
 mkdir -p /etc/kaizenvpn/data/;
 
+# ══════════════════════════════════════
 # // Update dan upgrade semua repository
+# ══════════════════════════════════════
 apt update -y;
 apt upgrade -y;
 apt autoremove -y;
@@ -137,13 +162,17 @@ apt install wget -y;
 apt install nano -y;
 apt install curl -y;
 
+# ═════════════════════════════════════════════════════════════════
 # // Menyemak sistem sekiranya terdapat pemasangan yang kurang / No
+# ═════════════════════════════════════════════════════════════════
 if ! which jq > /dev/null; then
     echo -e "${ERROR} Pakej JQ tidak dipasang";
     exit 1
 fi
 
+# ═══════════════════════════════
 # // Exporting maklumat rangkaian
+# ═══════════════════════════════
 wget -qO- --inet4-only 'https://raw.githubusercontent.com/rewasu91/scvpssettings/main/get-ip_sh' | bash;
 source /root/ip-detail.txt;
 export IP_NYA="$IP";
@@ -369,6 +398,23 @@ echo -e "dan Jika Ingin menggunakan Domain Automatik, sila taip ${GREEN}2${NC}";
 echo -e "${YELLOW}-----------------------------------------------------${NC}";
 echo "";
 read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
+
+echo -e ""
+echo -e "${E}══════════════════════════════════════════${R}"
+echo -e "${BG}           [ Setting Domain ]             ${R}"
+echo -e "${E}══════════════════════════════════════════${R}"
+echo -e ""
+echo -e "[ * ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?" 
+echo -e "[ * ] 1. Saya ingin menggunakan domain saya sendiri"
+echo -e "[ * ] 2. Saya ingin menggunakan domain yang disediakan oleh KaizenVPN"
+echo -e "${E}══════════════════════════════════════════${R}"
+read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
+
+
+
+
+
+
 
 
 # // Mengesahkan pilihan domain, samada 1 atau 2
