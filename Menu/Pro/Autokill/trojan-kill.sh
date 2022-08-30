@@ -113,13 +113,10 @@ PERMISSION () {
     BURIQ
 }
 PERMISSION
-if [ -f /home/needupdate ]; then
-red "Anda perlu update skrip anda terlebih dahulu !"
-exit 0
-elif [ "$res" = "Permission Accepted..." ]; then
+if [ "$res" = "Permission Accepted..." ]; then
 echo -ne
 else
-red "Permission Denied!"
+echo -e "${ERROR} Permission Denied!";
 exit 0
 fi
 
