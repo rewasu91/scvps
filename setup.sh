@@ -15,13 +15,13 @@
 # ══════════════════════════
 # // Export Warna & Maklumat
 # ══════════════════════════
-export RED='\033[0;31m';
-export GREEN='\033[0;32m';
-export YELLOW='\033[0;33m';
-export BLUE='\033[0;34m';
-export PURPLE='\033[0;35m';
-export CYAN='\033[0;36m';
-export LIGHT='\033[0;37m';
+export RED='\033[1;91m';
+export GREEN='\033[1;92m';
+export YELLOW='\033[1;93m';
+export BLUE='\033[1;94m';
+export PURPLE='\033[1;95m';
+export CYAN='\033[1;96m';
+export LIGHT='\033[1;97m';
 export NC='\033[0m';
 
 # ════════════════════════════════
@@ -33,8 +33,8 @@ export OKEY="[${GREEN} OKEY ${NC}]";
 export PENDING="[${YELLOW} PENDING ${NC}]";
 export SEND="[${YELLOW} SEND ${NC}]";
 export RECEIVE="[${YELLOW} RECEIVE ${NC}]";
-export RED_BG='\e[41m';
-export BG2='\e[1;47;30m';
+export REDBG='\e[41m';
+export WBBG='\e[1;47;30m';
 
 # ═══════════════
 # // Export Align
@@ -435,37 +435,16 @@ lsof -t -i tcp:443 -s tcp:listen | xargs kill > /dev/null 2>&1
 # ═════════════════
 clear;
 echo "";
-echo -e "${GREEN}Setting Domain${NC}";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo -e "Anda ingin Menggunakan Domain Sendiri ?";
-echo -e "Atau ingin Menggunakan Domain Automatik ?";
-echo -e "Jika ingin Menggunakan Domain Sendiri, sila taip ${GREEN}1${NC}";
-echo -e "dan Jika Ingin menggunakan Domain Automatik, sila taip ${GREEN}2${NC}";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "${WBBG}           [ Setting Domain ]             ${NC}";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
+echo -e "";
+echo -e "[ * ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?";
+echo -e "[ * ] 1. Saya ingin menggunakan domain saya sendiri";
+echo -e "[ * ] 2. Saya ingin menggunakan domain yang disediakan oleh KaizenVPN";
+echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo "";
 read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
-
-clear;
-echo -e ""
-echo -e "${YELLOW}══════════════════════════════════════════${NC}"
-echo -e "${RED_BG}           [ Setting Domain ]             ${NC}"
-echo -e "${YELLOW}══════════════════════════════════════════${NC}"
-echo -e ""
-echo -e "[ * ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?" 
-echo -e "[ * ] 1. Saya ingin menggunakan domain saya sendiri"
-echo -e "[ * ] 2. Saya ingin menggunakan domain yang disediakan oleh KaizenVPN"
-echo -e "${E}══════════════════════════════════════════${R}"
-read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
-
-
-echo -e "${E}══════════════════════════════════════════${R}"
-echo -e "${BG}     [ Proses Semakan Pengguna Root ]     ${R}"
-echo -e "${E}══════════════════════════════════════════${R}"
-
-E='\e[1;96m'
-BG='\e[1;47;30m'
-
-
 
 # // Mengesahkan pilihan domain, samada 1 atau 2
 if [[ $choose_domain == "2" ]]; then # // Using Automatic Domain
