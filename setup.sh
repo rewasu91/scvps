@@ -1,16 +1,15 @@
 #!/bin/bash
 # (C) Copyright 2022 Oleh KaizenVPN
-# ==================================================================
-# Name        : VPN Script Quick Installation Script
-# Description : This Script Is Setup for running other
-#               quick Setup script from one click installation
-# Created     : 30-08-2022 ( 30 Ogos 2022 )
+# ===================================================================
+# Nama        : Autoskrip VPN
+# Info        : Memasang pelbagai jenis servis vpn didalam satu skrip
+# Dibuat Pada : 30-08-2022 ( 30 Ogos 2022 )
 # OS Support  : Ubuntu & Debian
-# Auther      : sshwsvpn
-# WebSite     : https://t.me/KaizenA
+# Owner       : KaizenVPN
+# Telegram    : https://t.me/KaizenA
 # Github      : github.com/rewasu91
-# License     : MIT License
-# ==================================================================
+# Lesen       : MIT License
+# ===================================================================
 
 # // Export Warna & Maklumat
 export RED='\033[0;31m';
@@ -100,12 +99,12 @@ wget -q -O /etc/kaizenvpn/Rules "https://raw.githubusercontent.com/rewasu91/scvp
 clear;
 cat /etc/kaizenvpn/Rules;
 echo "";
-echo -e "Untuk meneruskan pemasangan skrip, sila setuju dengan peraturan kami dengan menaip '${YELLOW}ok${NC}'";
+echo -e "Untuk meneruskan pemasangan skrip, sila baca dan setuju dengan peraturan kami dengan menaip '${YELLOW}okey${NC}'";
 echo "";
-read -p 'Sila taip 'ok' : ' accepted_rules;
-if [[ $accepted_rules == "ok" ]]; then
+read -p 'Sila taip 'okey' : ' accepted_rules;
+if [[ $accepted_rules == "okey" ]]; then
     echo "";
-    echo -e "${OKEY} Anda telah bersetuju dengan peraturan kami. Sistem akan memulakan pemasangan skrip dalam 3 saat.";
+    echo -e "${OKEY} Anda telah bersetuju dengan peraturan kami. Sistem akan memulakan pemasangan skrip dalam masa 3 saat.";
     sleep 3;
     clear;
 else
@@ -155,7 +154,7 @@ export CITY_NYA="$CITY";
 export COUNTRY_NYA="$COUNTRY";
 export TIME_NYA="$TIMEZONE";
 
-# // Exporting The Banner
+# // Exporting Banner
 clear
 echo -e "${YELLOW}---------------------------------------------------${NC}
    Selamat Datang ke KaizenVPN Skrip V1.0 Stable
@@ -235,50 +234,50 @@ else
     exit 1;
 fi
 
-# // IP Checking
+# // Menyemak IP Address
 if [[ $IP_NYA == "" ]]; then
-    echo -e "${ERROR} IP Address Not Detected";
+    echo -e "${ERROR} IP Address tidak berjaya dikesan";
     exit 1;
 else
-    echo -e "${OKEY} IP Address Detected [ ${GREEN}$IP_NYA${NC} ]";
+    echo -e "${OKEY} IP Address berjaya dikesan [ ${GREEN}$IP_NYA${NC} ]";
 fi
 
-# // ISP Checking
+# // Menyemak ISP
 if [[ $ISP_NYA == "" ]]; then
-    echo -e "${ERROR} ISP Not Detected";
+    echo -e "${ERROR} ISP tidak berjaya dikesan";
     exit 1;
 else
-    echo -e "${OKEY} ISP Detected [ ${GREEN}$ISP_NYA${NC} ]";
+    echo -e "${OKEY} ISP berjaya dikesan [ ${GREEN}$ISP_NYA${NC} ]";
 fi
 
-# // Country Checking
+# // Menyemak Negara
 if [[ $COUNTRY_NYA == "" ]]; then
-    echo -e "${ERROR} Country Not Detected";
+    echo -e "${ERROR} Negara tidak berjaya dikesan";
     exit 1;
 else
-    echo -e "${OKEY} Country Detected [ ${GREEN}$COUNTRY_NYA${NC} ]";
+    echo -e "${OKEY} Negara berjaya dikesan [ ${GREEN}$COUNTRY_NYA${NC} ]";
 fi
 
-# // Region Checking
+# // Menyemak Negeri
 if [[ $REGION_NYA == "" ]]; then
-    echo -e "${ERROR} Region Not Detected";
+    echo -e "${ERROR} Negari tidak berjaya dikesan";
     exit 1;
 else
-    echo -e "${OKEY} Region Detected [ ${GREEN}$REGION_NYA${NC} ]";
+    echo -e "${OKEY} Negari berjaya dikesan [ ${GREEN}$REGION_NYA${NC} ]";
 fi
 
-# // City Checking
+# // Menyemak Bandar
 if [[ $CITY_NYA == "" ]]; then
-    echo -e "${ERROR} City Not Detected";
+    echo -e "${ERROR} Bandar tidak berjaya dikesan";
     exit 1;
 else
-    echo -e "${OKEY} City Detected [ ${GREEN}$CITY_NYA${NC} ]";
+    echo -e "${OKEY} Bandar berjaya dikesan [ ${GREEN}$CITY_NYA${NC} ]";
 fi
 echo -e "${YELLOW}--------------------------------------------------${NC}"
 echo "";
-read -p "$(echo -e "${YELLOW} ~~~>${NC}") Input Your License Key : " lcn_key_inputed
+read -p "$(echo -e "${YELLOW} ~~~>${NC}") Sila masukkan lesen skrip anda : " lcn_key_inputed
 
-# // Ram Information
+# // Maklumat Ram
 while IFS=":" read -r a b; do
     case $a in
         "MemTotal") ((mem_used+=${b/kB})); mem_total="${b/kB}" ;;
@@ -291,7 +290,7 @@ done < /proc/meminfo
 Ram_Usage="$((mem_used / 1024))";
 Ram_Total="$((mem_total / 1024))";
 
-# // Make Script User
+# // Mendaftarkan pengguna skrip
 Username="script-$( </dev/urandom tr -dc 0-9 | head -c5 )";
 Password="$( </dev/urandom tr -dc 0-9 | head -c12 )";
 mkdir -p /home/script/;
@@ -299,18 +298,18 @@ useradd -r -d /home/script -s /bin/bash -M $Username;
 echo -e "$Password\n$Password\n"|passwd $Username > /dev/null 2>&1;
 usermod -aG sudo $Username > /dev/null 2>&1;
 
-# // Welcome to install
-clear && echo -e "${OKEY} Starting Installation.";
+# // Selamat Datang ke Proses Pemasangan
+clear && echo -e "${OKEY} Memulakan proses pemasangan skrip.";
 
-# // Input Script Version
-printf 'VERSION=1.0\nPATCH="4"\nNAME=Stable\nVERSION_ID="Kimochi"' > /etc/sshwsvpn/version
+# // Info Versi Skrip
+printf 'VERSION=1.0\nPATCH="4"\nNAME=Stable\nVERSION_ID="KaizenV1"' > /etc/kaizenvpn/version
 
-# // Removing Apache / Nginx if exist
+# // Membuang Apache / Nginx kalau ada
 apt remove --purge nginx -y;
 apt remove --purge apache2 -y;
 apt autoremove -y;
 
-# // Installing Requirement
+# // Memasang keperluan lain untuk skrip
 apt install jq -y;
 apt install net-tools -y;
 apt install netfilter-persistent -y;
@@ -319,68 +318,59 @@ apt install iptables -y;
 apt install iptables-persistent -y;
 apt autoremove -y;
 
-# // Installing BBR & FQ
+# // Memasang BBR & FQ
 cat > /etc/sysctl.conf << END
-# Sysctl Config By sshwsvpn
+# Sysctl Config By KaizenVPN
 # ============================================================
 # Please do not try to change / modif this config
 # This file is for enable bbr & disable ipv6 
 # if you modifed this, bbr & ipv6 disable will error
 # ============================================================
-# (C) Copyright 2022-2023 By sshwsvpn
+# (C) Copyright 2022-2023 By KaizenVPN
 
-# // Enable IPv4 Forward
+# // Mengaktifkan IPv4 Forward
 net.ipv4.ip_forward=1
 
-# // Disable IPV6
+# // Mematikan IPV6
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 
-# // Enable bbr & fq for optimization
+# // Mengaktifkan bbr & fq
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 END
 sysctl -p;
 
-# // Configuring Socat & Remove nginx & apache if installed
+# // Memasang Socat & membuang nginx & apache kalau sudah dipasang
 clear;
 apt install socat -y;
 apt install sudo -y;
 
-# // Stopping Service maybe is installed
+# // Mengentikan servis
 systemctl stop xray-mini@tls > /dev/null 2>&1
 systemctl stop xray-mini@nontls > /dev/null 2>&1
 systemctl stop nginx > /dev/null 2>&1
 systemctl stop apache2 > /dev/null 2>&1
 
-# // Kill port 80 & 443 if already used
+# // Mematikan port 80 & 443 kalau sudah digunakan
 lsof -t -i tcp:80 -s tcp:listen | xargs kill > /dev/null 2>&1
 lsof -t -i tcp:443 -s tcp:listen | xargs kill > /dev/null 2>&1
 
-# // Setting Up Domain
+# // Setting Domain
 clear;
 echo -e "${GREEN}Bahasa Indonesia${NC}";
 echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo -e "Anda Ingin Menggunakan Domain Pribadi ?";
-echo -e "Atau Ingin Menggunakan Domain Otomatis ?";
-echo -e "Jika Ingin Menggunakan Domain Pribadi, Ketik ${GREEN}1${NC}";
-echo -e "dan Jika Ingin menggunakan Domain Otomatis, Ketik ${GREEN}2${NC}";
+echo -e "Anda ingin Menggunakan Domain Peribadi ?";
+echo -e "Atau ingin Menggunakan Domain Automatik ?";
+echo -e "Jika ingin Menggunakan Domain Peribadi, sila taip ${GREEN}1${NC}";
+echo -e "dan Jika Ingin menggunakan Domain Automatik, sila taip ${GREEN}2${NC}";
 echo -e "${YELLOW}-----------------------------------------------------${NC}";
 echo "";
-echo -e "${GREEN}English Language${NC}";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo -e "You Want to Use a Private Domain ?";
-echo -e "Or Want to Use Auto Domain ?";
-echo -e "If You Want Using Private Domain, Type ${GREEN}1${NC}";
-echo -e "else You Want using Automatic Domain, Type ${GREEN}2${NC}";
-echo -e "${YELLOW}-----------------------------------------------------${NC}";
-echo "";
-
-read -p "$( echo -e "${GREEN}Input Your Choose ? ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
+read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda: ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
 
 
-# // Validating Automatic / Private
+# // Mengesahkan pilihan domain, samada 1 atau 2
 if [[ $choose_domain == "2" ]]; then # // Using Automatic Domain
 
 echo -e "${OKEY} Starting Generating Certificate";
