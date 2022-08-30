@@ -4,7 +4,7 @@
 # This config is used for Autokill
 # if having wrong input data you will be lost all client data
 # ═══════════════════════════════════════════════════════════════════
-# (C) Copyright 2022-2023 By WildyDev21
+# (C) Copyright 2022 By KaizenVPN
 
 # // Start
 ENABLED=0 # 1 is enabled then 0 is disabled
