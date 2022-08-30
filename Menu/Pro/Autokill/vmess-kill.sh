@@ -186,8 +186,8 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}       [ Setting Vmess Autokill ]         ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo "$(date) Autokill Vmess Multilogin Versi 1.0 Stable";
-echo "$(date) Dipasang oleh KaizenVPN";
+echo "$(date) Autokill Vmess Multilogin Versi 1.0 Stable.";
+echo "$(date) Dipasang oleh KaizenVPN.";
 echo "$(date) Memulakan Servis Vmess Autokill.";
 
 while true; do
