@@ -203,7 +203,7 @@ case $selection_mu in
         chkwg;
     ;;
     *)
-        echo -e "${ERROR} Your Input is Wrong";
+        echo -e "${ERROR} Sila masukkan nombor yang betul!";
         sleep 1;
         wg-menu;
     ;;
