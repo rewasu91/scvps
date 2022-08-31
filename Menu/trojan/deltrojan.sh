@@ -165,16 +165,13 @@ echo -e "${WBBG}         [ Memadam Akaun Trojan ]           ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 CLIENT_001=$(grep -c -E "^Trojan " "/etc/xray-mini/client.conf" );
-echo "    ══════════════════════════════════════════════════";
-echo "                    SENARAI AKAUN TROJAN              ";
-echo "    ══════════════════════════════════════════════════";
 grep -e "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2-8 | nl -s ') ';
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
-                echo "    ══════════════════════════════════════════════════";
+                echo -e "${CYAN}════════════════════════════════════════════${NC}";
 			read -rp "    Sila taip nombor akaun yang ingin dipadam (1-${CLIENT_001}) : " CLIENT_002;
 		else
-                echo "    ══════════════════════════════════════════════════";
+                echo -e "${CYAN}════════════════════════════════════════════${NC}";
 			read -rp "    Sila taip nombor akaun yang ingin dipadam (1-${CLIENT_001}) : " CLIENT_002;
 		fi
 	done
