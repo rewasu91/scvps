@@ -155,7 +155,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}              [ Menu Trojan ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e " ${CYAN}Trojan GRPC, TCP XTLS & WS${NC}";
+echo -e " ${CYAN}Trojan GRPC, TCP TLS & WS${NC}";
 echo -e " ${GREEN}[ 01 ]${NC} ► Membuat akaun";
 echo -e " ${GREEN}[ 02 ]${NC} ► Membuat akaun percubaan";
 echo -e " ${GREEN}[ 03 ]${NC} ► Memadam akaun";
