@@ -189,7 +189,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}        [ Log Akses Akaun Trojan ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "${INFO} Log out telah berjaya diexport";
+echo -e "${INFO} Log akses telah berjaya diexport";
 hariini=`date -d "0 days" +"%Y/%m/%d"`;
 waktu=`date -d "0 days" +"%H"`;
 waktunya=`date -d "0 days" +"%Y/%m/%d %H:%M"`;
