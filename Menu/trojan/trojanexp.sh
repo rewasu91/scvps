@@ -156,14 +156,14 @@ export TIME_NYA="$TIMEZONE";
 clear;
 
 # // Start
-grep -c -E "^Trojan " "/etc/xray-mini/client.conf" > /etc/sshwsvpn/jumlah-akun-trojan.db;
-grep "^Trojan " "/etc/xray-mini/client.conf" | awk '{print $2}'  > /etc/sshwsvpn/akun-trojan.db;
-totalaccounts=`cat /etc/sshwsvpn/akun-trojan.db | wc -l`;
-echo "Total Akun = $totalaccounts" > /etc/sshwsvpn/total-akun-trojan.db;
+grep -c -E "^Trojan " "/etc/xray-mini/client.conf" > /etc/kaizenvpn/jumlah-akun-trojan.db;
+grep "^Trojan " "/etc/xray-mini/client.conf" | awk '{print $2}'  > /etc/kaizenvpn/akun-trojan.db;
+totalaccounts=`cat /etc/kaizenvpn/akun-trojan.db | wc -l`;
+echo "Total Akun = $totalaccounts" > /etc/kaizenvpn/total-akun-trojan.db;
 for((i=1; i<=$totalaccounts; i++ ));
 do
     # // Username Interval Counting
-    username=$( head -n $i /etc/sshwsvpn/akun-trojan.db | tail -n 1 );
+    username=$( head -n $i /etc/kaizenvpn/akun-trojan.db | tail -n 1 );
     expired=$( grep "^Trojan " "/etc/xray-mini/client.conf" | grep -w $username | head -n1 | awk '{print $3}' );
 
     # // Counting On Simple Algoritmatika
@@ -175,11 +175,11 @@ do
 # // Validate Use If Syntax
 if [[ $sisa_hari -lt 1 ]]; then
     # // Removing Data From Server Configuration
-    cp /etc/xray-mini/tls.json /etc/sshwsvpn/xray-mini-utils/tls-backup.json;
-    cat /etc/sshwsvpn/xray-mini-utils/tls-backup.json | jq 'del(.inbounds[0].settings.clients[] | select(.password == "'${username}'"))' > /etc/sshwsvpn/xray-mini-cache.json;
-    cat /etc/sshwsvpn/xray-mini-cache.json | jq 'del(.inbounds[1].settings.clients[] | select(.password == "'${username}'"))' > /etc/sshwsvpn/xray-mini-cache2.json;
-    cat /etc/sshwsvpn/xray-mini-cache2.json | jq 'del(.inbounds[4].settings.clients[] | select(.password == "'${username}'"))' > /etc/xray-mini/tls.json;
-    rm -rf /etc/sshwsvpn/trojan/${username};
+    cp /etc/xray-mini/tls.json /etc/kaizenvpn/xray-mini-utils/tls-backup.json;
+    cat /etc/kaizenvpn/xray-mini-utils/tls-backup.json | jq 'del(.inbounds[0].settings.clients[] | select(.password == "'${username}'"))' > /etc/kaizenvpn/xray-mini-cache.json;
+    cat /etc/kaizenvpn/xray-mini-cache.json | jq 'del(.inbounds[1].settings.clients[] | select(.password == "'${username}'"))' > /etc/kaizenvpn/xray-mini-cache2.json;
+    cat /etc/kaizenvpn/xray-mini-cache2.json | jq 'del(.inbounds[4].settings.clients[] | select(.password == "'${username}'"))' > /etc/xray-mini/tls.json;
+    rm -rf /etc/kaizenvpn/trojan/${username};
     sed -i "/\b$username\b/d" /etc/xray-mini/client.conf;
     systemctl restart xray-mini@tls;
 
@@ -189,7 +189,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}      [ Memadam Akaun Expire Trojan ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo " Username : $username | Expire Pada : $expired | Dipadam Pada : $now" >> /etc/sshwsvpn/trojan-expired-deleted.db;
+echo " Username : $username | Expire Pada : $expired | Dipadam Pada : $now" >> /etc/kaizenvpn/trojan-expired-deleted.db;
 echo " Username : $username | Expire Pada : $expired | Dipadam Pada : $now";
 
 else
