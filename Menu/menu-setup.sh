@@ -159,111 +159,127 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-# ═══════════════════
-# // Downloading Menu
-# ═══════════════════+
+# ══════════════════════════
+# // Downloading Menu Trojan
+# ══════════════════════════
+wget -q -O /usr/local/sbin/trojan-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/menu.sh"; chmod +x /usr/local/sbin/trojan-menu;
+wget -q -O /usr/local/sbin/addtrojan "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/addtrojan.sh"; chmod +x /usr/local/sbin/addtrojan;
+wget -q -O /usr/local/sbin/deltrojan "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/deltrojan.sh"; chmod +x /usr/local/sbin/deltrojan;
+wget -q -O /usr/local/sbin/trialtrojan "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/trialtrojan.sh"; chmod +x /usr/local/sbin/trialtrojan;
+wget -q -O /usr/local/sbin/trojanexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/trojanexp.sh"; chmod +x /usr/local/sbin/trojanexp;
+wget -q -O /usr/local/sbin/trojanconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/trojanconfig.sh"; chmod +x /usr/local/sbin/trojanconfig;
+wget -q -O /usr/local/sbin/trojanlist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/trojanlist.sh"; chmod +x /usr/local/sbin/trojanlist;
+wget -q -O /usr/local/sbin/chktrojan "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/chktrojan.sh"; chmod +x /usr/local/sbin/chktrojan;
+wget -q -O /usr/local/sbin/trojanlog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/trojanlog.sh"; chmod +x /usr/local/sbin/trojanlog;
+wget -q -O /usr/local/sbin/renewtrojan "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/trojan/renewtrojan.sh"; chmod +x /usr/local/sbin/renewtrojan;
 
-export Layanan='trojan';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/chk${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/chk${Layanan}.sh"; chmod +x /usr/local/sbin/chk${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}log "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}log.sh"; chmod +x /usr/local/sbin/${Layanan}log;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═════════════════════════
+# // Downloading Menu Vmess
+# ═════════════════════════
+wget -q -O /usr/local/sbin/vmess-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/menu.sh"; chmod +x /usr/local/sbin/vmess-menu;
+wget -q -O /usr/local/sbin/addvmess "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/addvmess.sh"; chmod +x /usr/local/sbin/addvmess;
+wget -q -O /usr/local/sbin/delvmess "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/delvmess.sh"; chmod +x /usr/local/sbin/delvmess;
+wget -q -O /usr/local/sbin/trialvmess "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/trialvmess.sh"; chmod +x /usr/local/sbin/trialvmess;
+wget -q -O /usr/local/sbin/vmessexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/vmessexp.sh"; chmod +x /usr/local/sbin/vmessexp;
+wget -q -O /usr/local/sbin/vmessconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/vmessconfig.sh"; chmod +x /usr/local/sbin/vmessconfig;
+wget -q -O /usr/local/sbin/vmesslist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/vmesslist.sh"; chmod +x /usr/local/sbin/vmesslist;
+wget -q -O /usr/local/sbin/chkvmess "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/chkvmess.sh"; chmod +x /usr/local/sbin/chkvmess;
+wget -q -O /usr/local/sbin/vmesslog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/vmesslog.sh"; chmod +x /usr/local/sbin/vmesslog;
+wget -q -O /usr/local/sbin/renewvmess "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vmess/renewvmess.sh"; chmod +x /usr/local/sbin/renewvmess;
 
-export Layanan='vmess';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/chk${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/chk${Layanan}.sh"; chmod +x /usr/local/sbin/chk${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}log "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}log.sh"; chmod +x /usr/local/sbin/${Layanan}log;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═════════════════════════
+# // Downloading Menu Vless
+# ═════════════════════════
+wget -q -O /usr/local/sbin/vless-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/menu.sh"; chmod +x /usr/local/sbin/vless-menu;
+wget -q -O /usr/local/sbin/addvless "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/addvless.sh"; chmod +x /usr/local/sbin/addvless;
+wget -q -O /usr/local/sbin/delvless "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/delvless.sh"; chmod +x /usr/local/sbin/delvless;
+wget -q -O /usr/local/sbin/trialvless "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/trialvless.sh"; chmod +x /usr/local/sbin/trialvless;
+wget -q -O /usr/local/sbin/vlessexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/vlessexp.sh"; chmod +x /usr/local/sbin/vlessexp;
+wget -q -O /usr/local/sbin/vlessconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/vlessconfig.sh"; chmod +x /usr/local/sbin/vlessconfig;
+wget -q -O /usr/local/sbin/vlesslist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/vlesslist.sh"; chmod +x /usr/local/sbin/vlesslist;
+wget -q -O /usr/local/sbin/chkvless "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/chkvless.sh"; chmod +x /usr/local/sbin/chkvless;
+wget -q -O /usr/local/sbin/vlesslog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/vlesslog.sh"; chmod +x /usr/local/sbin/vlesslog;
+wget -q -O /usr/local/sbin/renewvless "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/vless/renewvless.sh"; chmod +x /usr/local/sbin/renewvless;
 
-export Layanan='vless';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/chk${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/chk${Layanan}.sh"; chmod +x /usr/local/sbin/chk${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}log "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}log.sh"; chmod +x /usr/local/sbin/${Layanan}log;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═══════════════════════════════
+# // Downloading Menu Shadowsocks
+# ═══════════════════════════════
+wget -q -O /usr/local/sbin/ss-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/menu.sh"; chmod +x /usr/local/sbin/ss-menu;
+wget -q -O /usr/local/sbin/addss "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/addss.sh"; chmod +x /usr/local/sbin/addss;
+wget -q -O /usr/local/sbin/delss "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/delss.sh"; chmod +x /usr/local/sbin/delss;
+wget -q -O /usr/local/sbin/trialss "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/trialss.sh"; chmod +x /usr/local/sbin/trialss;
+wget -q -O /usr/local/sbin/ssexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/ssexp.sh"; chmod +x /usr/local/sbin/ssexp;
+wget -q -O /usr/local/sbin/ssconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/ssconfig.sh"; chmod +x /usr/local/sbin/ssconfig;
+wget -q -O /usr/local/sbin/sslist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/sslist.sh"; chmod +x /usr/local/sbin/sslist;
+wget -q -O /usr/local/sbin/chkss "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/chkss.sh"; chmod +x /usr/local/sbin/chkss;
+wget -q -O /usr/local/sbin/sslog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/sslog.sh"; chmod +x /usr/local/sbin/sslog;
+wget -q -O /usr/local/sbin/renewss "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ss/renewss.sh"; chmod +x /usr/local/sbin/renewss;
 
-export Layanan='ss';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/chk${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/chk${Layanan}.sh"; chmod +x /usr/local/sbin/chk${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}log "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}log.sh"; chmod +x /usr/local/sbin/${Layanan}log;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═══════════════════════
+# // Downloading Menu SSH
+# ═══════════════════════
+wget -q -O /usr/local/sbin/ssh-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/menu.sh"; chmod +x /usr/local/sbin/ssh-menu;
+wget -q -O /usr/local/sbin/addssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/addssh.sh"; chmod +x /usr/local/sbin/addssh;
+wget -q -O /usr/local/sbin/delssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/delssh.sh"; chmod +x /usr/local/sbin/delssh;
+wget -q -O /usr/local/sbin/trialssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/trialssh.sh"; chmod +x /usr/local/sbin/trialssh;
+wget -q -O /usr/local/sbin/sshexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/sshexp.sh"; chmod +x /usr/local/sbin/sshexp;
+wget -q -O /usr/local/sbin/sshconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/sshconfig.sh"; chmod +x /usr/local/sbin/sshconfig;
+wget -q -O /usr/local/sbin/sshlist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/sshlist.sh"; chmod +x /usr/local/sbin/sshlist;
+wget -q -O /usr/local/sbin/chkssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/chkssh.sh"; chmod +x /usr/local/sbin/chkssh;
+wget -q -O /usr/local/sbin/renewssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/renewssh.sh"; chmod +x /usr/local/sbin/renewssh;
 
-export Layanan='ssh';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/chk${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/chk${Layanan}.sh"; chmod +x /usr/local/sbin/chk${Layanan};
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═════════════════════════════
+# // Downloading Menu Wireguard
+# ═════════════════════════════
+wget -q -O /usr/local/sbin/wg-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/menu.sh"; chmod +x /usr/local/sbin/wg-menu;
+wget -q -O /usr/local/sbin/addwg "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/addwg.sh"; chmod +x /usr/local/sbin/addwg;
+wget -q -O /usr/local/sbin/delwg "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/delwg.sh"; chmod +x /usr/local/sbin/delwg;
+wget -q -O /usr/local/sbin/trialwg "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/trialwg.sh"; chmod +x /usr/local/sbin/trialwg;
+wget -q -O /usr/local/sbin/wgexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/wgexp.sh"; chmod +x /usr/local/sbin/wgexp;
+wget -q -O /usr/local/sbin/wgconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/wgconfig.sh"; chmod +x /usr/local/sbin/wgconfig;
+wget -q -O /usr/local/sbin/wglist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/wglist.sh"; chmod +x /usr/local/sbin/wglist;
+wget -q -O /usr/local/sbin/chkwg "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/chkwg.sh"; chmod +x /usr/local/sbin/chkwg;
+wget -q -O /usr/local/sbin/renewwg "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/wg/renewwg.sh"; chmod +x /usr/local/sbin/renewwg;
 
-export Layanan='wg';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/chk${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/chk${Layanan}.sh"; chmod +x /usr/local/sbin/chk${Layanan};
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═════════════════════════
+# // Downloading Menu Socks
+# ═════════════════════════
+wget -q -O /usr/local/sbin/socks-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/menu.sh"; chmod +x /usr/local/sbin/socks-menu;
+wget -q -O /usr/local/sbin/addsocks "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/addsocks.sh"; chmod +x /usr/local/sbin/addsocks;
+wget -q -O /usr/local/sbin/delsocks "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/delsocks.sh"; chmod +x /usr/local/sbin/delsocks;
+wget -q -O /usr/local/sbin/trialsocks "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/trialsocks.sh"; chmod +x /usr/local/sbin/trialsocks;
+wget -q -O /usr/local/sbin/socksexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/socksexp.sh"; chmod +x /usr/local/sbin/socksexp;
+wget -q -O /usr/local/sbin/socksconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/socksconfig.sh"; chmod +x /usr/local/sbin/socksconfig;
+wget -q -O /usr/local/sbin/sockslist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/sockslist.sh"; chmod +x /usr/local/sbin/sockslist;
+wget -q -O /usr/local/sbin/renewsocks "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/socks/renewsocks.sh"; chmod +x /usr/local/sbin/renewsocks;
 
-export Layanan='socks';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ════════════════════════
+# // Downloading Menu HTTP
+# ════════════════════════
+wget -q -O /usr/local/sbin/http-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/menu.sh"; chmod +x /usr/local/sbin/http-menu;
+wget -q -O /usr/local/sbin/addhttp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/addhttp.sh"; chmod +x /usr/local/sbin/addhttp;
+wget -q -O /usr/local/sbin/delhttp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/delhttp.sh"; chmod +x /usr/local/sbin/delhttp;
+wget -q -O /usr/local/sbin/trialhttp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/trialhttp.sh"; chmod +x /usr/local/sbin/trialhttp;
+wget -q -O /usr/local/sbin/httpexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/httpexp.sh"; chmod +x /usr/local/sbin/httpexp;
+wget -q -O /usr/local/sbin/httpconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/httpconfig.sh"; chmod +x /usr/local/sbin/httpconfig;
+wget -q -O /usr/local/sbin/httplist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/httplist.sh"; chmod +x /usr/local/sbin/httplist;
+wget -q -O /usr/local/sbin/renewhttp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/http/renewhttp.sh"; chmod +x /usr/local/sbin/renewhttp;
 
-export Layanan='http';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
+# ═══════════════════════
+# // Downloading Menu SSR
+# ═══════════════════════
+wget -q -O /usr/local/sbin/ssr-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/menu.sh"; chmod +x /usr/local/sbin/ssr-menu;
+wget -q -O /usr/local/sbin/addssr "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/addssr.sh"; chmod +x /usr/local/sbin/addssr;
+wget -q -O /usr/local/sbin/delssr "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/delssr.sh"; chmod +x /usr/local/sbin/delssr;
+wget -q -O /usr/local/sbin/trialssr "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/trialssr.sh"; chmod +x /usr/local/sbin/trialssr;
+wget -q -O /usr/local/sbin/ssrexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/ssrexp.sh"; chmod +x /usr/local/sbin/ssrexp;
+wget -q -O /usr/local/sbin/ssrconfig "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/ssrconfig.sh"; chmod +x /usr/local/sbin/ssrconfig;
+wget -q -O /usr/local/sbin/ssrlist "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/ssrlist.sh"; chmod +x /usr/local/sbin/ssrlist;
+wget -q -O /usr/local/sbin/renewssr "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssr/renewssr.sh"; chmod +x /usr/local/sbin/renewssr;
 
-export Layanan='ssr';
-wget -q -O /usr/local/sbin/${Layanan}-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/menu.sh"; chmod +x /usr/local/sbin/${Layanan}-menu;
-wget -q -O /usr/local/sbin/add${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/add${Layanan}.sh"; chmod +x /usr/local/sbin/add${Layanan};
-wget -q -O /usr/local/sbin/del${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/del${Layanan}.sh"; chmod +x /usr/local/sbin/del${Layanan};
-wget -q -O /usr/local/sbin/trial${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/trial${Layanan}.sh"; chmod +x /usr/local/sbin/trial${Layanan};
-wget -q -O /usr/local/sbin/${Layanan}exp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}exp.sh"; chmod +x /usr/local/sbin/${Layanan}exp;
-wget -q -O /usr/local/sbin/${Layanan}config "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}config.sh"; chmod +x /usr/local/sbin/${Layanan}config;
-wget -q -O /usr/local/sbin/${Layanan}list "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/${Layanan}list.sh"; chmod +x /usr/local/sbin/${Layanan}list;
-wget -q -O /usr/local/sbin/renew${Layanan} "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/${Layanan}/renew${Layanan}.sh"; chmod +x /usr/local/sbin/renew${Layanan};
-
-# // Panel Tools
+# ══════════════════════════
+# // Downloading Panel Tools
+# ══════════════════════════
 wget -q -O /usr/local/sbin/panel-add-http "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/panel/panel-add-http.sh"; chmod +x /usr/local/sbin/panel-add-http;
 wget -q -O /usr/local/sbin/panel-add-ssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/panel/panel-add-ssh.sh"; chmod +x /usr/local/sbin/panel-add-ssh;
 wget -q -O /usr/local/sbin/panel-add-wg "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/panel/panel-add-wg.sh"; chmod +x /usr/local/sbin/panel-add-wg;
@@ -273,12 +289,13 @@ wget -q -O /usr/local/sbin/panel-add-vless "https://raw.githubusercontent.com/re
 wget -q -O /usr/local/sbin/panel-add-socks "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/panel/panel-add-socks.sh"; chmod +x /usr/local/sbin/panel-add-socks;
 wget -q -O /usr/local/sbin/panel-add-ss "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/panel/panel-add-ss.sh"; chmod +x /usr/local/sbin/panel-add-ss;
 
-# // Other
+# ════════════════════════
+# // Downloading Lain-lain
+# ════════════════════════
 wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/menu.sh"; chmod +x /usr/local/sbin/menu;
-wget -q -O /usr/local/sbin/lcn-change "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/change-lcn.sh"; chmod +x /usr/local/sbin/lcn-change;
 wget -q -O /usr/local/sbin/speedtest "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/speedtest"; chmod +x /usr/local/sbin/speedtest;
 wget -q -O /usr/local/sbin/ram-usage "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ram-usage.sh"; chmod +x /usr/local/sbin/ram-usage;
-wget -q -O /usr/local/sbin/autokill-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/pro/autokill/menu.sh"; chmod +x /usr/local/sbin/autokill-menu;
+wget -q -O /usr/local/sbin/autokill-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/menu.sh"; chmod +x /usr/local/sbin/autokill-menu;
 wget -q -O /usr/local/sbin/autoexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/autoexp.sh"; chmod +x /usr/local/sbin/autoexp;
 wget -q -O /usr/local/sbin/autobackup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/backup.sh"; chmod +x /usr/local/sbin/autobackup;
 wget -q -O /usr/local/sbin/backup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/backup.sh"; chmod +x /usr/local/sbin/backup;
