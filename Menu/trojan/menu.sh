@@ -128,6 +128,15 @@ if [[ "${EUID}" -ne 0 ]]; then
 		exit 1
 fi
 
+# ════════════════════════════════════════════════════════════
+# // Menyemak sistem sekiranya terdapat pemasangan yang kurang
+# ════════════════════════════════════════════════════════════
+if ! which jq > /dev/null; then
+    clear;
+    echo -e "${ERROR} JQ Packages Not installed";
+    exit 1;
+fi
+
 # ═══════════════════════════════
 # // Exporting maklumat rangkaian
 # ═══════════════════════════════
