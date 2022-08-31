@@ -241,7 +241,7 @@ echo -e "${WBBG}       [ Maklumat Akaun Shadowsocks ]       ${NC}" | tee -a /etc
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Username    ► ${Username}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Dibuat Pada ► ${hariini}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
-echo -e " Expire Pada ► ${exp}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo -e " Expire Pada ► ${exp}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " IP          ► ${IP_NYA}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Address     ► ${domain}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Port        ► ${port}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
