@@ -173,11 +173,11 @@ grep -e "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2-8 | nl -s ') '
 # // String For Username && Expired Date
 client=$(grep "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2 | sed -n "${CLIENT_002}"p);
 expired=$(grep "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 3 | sed -n "${CLIENT_002}"p);
-cp /etc/xray-mini/tls.json /etc/sshwsvpn/xray-mini-utils/tls-backup.json;
-cat /etc/sshwsvpn/xray-mini-utils/tls-backup.json | jq 'del(.inbounds[0].settings.clients[] | select(.password == "'${client}'"))' > /etc/sshwsvpn/xray-mini-cache.json;
-cat /etc/sshwsvpn/xray-mini-cache.json | jq 'del(.inbounds[1].settings.clients[] | select(.password == "'${client}'"))' > /etc/sshwsvpn/xray-mini-cache2.json;
-cat /etc/sshwsvpn/xray-mini-cache2.json | jq 'del(.inbounds[4].settings.clients[] | select(.password == "'${client}'"))' > /etc/xray-mini/tls.json;
-rm -rf /etc/sshwsvpn/trojan/${client};
+cp /etc/xray-mini/tls.json /etc/kaizenvpn/xray-mini-utils/tls-backup.json;
+cat /etc/kaizenvpn/xray-mini-utils/tls-backup.json | jq 'del(.inbounds[0].settings.clients[] | select(.password == "'${client}'"))' > /etc/kaizenvpn/xray-mini-cache.json;
+cat /etc/kaizenvpn/xray-mini-cache.json | jq 'del(.inbounds[1].settings.clients[] | select(.password == "'${client}'"))' > /etc/kaizenvpn/xray-mini-cache2.json;
+cat /etc/kaizenvpn/xray-mini-cache2.json | jq 'del(.inbounds[4].settings.clients[] | select(.password == "'${client}'"))' > /etc/xray-mini/tls.json;
+rm -rf /etc/kaizenvpn/trojan/${client};
 sed -i "/\b$client\b/d" /etc/xray-mini/client.conf;
 systemctl restart xray-mini@tls;
 clear;
