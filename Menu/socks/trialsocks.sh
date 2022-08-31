@@ -192,14 +192,14 @@ exp=`date -d "$Jumlah_Hari days" +"%Y-%m-%d";`
 hariini=`date -d "0 days" +"%Y-%m-%d"`;
 
 # // Generate New UUID & Domain
-domain=$( cat /etc/sshwsvpn/domain.txt );
+domain=$( cat /etc/kaizenvpn/domain.txt );
 
 # // Force create folder for fixing account wasted
-mkdir -p /etc/sshwsvpn/cache/;
+mkdir -p /etc/kaizenvpn/cache/;
 mkdir -p /etc/xray-mini/;
-mkdir -p /etc/sshwsvpn/xray-mini-socks/;
+mkdir -p /etc/kaizenvpn/xray-mini-socks/;
 
-# // Getting Vmess port using grep from config
+# // Getting Socks port using grep from config
 port=$( cat /etc/xray-mini/socks.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
 
 export CHK=$( cat /etc/xray-mini/socks.json );
@@ -210,8 +210,8 @@ if [[ $CHK == "" ]]; then
 fi
 
 # // Input Your Data to server
-cp /etc/xray-mini/socks.json /etc/sshwsvpn/xray-mini-utils/socks-backup.json;
-cat /etc/sshwsvpn/xray-mini-utils/socks-backup.json | jq '.inbounds[0].settings.accounts += [{"user": "'${Username}'","pass": "'${Username}'" }]' > /etc/xray-mini/socks.json;
+cp /etc/xray-mini/socks.json /etc/kaizenvpn/xray-mini-utils/socks-backup.json;
+cat /etc/kaizenvpn/xray-mini-utils/socks-backup.json | jq '.inbounds[0].settings.accounts += [{"user": "'${Username}'","pass": "'${Username}'" }]' > /etc/xray-mini/socks.json;
 echo -e "Socks $Username $exp" >> /etc/xray-mini/client.conf;
 
 # // Restarting XRay Service
@@ -223,15 +223,15 @@ systemctl restart xray-mini@socks;
 tmp1="https://t.me/socks?server=${domain}&port=${port}&user=${Username}&pass=${Username}";
 
 # // Make Client Folder for save the configuration
-mkdir -p /etc/sshwsvpn/socks/;
-mkdir -p /etc/sshwsvpn/socks/${Username};
-rm -f /etc/sshwsvpn/socks/${Username}/config.log;
+mkdir -p /etc/kaizenvpn/socks/;
+mkdir -p /etc/kaizenvpn/socks/${Username};
+rm -f /etc/kaizenvpn/socks/${Username}/config.log;
 
 # ═════════════════════════════════════
 # // Maklumat Akaun Percubaan Socks 4/5
 # ═════════════════════════════════════
 clear; 
-echo "" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
+echo "" | tee -a /etc/kaizenvpn/socks/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/socks/${Username}/config.log;
 echo -e "${WBBG}   [ Maklumat Akaun Percubaan Socks 4/5 ]   ${NC}" | tee -a /etc/kaizenvpn/socks/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/socks/${Username}/config.log;
