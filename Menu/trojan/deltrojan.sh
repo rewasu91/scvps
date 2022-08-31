@@ -169,10 +169,10 @@ grep -e "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2-8 | nl -s ') '
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
                 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-			read -rp "    Sila taip nombor akaun yang ingin dipadam (1-${CLIENT_001}) : " CLIENT_002;
+			read -rp " Sila taip nombor akaun yang ingin dipadam (1-${CLIENT_001}) : " CLIENT_002;
 		else
                 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-			read -rp "    Sila taip nombor akaun yang ingin dipadam (1-${CLIENT_001}) : " CLIENT_002;
+			read -rp " Sila taip nombor akaun yang ingin dipadam (1-${CLIENT_001}) : " CLIENT_002;
 		fi
 	done
 
