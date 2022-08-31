@@ -155,13 +155,13 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-# ══════════════════════════════
-# // Link Config Akaun Socks 4/5
-# ══════════════════════════════
+# ═══════════════════════════════════
+# // Maklumat akaun yang sudah dibuat
+# ═══════════════════════════════════
 clear;
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}      [ Link Config Akaun Socks 4/5 ]       ${NC}";
+echo -e "${WBBG}       [ Maklumat Akaun Socks 4/5 ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 CLIENT_001=$(grep -c -E "^Socks " "/etc/xray-mini/client.conf" );
@@ -169,10 +169,10 @@ grep -e "^Socks " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2-8 | nl -s ') ';
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
                 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-			read -rp " Sila taip nombor akaun untuk melihat config (1-${CLIENT_001}) : " CLIENT_002;
+			read -rp " Sila taip nombor akaun untuk melihat maklumatnya (1-${CLIENT_001}) : " CLIENT_002;
 		else
                 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-			read -rp " Sila taip nombor akaun untuk melihat config (1-${CLIENT_001}) : " CLIENT_002;
+			read -rp " Sila taip nombor akaun untuk melihat maklumatnya (1-${CLIENT_001}) : " CLIENT_002;
 		fi
 	done
 
