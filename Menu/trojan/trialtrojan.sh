@@ -183,13 +183,13 @@ exp=`date -d "$Jumlah_Hari days" +"%Y-%m-%d"`;
 hariini=`date -d "0 days" +"%Y-%m-%d"`;
 
 # // Generate New UUID & Domain
-domain=$( cat /etc/sshwsvpn/domain.txt );
+domain=$( cat /etc/kaizenvpn/domain.txt );
 
 # // Force create folder for fixing account wasted
-mkdir -p /etc/sshwsvpn/cache/;
+mkdir -p /etc/kaizenvpn/cache/;
 mkdir -p /etc/xray-mini/;
-mkdir -p /etc/sshwsvpn/xray-mini-tls/;
-mkdir -p /etc/sshwsvpn/xray-mini-nontls/;
+mkdir -p /etc/kaizenvpn/xray-mini-tls/;
+mkdir -p /etc/kaizenvpn/xray-mini-nontls/;
 
 # // Getting Vmess port using grep from config
 tls_port=$( cat /etc/xray-mini/tls.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
@@ -203,10 +203,10 @@ if [[ $CHK == "" ]]; then
 fi
 
 # // Input Your Data to server
-cp /etc/xray-mini/tls.json /etc/sshwsvpn/xray-mini-utils/tls-backup.json;
-cat /etc/sshwsvpn/xray-mini-utils/tls-backup.json | jq '.inbounds[0].settings.clients += [{"password": "'${Username}'","flow": "xtls-rprx-direct","email":"'${Username}'","level": 0 }]' > /etc/sshwsvpn/xray-mini-cache.json;
-cat /etc/sshwsvpn/xray-mini-cache.json | jq '.inbounds[1].settings.clients += [{"password": "'${Username}'","email":"'${Username}'" }]' > /etc/sshwsvpn/xray-mini-cache2.json;
-cat /etc/sshwsvpn/xray-mini-cache2.json | jq '.inbounds[4].settings.clients += [{"password": "'${Username}'","email":"'${Username}'" }]' > /etc/xray-mini/tls.json;
+cp /etc/xray-mini/tls.json /etc/kaizenvpn/xray-mini-utils/tls-backup.json;
+cat /etc/kaizenvpn/xray-mini-utils/tls-backup.json | jq '.inbounds[0].settings.clients += [{"password": "'${Username}'","flow": "xtls-rprx-direct","email":"'${Username}'","level": 0 }]' > /etc/kaizenvpn/xray-mini-cache.json;
+cat /etc/kaizenvpn/xray-mini-cache.json | jq '.inbounds[1].settings.clients += [{"password": "'${Username}'","email":"'${Username}'" }]' > /etc/kaizenvpn/xray-mini-cache2.json;
+cat /etc/kaizenvpn/xray-mini-cache2.json | jq '.inbounds[4].settings.clients += [{"password": "'${Username}'","email":"'${Username}'" }]' > /etc/xray-mini/tls.json;
 echo -e "Trojan $Username $exp" >> /etc/xray-mini/client.conf;
 
 # // Make Configruation Link
@@ -223,9 +223,9 @@ systemctl restart xray-mini@tls;
 systemctl restart xray-mini@nontls;
 
 # // Make Client Folder for save the configuration
-mkdir -p /etc/sshwsvpn/trojan/;
-mkdir -p /etc/sshwsvpn/trojan/${Username};
-rm -f /etc/sshwsvpn/trojan/${Username}/config.log;
+mkdir -p /etc/kaizenvpn/trojan/;
+mkdir -p /etc/kaizenvpn/trojan/${Username};
+rm -f /etc/kaizenvpn/trojan/${Username}/config.log;
 
 # ══════════════════════════════════
 # // Maklumat Akaun Percubaan Trojan
