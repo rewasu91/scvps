@@ -235,10 +235,10 @@ rm -f /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 # // Maklumat Akaun Shadowsocks
 # ═════════════════════════════
 clear; 
-echo ""; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
-echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
-echo -e "${WBBG}       [ Maklumat Akaun Shadowsocks ]       ${NC}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
-echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo "" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo -e "${WBBG}       [ Maklumat Akaun Shadowsocks ]       ${NC}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Username    ► ${Username}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Dibuat Pada ► ${hariini}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Expire Pada ► ${exp}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
@@ -246,7 +246,7 @@ echo -e " IP          ► ${IP_NYA}" | tee -a /etc/kaizenvpn/shadowsocks/${Usern
 echo -e " Address     ► ${domain}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Port        ► ${port}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " Password    ► ${Username}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
-echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " SHADOWSOCKS CONFIG LINK" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
 echo -e " ${link_config}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
-echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
+echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/shadowsocks/${Username}/config.log;
