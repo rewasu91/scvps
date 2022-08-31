@@ -170,7 +170,7 @@ Username="$(echo ${Username} | sed 's/ //g' | tr -d '\r' | tr -d '\r\n' )";
 # // Validate Input
 if [[ $Username == "" ]]; then
     clear;
-    echo -e "${EROR} Please Input an Username !";
+    echo -e "${EROR} Sila masukkan Username !";
     exit 1;
 fi
 
