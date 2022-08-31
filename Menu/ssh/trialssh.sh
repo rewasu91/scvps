@@ -229,15 +229,15 @@
 	# // Maklumat Akaun Percubaan SSH & OpenVPN
 	# ═════════════════════════════════════════
 	clear; 
-	echo ""; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${WBBG} [ Maklumat Akaun Percubaan SSH & OpenVPN ] ${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo "" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${WBBG} [ Maklumat Akaun Percubaan SSH & OpenVPN ] ${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Username         ► ${Username}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Password         ► ${Password}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Dibuat Pada      ► ${hariini}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Expire Pada      ► $exp" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " IP Address       ► ${IP_NYA}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Domain           ► ${domain}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " OpenSSH          ► ${openssh}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
@@ -258,15 +258,15 @@
 	echo -e " BadVPN UDP 1     ► ${udp_1}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " BadVPN UDP 2     ► ${udp_2}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " BadVPN UDP 3     ► ${udp_3}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	eecho -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Payload WebSocket NonTLS" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " GET / HTTP/1.1[crlf]Host: ${DOMAIN}[crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Payload WebSocket TLS" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " GET wss://example.com [protocol][crlf]Host: ${DOMAIN}[crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Link OVPN TCP    ► http://${IP}:85/tcp.ovpn" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Link OVPN UDP    ► http://${IP}:85/udp.ovpn" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Link SSL TCP     ► http://${IP}:85/ssl-tcp.ovpn" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
 	echo -e " Link OVPN CONFIG ► http://${IP}:85/all.zip" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
-	echo -e "${CYAN}════════════════════════════════════════════${NC}"; | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
+	echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/ssh/${Username}/config.log;
