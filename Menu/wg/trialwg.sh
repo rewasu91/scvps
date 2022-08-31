@@ -205,7 +205,7 @@ DNS1=8.8.8.8;
 DNS2=8.8.4.4;
 
 # // Domain Export
-Domain=$( cat /etc/sshwsvpn/domain.txt );
+Domain=$( cat /etc/kaizenvpn/domain.txt );
 
 # // Generate Client Key
 User_Priv_Key=$(wg genkey);
@@ -213,7 +213,7 @@ User_PUB_Key=$(echo "$User_Priv_Key" | wg pubkey);
 User_Preshared_Key=$(wg genpsk);
 
 # // Make Client Config
-cat > /etc/sshwsvpn/wireguard-cache.tmp << END
+cat > /etc/kaizenvpn/wireguard-cache.tmp << END
 [Interface]
 PrivateKey = ${User_Priv_Key}
 Address = ${User_IP}/24
@@ -238,14 +238,14 @@ AllowedIPs = ${User_IP}/32
 END
 
 # // Make Wireguard cache folder
-mkdir -p /etc/sshwsvpn/wireguard/;
-rm -rf /etc/sshwsvpn/wireguard/$Username;
-mkdir -p /etc/sshwsvpn/wireguard/$Username;
+mkdir -p /etc/kaizenvpn/wireguard/;
+rm -rf /etc/kaizenvpn/wireguard/$Username;
+mkdir -p /etc/kaizenvpn/wireguard/$Username;
 
 # // Restarting Service & Copy Client data to webserver
 systemctl restart "wg-quick@wg0";
 sysctl -p
-cp /etc/sshwsvpn/wireguard-cache.tmp /etc/sshwsvpn/webserver/wg-client/${Username}.conf;
+cp /etc/kaizenvpn/wireguard-cache.tmp /etc/kaizenvpn/webserver/wg-client/${Username}.conf;
 
 # ═════════════════════════════════════
 # // Maklumat Akaun Percubaan Wireguard
