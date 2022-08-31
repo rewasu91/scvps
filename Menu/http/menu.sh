@@ -170,7 +170,7 @@ echo -e " ${GREEN}[ 02 ]${NC} ► Membuat akaun percubaan";
 echo -e " ${GREEN}[ 03 ]${NC} ► Memadam akaun";
 echo -e " ${GREEN}[ 04 ]${NC} ► Perbaharui akaun";
 echo -e " ${GREEN}[ 05 ]${NC} ► Senarai akaun yang sudah dibuat";
-echo -e " ${GREEN}[ 06 ]${NC} ► Link config setiap akaun";
+echo -e " ${GREEN}[ 06 ]${NC} ► Maklumat akaun yang sudah dibuat";
 echo -e " ${GREEN}[ 07 ]${NC} ► Memadam akaun yang sudah expire";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
