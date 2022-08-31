@@ -220,6 +220,7 @@ wget -q -O /usr/local/sbin/renewss "https://raw.githubusercontent.com/rewasu91/s
 # ═══════════════════════
 wget -q -O /usr/local/sbin/ssh-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/menu.sh"; chmod +x /usr/local/sbin/ssh-menu;
 wget -q -O /usr/local/sbin/addssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/addssh.sh"; chmod +x /usr/local/sbin/addssh;
+wget -q -O /usr/local/sbin/pass-ssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/pass-ssh"; chmod +x /usr/local/sbin/pass-ssh;
 wget -q -O /usr/local/sbin/delssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/delssh.sh"; chmod +x /usr/local/sbin/delssh;
 wget -q -O /usr/local/sbin/trialssh "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/trialssh.sh"; chmod +x /usr/local/sbin/trialssh;
 wget -q -O /usr/local/sbin/sshexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/ssh/sshexp.sh"; chmod +x /usr/local/sbin/sshexp;
