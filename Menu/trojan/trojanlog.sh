@@ -186,7 +186,7 @@ expired=$(grep "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 3 | sed -
 clear;
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}         [ Senarai Akaun Trojan ]           ${NC}";
+echo -e "${WBBG}        [ Log Akses Akaun Trojan ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 echo -e "${INFO} Log out telah berjaya diexport";
