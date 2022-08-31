@@ -182,7 +182,7 @@ if [[ "$( cat /etc/xray-mini/client.conf | grep -w ${Username})" == "" ]]; then
     Do=Nothing;
 else
     clear;
-    echo -e "${ERROR} Username ( ${YELLOW}$Username${NC} ) Sudah Dipakai !";
+    echo -e "${ERROR} Username ( ${YELLOW}$Username${NC} ) sudah dipakai !";
     exit 1;
 fi
 
