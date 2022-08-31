@@ -276,8 +276,8 @@ wget -q -O /usr/local/sbin/panel-add-ss "https://raw.githubusercontent.com/rewas
 # // Other
 wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/menu.sh"; chmod +x /usr/local/sbin/menu;
 wget -q -O /usr/local/sbin/lcn-change "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/change-lcn.sh"; chmod +x /usr/local/sbin/lcn-change;
-wget -q -O /usr/local/sbin/speedtest "https://releases.sshwsvpn.me/vpn-script/Resource/Core/speedtest"; chmod +x /usr/local/sbin/speedtest;
-wget -q -O /usr/local/sbin/ram-usage "https://releases.sshwsvpn.me/vpn-script/Resource/Core/ram-usage.sh"; chmod +x /usr/local/sbin/ram-usage;
+wget -q -O /usr/local/sbin/speedtest "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/speedtest"; chmod +x /usr/local/sbin/speedtest;
+wget -q -O /usr/local/sbin/ram-usage "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ram-usage.sh"; chmod +x /usr/local/sbin/ram-usage;
 wget -q -O /usr/local/sbin/autokill-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/pro/autokill/menu.sh"; chmod +x /usr/local/sbin/autokill-menu;
 wget -q -O /usr/local/sbin/autoexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/autoexp.sh"; chmod +x /usr/local/sbin/autoexp;
 wget -q -O /usr/local/sbin/autobackup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/backup.sh"; chmod +x /usr/local/sbin/autobackup;
