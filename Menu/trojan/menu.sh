@@ -173,7 +173,7 @@ echo -e " ${GREEN}[ 05 ]${NC} ► Senarai akaun yang sudah dibuat";
 echo -e " ${GREEN}[ 06 ]${NC} ► Link config setiap akaun";
 echo -e " ${GREEN}[ 07 ]${NC} ► Memadam akaun yang sudah expire";
 echo -e " ${GREEN}[ 08 ]${NC} ► Senarai akaun yang sedang login";
-echo -e " ${GREEN}[ 09 ]${NC} ► Semak sesi login setiap akaun";
+echo -e " ${GREEN}[ 09 ]${NC} ► Log akses akaun Trojan";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 read -p "► Sila masukkan nombor pilihan anda [1-9] : " selection_mu;
