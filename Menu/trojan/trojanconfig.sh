@@ -155,19 +155,24 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-# // Start
+# ═══════════════════════════
+# // Link Config Akaun Trojan
+# ═══════════════════════════
+clear;
+echo "";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}       [ Link Config Akaun Trojan ]         ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "";
 CLIENT_001=$(grep -c -E "^Trojan " "/etc/xray-mini/client.conf" );
-echo "    ==================================================";
-echo "              LIST TROJAN CLIENT ON THIS VPS";
-echo "    ==================================================";
 grep -e "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2-8 | nl -s ') ';
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
-                echo "    ==================================================";
-			read -rp "    Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002;
+                echo -e "${CYAN}════════════════════════════════════════════${NC}";
+			read -rp " Sila taip nombor akaun untuk melihat config (1-${CLIENT_001}) : " CLIENT_002;
 		else
-                echo "    ==================================================";
-			read -rp "    Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002;
+                echo -e "${CYAN}════════════════════════════════════════════${NC}";
+			read -rp " Sila taip nombor akaun untuk melihat config (1-${CLIENT_001}) : " CLIENT_002;
 		fi
 	done
 
@@ -176,8 +181,6 @@ client=$(grep "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 2 | sed -n
 expired=$(grep "^Trojan " "/etc/xray-mini/client.conf" | cut -d ' ' -f 3 | sed -n "${CLIENT_002}"p);
 
 clear;
-cat /etc/sshwsvpn/trojan/${client}/config.log;
-echo -e " Expired     = ${expired}";
-echo -e "===============================";
+cat /etc/kaizenvpn/trojan/${client}/config.log;
 echo "";
-echo -e "${INFO} Successfull Exported [ ${YELLOW}${client}${NC} ] Config";
+echo -e "${INFO} Selesai export config untuk akaun [ ${YELLOW}${client}${NC} ]";
