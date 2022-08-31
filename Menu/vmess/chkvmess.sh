@@ -197,9 +197,9 @@ echo "$jum2";
 echo "";
 fi
 done
-echo "=============================================";
-echo "           WebSocket NonTLS Login";
-echo "=============================================";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}    [ Senarai Login WebSocket NonTLS ]      ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -n > /etc/kaizenvpn/cache/vmess_temp3.txt;
 data=(`cat /etc/xray-mini/client.conf | grep '^Vmess' | cut -d " " -f 2`);
 for akun in "${data[@]}"
