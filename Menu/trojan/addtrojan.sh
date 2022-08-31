@@ -207,7 +207,7 @@ nontls_port=$( cat /etc/xray-mini/nontls.json | grep -w port | awk '{print $2}' 
 export CHK=$( cat /etc/xray-mini/tls.json );
 if [[ $CHK == "" ]]; then
     clear;
-    echo -e "${ERROR} Your VPS Crash, Contact admin for fix it";
+    echo -e "${ERROR} Terdapat masalah teknikal didalam VPS anda. Sila hubungi admin untuk fixkan VPS anda !";
     exit 1;
 fi
 
