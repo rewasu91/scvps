@@ -194,4 +194,4 @@ hariini=`date -d "0 days" +"%Y/%m/%d"`;
 waktu=`date -d "0 days" +"%H"`;
 waktunya=`date -d "0 days" +"%Y/%m/%d %H:%M"`;
 cat /etc/kaizenvpn/xray-mini-tls/access.log | grep -w $hariini | grep -w $waktu | tail -n1000 | grep -w 'accepted' | grep -w $client;
-echo -e "${INFO} Log Akses direkodkan pada [ ${GREEN}${waktunya}${NC} ]";
+echo -e "${INFO} Log akses direkodkan pada [ ${GREEN}${waktunya}${NC} ]";
