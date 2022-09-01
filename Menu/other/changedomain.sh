@@ -201,7 +201,6 @@ echo -e "";
         # // Restart
         systemctl restart xray-mini@tls > /dev/null 2>&1
         systemctl restart xray-mini@nontls > /dev/null 2>&1
-
         clear;
         echo "";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -211,4 +210,3 @@ echo -e "";
         echo -e "${OKEY} Domain anda : $domain";
         sleep 1;
         echo -e "${OKEY} Berjaya! Domain anda telah ditukar kepada $domain";
-        exit 1;
