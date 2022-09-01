@@ -432,6 +432,11 @@ apt install openssl -y;
 apt install iptables -y;
 apt install iptables-persistent -y;
 apt autoremove -y;
+apt-get install socat;
+apt-get install figlet;
+apt-get install cowsay fortune-mod -y;
+ln -s /usr/games/cowsay /bin;
+ln -s /usr/games/fortune /bin;
 
 # ════════════════════
 # // Memasang BBR & FQ
