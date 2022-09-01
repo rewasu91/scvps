@@ -409,12 +409,12 @@ echo -e "  Versi Xray          ► $verxray";
 echo -e "  Versi Skrip         ► $Sver"
 echo -e "  Certificate status  ► Expire pada ${tlsStatus} hari"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   "
-echo -e "  Download      ►$dtoday       ►$dyest         ►$dmon      "
-echo -e "  Upload        ►$utoday       ►$uyest         ►$umon      "
-echo -e "  Total         ►$ttoday       ►$tyest         ►$tmon      "
+echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini               "
+echo -e "  Download      $dtoday        $dyest          $dmon                   "
+echo -e "  Upload        $utoday        $uyest          $umon                   "
+echo -e "  Total         $ttoday        $tyest          $tmon                   "
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "                     [ Servis Status ]                     "
+echo -e "${WBBG}                     [ Servis Status ]                      {NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "  SSH                 ► ${SSH_STT}";
 echo -e "  Dropbear            ► ${DROPBEAR_STT}";
