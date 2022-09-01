@@ -164,7 +164,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}           [ Tambah Email Backup ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-        read -p "► Sila masukkan Email anda :" email_input
+        read -p "► Sila masukkan Email anda : " email_input
         if [[ $email_input == "" ]]; then
             clear;
             echo -e "${ERROR} ► Sila masukkan Email anda !";
