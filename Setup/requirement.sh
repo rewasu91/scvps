@@ -364,7 +364,7 @@ apt install fail2ban -y;
 # ═══════════════════════════
 # // Set kepada default login
 # ═══════════════════════════
-echo "autoexp && clear && infonya" >> /etc/profile
+echo "autoexp && clearlog && clear && infonya" >> /etc/profile
 
 # ════════════════════
 # // Memasang RC-Local
