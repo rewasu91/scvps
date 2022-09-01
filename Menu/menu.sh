@@ -295,31 +295,7 @@ case $choosemu in
     17) clear && addemailbackup ;;
     18) clear && backup ;;
     19) clear && restore ;;
-    20)
-        clear;
-        echo -e "${RED_BG}               AutoBackup ( 12:00 & 00:00 )                ${NC}";
-        echo -e "${GREEN}1${YELLOW})${NC}. Enable AutoBackup"
-        echo -e "${GREEN}2${YELLOW})${NC}. Disable AutoBackup"
-        read -p "Choose one " choosenya
-        if [[ $choosenya == "1" ]]; then 
-            echo "0 */12 * * * root /usr/local/sbin/autobackup" > /etc/cron.d/auto-backup;
-            /etc/init.d/cron restart;
-            clear;
-            echo -e "${OKEY} Successfull Enabled autobackup";
-            exit 1;
-        elif [[ $choosenya == "2" ]]; then
-            rm -rf /etc/cron.d/auto-backup;
-            /etc/init.d/cron restart;
-            clear;
-            echo -e "${OKEY} Successfull Disabled autobackup";
-            exit 1;
-        else
-            clear;
-            echo -e "${ERROR} Please Select a valid number"
-            sleep 2;
-            menu;
-        fi
-    ;;
+    20) clear && autobackup ;;
     21)
         clear;
         read -p "DNS 1 ( Require )  : " dns1nya
