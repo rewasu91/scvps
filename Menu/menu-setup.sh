@@ -296,6 +296,7 @@ wget -q -O /usr/local/sbin/panel-add-ss "https://raw.githubusercontent.com/rewas
 wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/menu.sh"; chmod +x /usr/local/sbin/menu;
 wget -q -O /usr/local/sbin/changetime "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/changetime.sh"; chmod +x /usr/local/sbin/changetime;
 wget -q -O /usr/local/sbin/changedomain "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/changedomain.sh"; chmod +x /usr/local/sbin/changedomain;
+wget -q -O /usr/local/sbin/renewcert "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/renewcert.sh"; chmod +x /usr/local/sbin/renewcert;
 
 wget -q -O /usr/local/sbin/speedtest "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/speedtest"; chmod +x /usr/local/sbin/speedtest;
 wget -q -O /usr/local/sbin/ram-usage "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ram-usage.sh"; chmod +x /usr/local/sbin/ram-usage;
