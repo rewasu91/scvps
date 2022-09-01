@@ -291,28 +291,8 @@ case $choosemu in
     13) clear && vnstat ;;
     14) clear && changetime ;;
     15) clear && changedomain ;;
-    16) 
-        domain=$(cat /etc/kaizenvpn/domain.txt);
-        if [[ $domain == "" ]]; then
-            clear;
-            echo -e "${ERROR} VPS Having Something Wrong";
-            exit 1
-        fi
-        echo -e "$OKEY Starting Certificate Renewal";
-        sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256;
-    ;;
-    17)
-        clear;
-        read -p "Input Your Email : " email_input
-        if [[ $email_input == "" ]]; then
-            clear;
-            echo -e "${ERROR} Please Input Email to contitune";
-            exit 1;
-        fi
-        echo $email_input > /etc/kaizenvpn/email.txt
-        clear;
-        echo -e "${OKEY} Successfull Set Email For Backup";
-    ;;
+    16) clear && renewcert ;;
+    17) clear && addemailbackup ;;
     18) backup ;;
     19) restore ;;
     20)
