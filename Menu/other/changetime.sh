@@ -174,21 +174,17 @@ read -p "► Sila masukkan nombor pilihan anda [1-9] : " selection_mu;
         read -p "Choose one : " soefiewjfwefw
         if [[ $selection_mu == "1" ]]; then
                 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime;
-                clear;
                 echo -e "${OKEY} Timezone telah ditukar ke Jakarta ( GMT +7 )";
                 exit 1;
         elif [[ $selection_mu == "2" ]]; then
                 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
-                clear;
                 echo -e "${OKEY} Timezone telah ditukar ke Malaysia ( GMT +8 )";
                 exit 1;
         elif [[ $selection_mu == "2" ]]; then
                 ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime;
-                clear;
                 echo -e "${OKEY} Timezone telah ditukar ke Chicago ( GMT +6 )";
                 exit 1;
         else
-                clear;
                 sleep 2;
                 echo -e "${ERROR} Sila masukkan nombor yang betul !";
                 changetime;
