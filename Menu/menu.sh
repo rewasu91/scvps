@@ -460,7 +460,7 @@ case $choosemu in
         systemctl restart nginx; systemctl restart fail2ban; systemctl restart ssr-server; systemctl restart dropbear; systemctl restart ssh; systemctl restart stunnel4; systemctl restart sslh;
         clear; echo -e "${OKEY} Successfull Restarted All Service";
     ;;
-    27) cd /root/; wget -q -O /root/update.sh "https://releases.kaizenvpn.me/vpn-script/Stable/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
+    27) cd /root/; wget -q -O /root/update.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
     28)
             clear
             # // clearlog
