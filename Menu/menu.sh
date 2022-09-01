@@ -293,8 +293,8 @@ case $choosemu in
     15) clear && changedomain ;;
     16) clear && renewcert ;;
     17) clear && addemailbackup ;;
-    18) backup ;;
-    19) restore ;;
+    18) clear && backup ;;
+    19) clear && restore ;;
     20)
         clear;
         echo -e "${RED_BG}               AutoBackup ( 12:00 & 00:00 )                ${NC}";
