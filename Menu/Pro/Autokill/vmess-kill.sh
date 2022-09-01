@@ -157,7 +157,7 @@ clear;
 # ═════════════════════
 # // Inputing Max Login
 # ═════════════════════				
-source /etc/kaizen/autokill.conf;
+source /etc/kaizenvpn/autokill.conf;
 if [[ $ENABLED == "0" ]]; then
     clear;
     echo -e "$(date) Autokill is disabled";
