@@ -168,7 +168,7 @@ read -p "► Sila masukkan nombor pilihan anda [1-2] : " choosenya
         
         read -p "Choose one " choosenya
         if [[ $choosenya == "1" ]]; then 
-            echo "0 */12 * * * root /usr/local/sbin/autobackup" > /etc/cron.d/auto-backup;
+            echo "0 */12 * * * root /usr/local/sbin/backup" > /etc/cron.d/auto-backup;
             /etc/init.d/cron restart;
             echo -e "${OKEY} Berjaya mengaktifkan autobackup";
             exit 1;
@@ -181,5 +181,5 @@ read -p "► Sila masukkan nombor pilihan anda [1-2] : " choosenya
             clear;
             echo -e "${ERROR} Sila masukkan nombor yang betul!";
             sleep 1;
-            autobackupbackup;
+            autobackup;
         fi
