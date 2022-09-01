@@ -264,3 +264,6 @@ echo -e "${CYAN}═════════════════════�
 echo -e " WS NTLS VLESS CONFIG LINK" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
 echo -e " ${vless_nontls}" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
+echo -e " DIGI CONFIG LINK" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
+echo -e " vtls="vless://${uuid}@who.int:${tls_port}?path=wss://who.int/vless&security=tls&encryption=none&host=${domain}&type=ws&sni=who.int#${Username}"" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
+echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/vless/${Username}/config.log;
