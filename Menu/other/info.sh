@@ -395,9 +395,9 @@ versibash=$shellversion
 
 clear
 echo -e ""
-echo -e "═══════════════════════════════════════════════════════════"
-echo -e "              [ Maklumat Sistem & Bandwith ]               "
-echo -e "═══════════════════════════════════════════════════════════"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
+echo -e "${WBBG}              [ Maklumat Sistem & Bandwith ]               ${NC}"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "  Server Uptime       ► $( uptime -p  | cut -d " " -f 2-10000 ) "
 echo -e "  Waktu Sekarang      ► $( date -d "0 days" +"%d-%m-%Y | %X" )"
 echo -e "  Nama ISP            ► $ISP"
@@ -408,14 +408,14 @@ echo -e "  Domain              ► $domain"
 echo -e "  Versi Xray          ► $verxray";                                                                                                                                                                                                
 echo -e "  Versi Skrip         ► $Sver"
 echo -e "  Certificate status  ► Expire pada ${tlsStatus} hari"
-echo -e "═══════════════════════════════════════════════════════════"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   "
 echo -e "  Download      ►$dtoday       ►$dyest         ►$dmon      "
 echo -e "  Upload        ►$utoday       ►$uyest         ►$umon      "
 echo -e "  Total         ►$ttoday       ►$tyest         ►$tmon      "
-echo -e "═══════════════════════════════════════════════════════════"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "                     [ Servis Status ]                     "
-echo -e "═══════════════════════════════════════════════════════════"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "  SSH                 ► ${SSH_STT}";
 echo -e "  Dropbear            ► ${DROPBEAR_STT}";
 echo -e "  Stunnel4            ► ${STUNNEL4_STT}";
@@ -445,4 +445,4 @@ echo -e "  Trojan AutoKill     ► ${TROJAN_KILL}"
 echo -e "  SS AutoKill         ► ${SS_KILL}"
 echo -e "  SSH AutoKill        ► ${SSH_KILL}"
 echo -e "  AutoBackup          ► ${STT_EMM}"
-echo -e "═══════════════════════════════════════════════════════════"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
