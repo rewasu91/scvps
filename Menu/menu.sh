@@ -150,11 +150,6 @@ export CITY_NYA="$CITY";
 export COUNTRY_NYA="$COUNTRY";
 export TIME_NYA="$TIMEZONE";
 
-# ═════════════
-# // Clear Data
-# ═════════════
-clear;
-
 #EXPIRED
 expired=$(curl -sS https://raw.githubusercontent.com/rewasu91/scvpssettings/main/access | grep $MYIP | awk '{print $3}')
 echo $expired > /root/expired.txt
@@ -221,22 +216,10 @@ verxray="$(/usr/local/bin/xray -version | awk 'NR==1 {print $2}')"
 shellversion+=" ${BASH_VERSION/-*}" 
 versibash=$shellversion
 
------------------------------
-
-STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
-
-if [[ $STATUS_IPV6 == "0" ]]; then
-IPv6=$( curl -s "https://ipv6.icanhazip.com");
-if [[ $IPv6 == "" ]]; then
-    IP_V6="Not Supported";
-else
-    IP_V6="${IPv6}";
-fi
-echo -e "Server IPv6         = ${IP_V6}";
-fi
-
--------------------------------------------
-
+# ═════════════
+# // Clear Data
+# ═════════════
+clear;
 
 echo -e "═══════════════════════════════════════════════════════════";
 echo -e "              [ Maklumat Sistem & Bandwith ]               ";
@@ -266,11 +249,10 @@ echo -e "  [ 03 ] ► Menu Vless          [ 08 ] ► Menu Socks 4/5     ";
 echo -e "  [ 04 ] ► Menu Trojan         [ 09 ] ► Menu HTTP          ";
 echo -e "  [ 05 ] ► Menu Shadowsocks    [ 10 ] ► Menu Autokill      ";
 echo -e "═══════════════════════════════════════════════════════════";
-echo -e "  [ 10 ] ► Speedtest";
-echo -e "  [ 11 ] ► Cek RAM";
-echo -e "  [ 12 ] ► Cek Bandwith";
-echo -e "  [ 13 ] ► Menukar Timezone";
-echo -e "  [ 14 ] ► Autokill Menu";
+echo -e "  [ 11 ] ► Speedtest";
+echo -e "  [ 12 ] ► Cek RAM";
+echo -e "  [ 13 ] ► Cek Bandwith";
+echo -e "  [ 14 ] ► Menukar Timezone";
 echo -e "  [ 15 ] ► Tukar Domain";
 echo -e "  [ 16 ] ► Renew Certificate";
 echo -e "  [ 17 ] ► Tambah Email untuk Backup";
@@ -294,95 +276,21 @@ echo -e "═══════════════════════�
 read -p "► Sila masukkan nombor pilihan anda [1-30] : " choosemu
 
 case $choosemu in
-    1) ssh-menu ;;
-    2) vmess-menu ;;
-    3) vless-menu ;;
-    4) trojan-menu ;;
-    5) ss-menu ;;
-    6) ssr-menu ;;
-    7) wg-menu ;;
-    8) socks-menu ;;
-    9) http-menu ;;
-    10) clear && speedtest ;;
-    11) clear && ram-usage ;;
-    12) clear && vnstat ;;
-    13)
-        clear;
-        echo -e "${RED_BG}                    Timezone Changer                       ${NC}";
-        echo -e "${GREEN}1${YELLOW})${NC}. Asia / Jakarta / Indonesia ( GMT+7 )"
-        echo -e "${GREEN}2${YELLOW})${NC}. Asia / Kuala Lumpur / Malaysia ( GMT+8 )"
-        echo -e "${GREEN}3${YELLOW})${NC}. America / Chicago / US Central ( GMT-6 )"
-
-        read -p "Choose one : " soefiewjfwefw
-        if [[ $soefiewjfwefw == "1" ]]; then
-                ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime;
-                clear;
-                echo -e "${OKEY} Successfull Set time to Jakarta ( GMT +7 )";
-                exit 1;
-        elif [[ $soefiewjfwefw == "2" ]]; then
-                ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
-                clear;
-                echo -e "${OKEY} Successfull Set time to Malaysia ( GMT +8 )";
-                exit 1;
-        elif [[ $soefiewjfwefw == "2" ]]; then
-                ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime;
-                clear;
-                echo -e "${OKEY} Successfull Set time to Malaysia ( GMT +8 )";
-                exit 1;
-        else
-                clear;
-                sleep 2;
-                echo -e "${ERROR} Please Choose One option"
-                menu;
-        fi
-    ;;
-    14) autokill-menu ;;
-    15) 
-        clear;
-        read -p "Input Your New Domain : " new_domains
-        if [[ $new_domains == "" ]]; then
-            clear;
-            sleep 2;
-            echo -e "${ERROR} Please Input New Domain for contitune";
-            menu;
-        fi
-
-        # // Stopping Xray nontls
-        systemctl stop xray-mini@nontls > /dev/null 2&>1
-
-        # // Input Domain To VPS
-        echo "$new_domains" > /etc/kaizenvpn/domain.txt;
-        domain=$( cat /etc/kaizenvpn/domain.txt );
-
-        # // Making Certificate
-        clear;
-        echo -e "${OKEY} Starting Generating Certificate";
-        rm -rf /root/.acme.sh;
-        mkdir -p /root/.acme.sh;
-        wget -q -O /root/.acme.sh/acme.sh "https://releases.kaizenvpn.me/vpn-script/Resource/Core/acme.sh";
-        chmod +x /root/.acme.sh/acme.sh;
-        sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
-        sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
-
-        # // Successfull Change Path to xray
-        key_path_default=$( cat /etc/xray-mini/tls.json | jq '.inbounds[0].streamSettings.xtlsSettings.certificates[]' | jq -r '.certificateFile' );
-        cp /etc/xray-mini/tls.json /etc/xray-mini/tls.json_temp;
-        cat /etc/xray-mini/tls.json_temp | jq 'del(.inbounds[0].streamSettings.xtlsSettings.certificates[] | select(.certificateFile == "'${key_path_default}'"))' > /etc/xray-mini/tls2.json_temp;
-        cat /etc/xray-mini/tls2.json_temp | jq '.inbounds[0].streamSettings.xtlsSettings.certificates += [{"certificateFile": "'/root/.acme.sh/${domain}_ecc/fullchain.cer'","keyFile": "'/root/.acme.sh/${domain}_ecc/${domain}.key'"}]' > /etc/xray-mini/tls.json;
-        rm -rf /etc/xray-mini/tls2.json_temp;
-        rm -rf /etc/xray-mini/tls.json_temp;
-
-        # // Restart
-        systemctl restart xray-mini@tls > /dev/null 2>&1
-        systemctl restart xray-mini@nontls > /dev/null 2>&1
-
-        # // Success
-        echo -e "${OKEY} Your Domain : $domain";
-        sleep 2;
-        clear;
-        echo -e "${OKEY} Successfull Change Domain to $domain";
-        exit 1;
-    ;;
+    1) clear && ssh-menu ;;
+    2) clear && vmess-menu ;;
+    3) clear && vless-menu ;;
+    4) clear && trojan-menu ;;
+    5) clear && ss-menu ;;
+    6) clear && ssr-menu ;;
+    7) clear && wg-menu ;;
+    8) clear && socks-menu ;;
+    9) clear && http-menu ;;
+    10) clear && autokill-menu ;;
+    11) clear && speedtest ;;
+    12) clear && ram-usage ;;
+    13) clear && vnstat ;;
+    14) clear && changetime ;;
+    15) clear && changedomain ;;
     16) 
         domain=$(cat /etc/kaizenvpn/domain.txt);
         if [[ $domain == "" ]]; then
