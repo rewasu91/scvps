@@ -222,8 +222,32 @@ verxray="$(/usr/local/bin/xray -version | awk 'NR==1 {print $2}')"
 shellversion+=" ${BASH_VERSION/-*}" 
 versibash=$shellversion
 
+clear 
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                 ⇱ SCRIPT MENU ⇲                  \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"                                                                                    
+echo -e "\e[5;33m Isp Name                :${NC}  $ISP"
+echo -e "\e[5;33m City                    :${NC}  $CITY"
+echo -e "\e[5;33m Domain                  :${NC}  $domain"	
+echo -e "\e[5;33m Ip Vps                  :${NC}  $IPVPS"	
+echo -e "\e[5;33m Time                    :${NC}  $JAM"
+echo -e "\e[5;33m Day                     :${NC}  $DAY"
+echo -e "\e[5;33m Date                    :${NC}  $DATE"
+echo -e "\e[5;33m Xray Version            :${NC}  ${PURPLE}$verxray${NC}"                                                                                                                                                                                                 
+echo -e "\e[5;33m Script Version          :${NC}  ${BLUE}$Sver${NC}"
+echo -e "\e[5;33m Telegram                :${NC}  $tele"
+echo -e "\e[5;33m Certificate status      :${NC}  \e[33mExpired in ${tlsStatus} days\e[0m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"
+echo -e "\e[33m Traffic\e[0m       \e[33mToday      Yesterday     Month   "
+echo -e "\e[33m Download\e[0m      $dtoday    $dyest       $dmon   \e[0m"
+echo -e "\e[33m Upload\e[0m        $utoday    $uyest       $umon   \e[0m"
+echo -e "\e[33m Total\e[0m       \033[0;36m  $ttoday    $tyest       $tmon  \e[0m "
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"
 
-
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "${CYAN}Client Name    :${NC} $name"                                                                                                                                                                                                                        
+echo -e "${CYAN}Script Expired :${NC} $exp"                                                                                                                                                                                                                        
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[37m"
 
 
 
@@ -271,19 +295,68 @@ echo -e "Lifetime"; else
 echo -e "${EXPIRED} ( $days_left Days Left )"; fi
 )"
 
-echo -e "";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}               [ Menu Utama ]               ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
 
-echo -e "${RED_BG}                VPN Admin/Account Manager                 ${NC}";
-echo -e "${GREEN} 1${YELLOW})${NC}. SSH & OpenVPN Account Manager";
-echo -e "${GREEN} 2${YELLOW})${NC}. Vmess Account Manager";
-echo -e "${GREEN} 3${YELLOW})${NC}. Vless Account Manager";
-echo -e "${GREEN} 4${YELLOW})${NC}. Trojan Account Manager";
-echo -e "${GREEN} 5${YELLOW})${NC}. Shadowsocks Account Manager";
-echo -e "${GREEN} 6${YELLOW})${NC}. ShadowsocksR Account Manager";
-echo -e "${GREEN} 7${YELLOW})${NC}. Wireguard Account Manager";
-echo -e "${GREEN} 8${YELLOW})${NC}. Socks 4/5 Account Manager";
-echo -e "${GREEN} 9${YELLOW})${NC}. HTTP Proxy Account Manager";
+echo -e "════════════════════════════════════════════";
+echo -e "               [ Menu Utama ]               ";
+echo -e "════════════════════════════════════════════";
 echo -e "";
+echo -e " [ 01 ] ► Menu SSH & OpenVPN";
+echo -e " [ 02 ] ► Menu Vmess";
+echo -e " [ 03 ] ► Menu Vless";
+echo -e " [ 04 ] ► Menu Trojan";
+echo -e " [ 05 ] ► Menu Shadowsocks";
+echo -e " [ 06 ] ► Menu ShadowsocksR";
+echo -e " [ 07 ] ► Menu Wireguard";
+echo -e " [ 08 ] ► Menu Socks 4/5";
+echo -e " [ 09 ] ► Menu HTTP";
+echo -e "";
+echo -e "════════════════════════════════════════════";
+echo -e "";
+echo -e " [ 10 ] ► Speedtest";
+echo -e " [ 11 ] ► Cek RAM";
+echo -e " [ 12 ] ► Cek Bandwith";
+echo -e " [ 13 ] ► Menukar Timezone";
+echo -e " [ 14 ] ► Autokill Menu";
+echo -e " [ 15 ] ► Tukar Domain";
+echo -e " [ 16 ] ► Renew Certificate";
+echo -e " [ 17 ] ► Tambah Email untuk Backup";
+echo -e " [ 18 ] ► Backup";
+echo -e " [ 19 ] ► Restore";
+echo -e " [ 20 ] ► Autobackup";
+echo -e " [ 21 ] ► Tukar DNS";
+echo -e " [ 22 ] ► Tukar Port";
+echo -e " [ 23 ] ► Cek Maklumat Servis & Sistem";
+echo -e " [ 24 ] ► Cek versi skrip";
+echo -e " [ 25 ] ► Reboot Server";
+echo -e " [ 26 ] ► Restart Semua Servis";
+echo -e " [ 27 ] ► Update Skrip";
+echo -e " [ 28 ] ► Melajukan VPS";
+echo -e " [ 29 ] ► Mengaktifkan IPV6";
+echo -e " [ 30 ] ► Matikan IPV6";
+
+
+
+
+
+
+
+echo -e "════════════════════════════════════════════════════════════";
+echo -e "                      [ Menu Utama ]                        ";
+echo -e "════════════════════════════════════════════════════════════";
+echo -e "";
+echo -e "  [ 01 ] ► Menu SSH & OpenVPN  [ 06 ] ► Menu ShadowsocksR  "
+echo -e "  [ 02 ] ► Menu Vmess          [ 07 ] ► Menu Wireguard     "
+echo -e "  [ 03 ] ► Menu Vless          [ 08 ] ► Menu Socks 4/5     "
+echo -e "  [ 04 ] ► Menu Trojan         [ 09 ] ► Menu HTTP          "
+echo -e "  [ 05 ] ► Menu Shadowsocks    [ 10 ] ► Menu Autokill      "
+
+
+
+
+
 echo -e "${RED_BG}                     Addons Service                       ${NC}";
 echo -e "${GREEN}10${YELLOW})${NC}. Benchmark Speed ( Speedtest By Ookla )";
 echo -e "${GREEN}11${YELLOW})${NC}. Checking Ram Usage";
@@ -358,9 +431,8 @@ case $choosemu in
                 menu;
         fi
     ;;
-    14) lcn-change ;;
-    15) autokill-menu ;;
-    16) 
+    14) autokill-menu ;;
+    15) 
         clear;
         read -p "Input Your New Domain : " new_domains
         if [[ $new_domains == "" ]]; then
@@ -406,7 +478,7 @@ case $choosemu in
         echo -e "${OKEY} Successfull Change Domain to $domain";
         exit 1;
     ;;
-    17) 
+    16) 
         domain=$(cat /etc/sshwsvpn/domain.txt);
         if [[ $domain == "" ]]; then
             clear;
@@ -416,7 +488,7 @@ case $choosemu in
         echo -e "$OKEY Starting Certificate Renewal";
         sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256;
     ;;
-    18)
+    17)
         clear;
         read -p "Input Your Email : " email_input
         if [[ $email_input == "" ]]; then
@@ -428,9 +500,9 @@ case $choosemu in
         clear;
         echo -e "${OKEY} Successfull Set Email For Backup";
     ;;
-    19) backup ;;
-    20) restore ;;
-    21)
+    18) backup ;;
+    19) restore ;;
+    20)
         clear;
         echo -e "${RED_BG}               AutoBackup ( 12:00 & 00:00 )                ${NC}";
         echo -e "${GREEN}1${YELLOW})${NC}. Enable AutoBackup"
@@ -455,7 +527,7 @@ case $choosemu in
             menu;
         fi
     ;;
-    22)
+    21)
         clear;
         read -p "DNS 1 ( Require )  : " dns1nya
         read -p "DNS 2 ( Optional ) : " dns2nya
@@ -475,16 +547,16 @@ case $choosemu in
             exit 1;
         fi
     ;;
-    23) change-port ;;
-    24) infonya ;;
-    25) vpnscript ;;
-    26) reboot ;;
-    27) systemctl restart xray-mini@tls; systemctl restart xray-mini@nontls; systemctl restart xray-mini@socks; systemctl restart xray-mini@shadowsocks; systemctl restart xray-mini@http;
+    22) change-port ;;
+    23) infonya ;;
+    24) vpnscript ;;
+    25) reboot ;;
+    26) systemctl restart xray-mini@tls; systemctl restart xray-mini@nontls; systemctl restart xray-mini@socks; systemctl restart xray-mini@shadowsocks; systemctl restart xray-mini@http;
         systemctl restart nginx; systemctl restart fail2ban; systemctl restart ssr-server; systemctl restart dropbear; systemctl restart ssh; systemctl restart stunnel4; systemctl restart sslh;
         clear; echo -e "${OKEY} Successfull Restarted All Service";
     ;;
-    28) cd /root/; wget -q -O /root/update.sh "https://releases.sshwsvpn.me/vpn-script/Stable/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
-    29)
+    27) cd /root/; wget -q -O /root/update.sh "https://releases.sshwsvpn.me/vpn-script/Stable/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
+    28)
             clear
             # // clearlog
             echo -e "${OKEY} Cleaning Your VPS Cache & Logs";
@@ -518,7 +590,7 @@ case $choosemu in
             clear;
             echo -e "${OKEY} Successfull SpeedUP Your VPS";
     ;;
-    30) 
+    29) 
             STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
             if [[ $STATUS_IPV6 == "0" ]]; then
                 clear;
@@ -532,7 +604,7 @@ case $choosemu in
             clear;
             echo -e "${OKEY} Successfull Enabled IPv6 Support";
     ;;
-    31) 
+    30) 
             STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
             if [[ $STATUS_IPV6 == "1" ]]; then
                 clear;
