@@ -231,7 +231,6 @@ echo -e "  Operating Sistem   ► $( cat /etc/os-release | grep -w PRETTY_NAME |
 echo -e "  Bandar             ► $CITY";
 echo -e "  Ip Vps             ► $IPVPS";
 echo -e "  Domain             ► $domain";
-echo -e "  Telegram           ► $tele";
 echo -e "  Versi Xray         ► $verxray";                                                                                                                                                                                                 
 echo -e "  Versi Skrip        ► $Sver";
 echo -e "  Certificate status ► Expire pada ${tlsStatus} hari";
@@ -252,7 +251,7 @@ echo -e "═══════════════════════�
 echo -e "  [ 11 ] ► Speedtest";
 echo -e "  [ 12 ] ► Cek RAM";
 echo -e "  [ 13 ] ► Cek Bandwith";
-echo -e "  [ 14 ] ► Menukar Timezone";
+echo -e "  [ 14 ] ► Tukar Timezone";
 echo -e "  [ 15 ] ► Tukar Domain";
 echo -e "  [ 16 ] ► Renew Certificate";
 echo -e "  [ 17 ] ► Tambah Email untuk Backup";
@@ -266,7 +265,7 @@ echo -e "  [ 24 ] ► Cek versi skrip";
 echo -e "  [ 25 ] ► Reboot Server";
 echo -e "  [ 26 ] ► Restart Semua Servis";
 echo -e "  [ 27 ] ► Update Skrip";
-echo -e "  [ 28 ] ► Melajukan VPS";
+echo -e "  [ 28 ] ► Melajukan VPS (Buang log & Cache)";
 echo -e "  [ 29 ] ► Mengaktifkan IPV6";
 echo -e "  [ 30 ] ► Matikan IPV6";
 echo -e "════════════════════════════════════════════════════════════";
@@ -296,33 +295,15 @@ case $choosemu in
     18) clear && backup ;;
     19) clear && restore ;;
     20) clear && autobackup ;;
-    21)
-        clear;
-        read -p "DNS 1 ( Require )  : " dns1nya
-        read -p "DNS 2 ( Optional ) : " dns2nya
-        if [[ $dns1nya == "" ]]; then
-            clear;
-            echo -e "${ERROR} Please Input DNS 1";
-            exit 1;
-        fi
-        if [[ $dns2nya == "" ]]; then
-            echo "nameserver $dns1nya" > /etc/resolv.conf
-            echo -e "${OKEY} Successful Change DNS To $dns1nya";
-            exit 1;
-        else
-            echo "nameserver $dns1nya" > /etc/resolv.conf
-            echo "nameserver $dns2nya" >> /etc/resolv.conf
-            echo -e "${OKEY} Successful Change DNS To $dns1nya & $dns2nya";
-            exit 1;
-        fi
-    ;;
-    22) change-port ;;
-    23) infonya ;;
-    24) vpnscript ;;
-    25) reboot ;;
+    21) clear && changedns ;;
+    22) clear && change-port ;;
+    23) clear && infonya ;;
+    24) clear && vpnscript ;;
+    25) clear && reboot ;;
     26) systemctl restart xray-mini@tls; systemctl restart xray-mini@nontls; systemctl restart xray-mini@socks; systemctl restart xray-mini@shadowsocks; systemctl restart xray-mini@http;
         systemctl restart nginx; systemctl restart fail2ban; systemctl restart ssr-server; systemctl restart dropbear; systemctl restart ssh; systemctl restart stunnel4; systemctl restart sslh;
-        clear; echo -e "${OKEY} Successfull Restarted All Service";
+        clear; echo -e "${OKEY} Selesai Restart Semua Servis !";
+	clear;
     ;;
     27) cd /root/; wget -q -O /root/update.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
     28)
@@ -357,13 +338,13 @@ case $choosemu in
             # // Done
             sleep 1;
             clear;
-            echo -e "${OKEY} Successfull SpeedUP Your VPS";
+            echo -e "${OKEY} Selesai membuang semua log & cache server";
     ;;
     29) 
             STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
             if [[ $STATUS_IPV6 == "0" ]]; then
                 clear;
-                echo -e "${ERROR} IPv6 Already Enabled on this Server";
+                echo -e "${ERROR} IPv6 sudah diaktifkan didalam server ini";
                 exit 1;
             fi
             sed -i 's/net.ipv6.conf.all.disable_ipv6 = 1/net.ipv6.conf.all.disable_ipv6 = 0/g' /etc/sysctl.conf;
@@ -371,13 +352,13 @@ case $choosemu in
             sed -i 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /etc/sysctl.conf;
             sysctl -p;
             clear;
-            echo -e "${OKEY} Successfull Enabled IPv6 Support";
+            echo -e "${OKEY} Berjaya mengaktifkan IPv6";
     ;;
     30) 
             STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
             if [[ $STATUS_IPV6 == "1" ]]; then
                 clear;
-                echo -e "${ERROR} IPv6 Already Disabled on this Server";
+                echo -e "${ERROR} IPv6 sudah dihentikan didalam server ini";
                 exit 1;
             fi
             sed -i 's/net.ipv6.conf.all.disable_ipv6 = 0/net.ipv6.conf.all.disable_ipv6 = 1/g' /etc/sysctl.conf;
@@ -385,7 +366,7 @@ case $choosemu in
             sed -i 's/net.ipv6.conf.lo.disable_ipv6 = 0/net.ipv6.conf.lo.disable_ipv6 = 1/g' /etc/sysctl.conf;
             sysctl -p;
             clear;
-            echo -e "${OKEY} Successfull Disabled IPv6 Support";
+            echo -e "${OKEY} Berjaya menghentikan IPv6";
     ;;
     *)
         clear;
