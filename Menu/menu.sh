@@ -155,7 +155,6 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-
 #EXPIRED
 expired=$(curl -sS https://raw.githubusercontent.com/rewasu91/scvpssettings/main/access | grep $MYIP | awk '{print $3}')
 echo $expired > /root/expired.txt
@@ -172,7 +171,7 @@ done < /root/expired.txt
 rm /root/expired.txt
 name=$(curl -sS https://raw.githubusercontent.com/rewasu91/scvpssettings/main/access | grep $MYIP | awk '{print $2}')
 
-domain=$(cat /etc/mon/xray/domain)
+domain=$(cat /etc/kaizenvpn/domain.txt)
 
 # // Status certificate
 modifyTime=$(stat $HOME/.acme.sh/${domain}_ecc/${domain}.key | sed -n '7,6p' | awk '{print $2" "$3" "$4" "$5}')
@@ -222,53 +221,10 @@ verxray="$(/usr/local/bin/xray -version | awk 'NR==1 {print $2}')"
 shellversion+=" ${BASH_VERSION/-*}" 
 versibash=$shellversion
 
-clear 
-echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
-echo -e "\033[30;5;47m                 ⇱ SCRIPT MENU ⇲                  \033[m"
-echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"                                                                                    
-echo -e "\e[5;33m Isp Name                :${NC}  $ISP"
-echo -e "\e[5;33m City                    :${NC}  $CITY"
-echo -e "\e[5;33m Domain                  :${NC}  $domain"	
-echo -e "\e[5;33m Ip Vps                  :${NC}  $IPVPS"	
-echo -e "\e[5;33m Time                    :${NC}  $JAM"
-echo -e "\e[5;33m Day                     :${NC}  $DAY"
-echo -e "\e[5;33m Date                    :${NC}  $DATE"
-echo -e "\e[5;33m Xray Version            :${NC}  ${PURPLE}$verxray${NC}"                                                                                                                                                                                                 
-echo -e "\e[5;33m Script Version          :${NC}  ${BLUE}$Sver${NC}"
-echo -e "\e[5;33m Telegram                :${NC}  $tele"
-echo -e "\e[5;33m Certificate status      :${NC}  \e[33mExpired in ${tlsStatus} days\e[0m"
-echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"
-echo -e "\e[33m Traffic\e[0m       \e[33mToday      Yesterday     Month   "
-echo -e "\e[33m Download\e[0m      $dtoday    $dyest       $dmon   \e[0m"
-echo -e "\e[33m Upload\e[0m        $utoday    $uyest       $umon   \e[0m"
-echo -e "\e[33m Total\e[0m       \033[0;36m  $ttoday    $tyest       $tmon  \e[0m "
-echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"
+-----------------------------
 
-echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
-echo -e "${CYAN}Client Name    :${NC} $name"                                                                                                                                                                                                                        
-echo -e "${CYAN}Script Expired :${NC} $exp"                                                                                                                                                                                                                        
-echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[37m"
-
-
-
-
-
-
-waktu_sekarang=$(date -d "0 days" +"%Y-%m-%d");
-expired_date="$EXPIRED";
-now_in_s=$(date -d "$waktu_sekarang" +%s);
-exp_in_s=$(date -d "$expired_date" +%s);
-days_left=$(( ($exp_in_s - $now_in_s) / 86400 ));
 STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
 
-# // Clear
-clear
-echo -e "${RED_BG}                 VPS / Sytem Information                  ${NC}";
-echo -e "Sever Uptime        = $( uptime -p  | cut -d " " -f 2-10000 ) ";
-echo -e "Current Time        = $( date -d "0 days" +"%d-%m-%Y | %X" )";
-echo -e "Operating System    = $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )";
-echo -e "Current Domain      = $( cat /etc/sshwsvpn/domain.txt )";
-echo -e "Server IPv4         = ${IP_NYA}";
 if [[ $STATUS_IPV6 == "0" ]]; then
 IPv6=$( curl -s "https://ipv6.icanhazip.com");
 if [[ $IPv6 == "" ]]; then
@@ -278,115 +234,66 @@ else
 fi
 echo -e "Server IPv6         = ${IP_V6}";
 fi
-echo -e "Customer ID         = ${PELANGGAN_KE}";
-echo -e "Activation Status   = $(if [[ $STATUS_IP == "active" ]]; then
-echo -e "Activated"; else
-echo -e "Inactive"; fi
-)"
-echo -e "License Type        = ${TYPE} Edition";
-echo -e "License Issued to   = ${NAME}";
-echo -e "License Start       = ${CREATED}";
-echo -e "License Limit       = $( if [[ $UNLIMITED == "true" ]]; then
-echo -e "Unlimited"; else
-echo -e "${COUNT}/${LIMIT} VPS"; fi
-)"
-echo -e "License Expired     = $( if [[ $LIFETIME == "true" ]]; then
-echo -e "Lifetime"; else
-echo -e "${EXPIRED} ( $days_left Days Left )"; fi
-)"
 
-echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}               [ Menu Utama ]               ${NC}";
-echo -e "${CYAN}════════════════════════════════════════════${NC}";
-
-echo -e "════════════════════════════════════════════";
-echo -e "               [ Menu Utama ]               ";
-echo -e "════════════════════════════════════════════";
-echo -e "";
-echo -e " [ 01 ] ► Menu SSH & OpenVPN";
-echo -e " [ 02 ] ► Menu Vmess";
-echo -e " [ 03 ] ► Menu Vless";
-echo -e " [ 04 ] ► Menu Trojan";
-echo -e " [ 05 ] ► Menu Shadowsocks";
-echo -e " [ 06 ] ► Menu ShadowsocksR";
-echo -e " [ 07 ] ► Menu Wireguard";
-echo -e " [ 08 ] ► Menu Socks 4/5";
-echo -e " [ 09 ] ► Menu HTTP";
-echo -e "";
-echo -e "════════════════════════════════════════════";
-echo -e "";
-echo -e " [ 10 ] ► Speedtest";
-echo -e " [ 11 ] ► Cek RAM";
-echo -e " [ 12 ] ► Cek Bandwith";
-echo -e " [ 13 ] ► Menukar Timezone";
-echo -e " [ 14 ] ► Autokill Menu";
-echo -e " [ 15 ] ► Tukar Domain";
-echo -e " [ 16 ] ► Renew Certificate";
-echo -e " [ 17 ] ► Tambah Email untuk Backup";
-echo -e " [ 18 ] ► Backup";
-echo -e " [ 19 ] ► Restore";
-echo -e " [ 20 ] ► Autobackup";
-echo -e " [ 21 ] ► Tukar DNS";
-echo -e " [ 22 ] ► Tukar Port";
-echo -e " [ 23 ] ► Cek Maklumat Servis & Sistem";
-echo -e " [ 24 ] ► Cek versi skrip";
-echo -e " [ 25 ] ► Reboot Server";
-echo -e " [ 26 ] ► Restart Semua Servis";
-echo -e " [ 27 ] ► Update Skrip";
-echo -e " [ 28 ] ► Melajukan VPS";
-echo -e " [ 29 ] ► Mengaktifkan IPV6";
-echo -e " [ 30 ] ► Matikan IPV6";
+-------------------------------------------
 
 
-
-
-
-
-
+echo -e "═══════════════════════════════════════════════════════════";
+echo -e "              [ Maklumat Sistem & Bandwith ]               ";
+echo -e "═══════════════════════════════════════════════════════════";
+echo -e "  Server Uptime      ► $( uptime -p  | cut -d " " -f 2-10000 ) ";
+echo -e "  Waktu Sekarang     ► $( date -d "0 days" +"%d-%m-%Y | %X" )";
+echo -e "  Nama ISP           ► $ISP";
+echo -e "  Operating Sistem   ► $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )";
+echo -e "  Bandar             ► $CITY";
+echo -e "  Ip Vps             ► $IPVPS";
+echo -e "  Domain             ► $domain";
+echo -e "  Telegram           ► $tele";
+echo -e "  Versi Xray         ► $verxray";                                                                                                                                                                                                 
+echo -e "  Versi Skrip        ► $Sver";
+echo -e "  Certificate status ► Expire pada ${tlsStatus} hari";
+echo -e "═══════════════════════════════════════════════════════════";
+echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   ";
+echo -e "  Download      ►$dtoday       ►$dyest         ►$dmon      ";
+echo -e "  Upload        ►$utoday       ►$uyest         ►$umon      ";
+echo -e "  Total         ►$ttoday       ►$tyest         ►$tmon      ";
+echo -e "═══════════════════════════════════════════════════════════";
+echo -e "                      [ Menu Utama ]                       ";
+echo -e "═══════════════════════════════════════════════════════════";
+echo -e "  [ 01 ] ► Menu SSH & OpenVPN  [ 06 ] ► Menu ShadowsocksR  ";
+echo -e "  [ 02 ] ► Menu Vmess          [ 07 ] ► Menu Wireguard     ";
+echo -e "  [ 03 ] ► Menu Vless          [ 08 ] ► Menu Socks 4/5     ";
+echo -e "  [ 04 ] ► Menu Trojan         [ 09 ] ► Menu HTTP          ";
+echo -e "  [ 05 ] ► Menu Shadowsocks    [ 10 ] ► Menu Autokill      ";
+echo -e "═══════════════════════════════════════════════════════════";
+echo -e "  [ 10 ] ► Speedtest";
+echo -e "  [ 11 ] ► Cek RAM";
+echo -e "  [ 12 ] ► Cek Bandwith";
+echo -e "  [ 13 ] ► Menukar Timezone";
+echo -e "  [ 14 ] ► Autokill Menu";
+echo -e "  [ 15 ] ► Tukar Domain";
+echo -e "  [ 16 ] ► Renew Certificate";
+echo -e "  [ 17 ] ► Tambah Email untuk Backup";
+echo -e "  [ 18 ] ► Backup";
+echo -e "  [ 19 ] ► Restore";
+echo -e "  [ 20 ] ► Autobackup";
+echo -e "  [ 21 ] ► Tukar DNS";
+echo -e "  [ 22 ] ► Tukar Port";
+echo -e "  [ 23 ] ► Cek Maklumat Servis & Sistem";
+echo -e "  [ 24 ] ► Cek versi skrip";
+echo -e "  [ 25 ] ► Reboot Server";
+echo -e "  [ 26 ] ► Restart Semua Servis";
+echo -e "  [ 27 ] ► Update Skrip";
+echo -e "  [ 28 ] ► Melajukan VPS";
+echo -e "  [ 29 ] ► Mengaktifkan IPV6";
+echo -e "  [ 30 ] ► Matikan IPV6";
 echo -e "════════════════════════════════════════════════════════════";
-echo -e "                      [ Menu Utama ]                        ";
+echo -e "  Nama Client       ► $name";                                                                                                                                                                              
+echo -e "  Skrip Expire Pada ► $exp";    
 echo -e "════════════════════════════════════════════════════════════";
-echo -e "";
-echo -e "  [ 01 ] ► Menu SSH & OpenVPN  [ 06 ] ► Menu ShadowsocksR  "
-echo -e "  [ 02 ] ► Menu Vmess          [ 07 ] ► Menu Wireguard     "
-echo -e "  [ 03 ] ► Menu Vless          [ 08 ] ► Menu Socks 4/5     "
-echo -e "  [ 04 ] ► Menu Trojan         [ 09 ] ► Menu HTTP          "
-echo -e "  [ 05 ] ► Menu Shadowsocks    [ 10 ] ► Menu Autokill      "
-
-
-
-
-
-echo -e "${RED_BG}                     Addons Service                       ${NC}";
-echo -e "${GREEN}10${YELLOW})${NC}. Benchmark Speed ( Speedtest By Ookla )";
-echo -e "${GREEN}11${YELLOW})${NC}. Checking Ram Usage";
-echo -e "${GREEN}12${YELLOW})${NC}. Checking Bandwidth Usage";
-echo -e "${GREEN}13${YELLOW})${NC}. Change Timezone";
-echo -e "${GREEN}14${YELLOW})${NC}. Change License Key";
-echo -e "${GREEN}15${YELLOW})${NC}. Autokill Menu | For Pro Only";
-echo -e "${GREEN}16${YELLOW})${NC}. Change Domain / Host";
-
-echo -e "${GREEN}17${YELLOW})${NC}. Renew SSL Certificate";
-echo -e "${GREEN}18${YELLOW})${NC}. Add Email For Backup";
-echo -e "${GREEN}19${YELLOW})${NC}. Backup VPN Client";
-echo -e "${GREEN}20${YELLOW})${NC}. Restore VPN Client";
-echo -e "${GREEN}21${YELLOW})${NC}. Auto Backup VPN Client";
-echo -e "${GREEN}22${YELLOW})${NC}. DNS Changer";
-echo -e "${GREEN}23${YELLOW})${NC}. Change Port For SSH & XRay";
-echo -e "${GREEN}24${YELLOW})${NC}. System & Service Information";
-echo -e "${GREEN}25${YELLOW})${NC}. Check Script Version";
-echo -e "${GREEN}26${YELLOW})${NC}. Reboot Your Server";
-echo -e "${GREEN}27${YELLOW})${NC}. Restarting All Service";
-echo -e "${GREEN}28${YELLOW})${NC}. Update Your Script Version";
-echo -e "${GREEN}29${YELLOW})${NC}. SpeedUP Your VPS";
-echo -e "${GREEN}30${YELLOW})${NC}. Enable IPv6 Support";
-echo -e "${GREEN}31${YELLOW})${NC}. Disable IPv6 Support";
-echo -e "";
-
-read -p "Input Your Choose ( 1-31 ) : " choosemu
+read -p "► Sila masukkan nombor pilihan anda [1-30] : " choosemu
 
 case $choosemu in
-    # // VPN Menu
     1) ssh-menu ;;
     2) vmess-menu ;;
     3) vless-menu ;;
@@ -396,8 +303,6 @@ case $choosemu in
     7) wg-menu ;;
     8) socks-menu ;;
     9) http-menu ;;
-
-    # // Other
     10) clear && speedtest ;;
     11) clear && ram-usage ;;
     12) clear && vnstat ;;
@@ -446,17 +351,17 @@ case $choosemu in
         systemctl stop xray-mini@nontls > /dev/null 2&>1
 
         # // Input Domain To VPS
-        echo "$new_domains" > /etc/sshwsvpn/domain.txt;
-        domain=$( cat /etc/sshwsvpn/domain.txt );
+        echo "$new_domains" > /etc/kaizenvpn/domain.txt;
+        domain=$( cat /etc/kaizenvpn/domain.txt );
 
         # // Making Certificate
         clear;
         echo -e "${OKEY} Starting Generating Certificate";
         rm -rf /root/.acme.sh;
         mkdir -p /root/.acme.sh;
-        wget -q -O /root/.acme.sh/acme.sh "https://releases.sshwsvpn.me/vpn-script/Resource/Core/acme.sh";
+        wget -q -O /root/.acme.sh/acme.sh "https://releases.kaizenvpn.me/vpn-script/Resource/Core/acme.sh";
         chmod +x /root/.acme.sh/acme.sh;
-        sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@sshwsvpn.me;
+        sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
         sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
 
         # // Successfull Change Path to xray
@@ -479,7 +384,7 @@ case $choosemu in
         exit 1;
     ;;
     16) 
-        domain=$(cat /etc/sshwsvpn/domain.txt);
+        domain=$(cat /etc/kaizenvpn/domain.txt);
         if [[ $domain == "" ]]; then
             clear;
             echo -e "${ERROR} VPS Having Something Wrong";
@@ -496,7 +401,7 @@ case $choosemu in
             echo -e "${ERROR} Please Input Email to contitune";
             exit 1;
         fi
-        echo $email_input > /etc/sshwsvpn/email.txt
+        echo $email_input > /etc/kaizenvpn/email.txt
         clear;
         echo -e "${OKEY} Successfull Set Email For Backup";
     ;;
@@ -555,7 +460,7 @@ case $choosemu in
         systemctl restart nginx; systemctl restart fail2ban; systemctl restart ssr-server; systemctl restart dropbear; systemctl restart ssh; systemctl restart stunnel4; systemctl restart sslh;
         clear; echo -e "${OKEY} Successfull Restarted All Service";
     ;;
-    27) cd /root/; wget -q -O /root/update.sh "https://releases.sshwsvpn.me/vpn-script/Stable/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
+    27) cd /root/; wget -q -O /root/update.sh "https://releases.kaizenvpn.me/vpn-script/Stable/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
     28)
             clear
             # // clearlog
@@ -621,7 +526,7 @@ case $choosemu in
     *)
         clear;
         sleep 2
-        echo -e "${ERROR} Please Input an valid number";
+        echo -e "${ERROR} Sila masukkan nombor yang betul!";
         menu;
     ;;
 esac        
