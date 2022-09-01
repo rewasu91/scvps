@@ -655,3 +655,5 @@ echo -e "${OKEY} Script Successfull Installed";
 # // Membuang fail yang tidak digunakan
 # ═════════════════════════════════════
 rm -rf /root/setup.sh
+sleep 3
+reboot
