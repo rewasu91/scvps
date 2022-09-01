@@ -299,13 +299,14 @@ wget -q -O /usr/local/sbin/changedomain "https://raw.githubusercontent.com/rewas
 wget -q -O /usr/local/sbin/renewcert "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/renewcert.sh"; chmod +x /usr/local/sbin/renewcert;
 wget -q -O /usr/local/sbin/addemailbackup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/addemailbackup.sh"; chmod +x /usr/local/sbin/addemailbackup;
 
+wget -q -O /usr/local/sbin/backup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/backup.sh"; chmod +x /usr/local/sbin/backup;
+wget -q -O /usr/local/sbin/restore "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/restore.sh"; chmod +x /usr/local/sbin/restore;
+wget -q -O /usr/local/sbin/autobackup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/autobackupbackup.sh"; chmod +x /usr/local/sbin/autobackup;
+
 wget -q -O /usr/local/sbin/speedtest "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/speedtest"; chmod +x /usr/local/sbin/speedtest;
 wget -q -O /usr/local/sbin/ram-usage "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ram-usage.sh"; chmod +x /usr/local/sbin/ram-usage;
 wget -q -O /usr/local/sbin/autokill-menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Autokill/menu.sh"; chmod +x /usr/local/sbin/autokill-menu;
 wget -q -O /usr/local/sbin/autoexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/autoexp.sh"; chmod +x /usr/local/sbin/autoexp;
-wget -q -O /usr/local/sbin/autobackup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/backup.sh"; chmod +x /usr/local/sbin/autobackup;
-wget -q -O /usr/local/sbin/backup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/backup.sh"; chmod +x /usr/local/sbin/backup;
-wget -q -O /usr/local/sbin/restore "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/restore.sh"; chmod +x /usr/local/sbin/restore;
 wget -q -O /usr/local/sbin/change-port "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/port-change.sh"; chmod +x /usr/local/sbin/change-port;
 wget -q -O /usr/local/sbin/clearlog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/clearlog.sh"; chmod +x /usr/local/sbin/clearlog;
 wget -q -O /usr/local/sbin/infonya "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/info.sh"; chmod +x /usr/local/sbin/infonya;
