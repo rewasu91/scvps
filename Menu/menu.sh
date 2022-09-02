@@ -218,9 +218,9 @@ versibash=$shellversion
 # // Clear Data
 # ═════════════
 clear;
-
+echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
-echo -e "${WBBG}              [ Maklumat Sistem & Bandwith ]               ${NC}";
+echo -e "${WBBG}                   [ Maklumat Sistem ]                     ${NC}";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  Server Uptime      ► $( uptime -p  | cut -d " " -f 2-10000 ) ";
 echo -e "  Waktu Sekarang     ► $( date -d "0 days" +"%d-%m-%Y | %X" )";
@@ -230,13 +230,15 @@ echo -e "  Bandar             ► $CITY";
 echo -e "  Ip Vps             ► $IPVPS";
 echo -e "  Domain             ► $domain";
 echo -e "  Versi Xray         ► Xray-Mini 1.5.5";
-echo -e "  Versi Skrip        ► $VERSION";
+echo -e "  Versi Skrip        ► V$VERSION ($EDITION)";
 echo -e "  Certificate status ► Expire pada ${tlsStatus} hari";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
+echo -e "${WBBG}                  [ Maklumat Bandwith ]                    ${NC}";
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   ";
-echo -e "  Download      $dtoday        $dyest          $dmon       ";
-echo -e "  Upload        $utoday        $uyest          $umon       ";
-echo -e "  Total         $ttoday        $tyest          $tmon       ";
+echo -e "  Download      $dtoday         $dyest          $dmon      ";
+echo -e "  Upload        $utoday         $uyest          $umon      ";
+echo -e "  Total         $ttoday         $tyest          $tmon      ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "${WBBG}                      [ Menu Utama ]                       ${NC}";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
@@ -266,7 +268,9 @@ echo -e "  ${GREEN}[ 27 ]${NC} ► Update Skrip";
 echo -e "  ${GREEN}[ 28 ]${NC} ► Melajukan VPS (Buang log & Cache)";
 echo -e "  ${GREEN}[ 29 ]${NC} ► Mengaktifkan IPV6";
 echo -e "  ${GREEN}[ 30 ]${NC} ► Matikan IPV6";
-echo -e "${CYAN}════════════════════════════════════════════════════════════${NC}";
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
+echo -e "${WBBG}                   [ Maklumat Client ]                     ${NC}";
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  Nama Client       ► $name";                                                                                                                                                                              
 echo -e "  Skrip Expire Pada ► $exp";    
 echo -e "${CYAN}════════════════════════════════════════════════════════════${NC}";
