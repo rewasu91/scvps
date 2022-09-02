@@ -175,23 +175,31 @@ ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
 # ════════════════════════
 wget -q -O /etc/kaizenvpn/Rules "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/rules.txt";
 clear;
+bacadulu ()
+{
 cat /etc/kaizenvpn/Rules;
 echo "";
-echo -e "Untuk meneruskan pemasangan skrip, sila baca dan setuju dengan peraturan kami dengan menaip '${YELLOW}okey${NC}'";
+echo -e "    Untuk meneruskan pemasangan skrip, sila baca dan ";
+echo -e "    anda perlu bersetuju dengan terma dan syarat kami.";
+echo -e "    Sekiranya anda bersetuju, sila taip '${YELLOW}okey${NC}'";
 echo "";
-read -p 'Sila taip 'okey' sebagai tanda setuju : ' accepted_rules;
+read -p '    Taip 'okey' sebagai tanda setuju : ' accepted_rules;
 if [[ $accepted_rules == "okey" ]]; then
     echo "";
-    echo -e "${OKEY} Anda telah bersetuju dengan peraturan kami. Sistem akan memulakan pemasangan skrip dalam masa 3 saat.";
-    sleep 3;
+    echo -e "    ${OKEY} Anda telah bersetuju dengan terma dan syarat kami.";
+    echo -e "    Sistem akan memulakan pemasangan skrip dalam masa 2 saat.";
+    sleep 2;
     clear;
 else
     rm -rf /etc/kaizenvpn/;
     rm -rf /usr/local/kaizenvpn/;
     echo "";
-    echo -e "${ERROR} Maaf, anda tidak boleh meneruskan pemasangan skrip kerana anda tidak bersetuju dengan peraturan kami.";
-    exit 1;
+    echo -e "    ${ERROR} Maaf, anda tidak boleh meneruskan pemasangan skrip";
+    echo -e "    kerana anda tidak bersetuju dengan peraturan kami.";
+    bacadulu
 fi 
+}
+bacadulu
 
 # ═══════════════════════
 # // Membuat folder local
@@ -448,9 +456,10 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}           [ Setting Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "[ ${GREEN}INFO${NC} ] Anda ingin menggunakan domain sendiri/domain KaizenVPN?";
-echo -e "[ ${YELLOW}*${NC} ] 1. Saya ingin menggunakan domain saya sendiri";
-echo -e "[ ${YELLOW}*${NC} ] 2. Saya ingin menggunakan domain yang disediakan oleh KaizenVPN";
+echo -e " ${PURPLE}Guna domain sendiri / domain automatik?${NC}";
+echo -e " ${GREEN}[ 01 ]${NC} ► Guna domain sendiri";
+echo -e " ${GREEN}[ 02 ]${NC} ► Guna domain automatik";
+
 echo -e "";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo "";
@@ -459,7 +468,7 @@ read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda${NC} (${YELLOW}1/
 # ══════════════════════════════════════════════
 # // Mengesahkan pilihan domain, samada 1 atau 2
 # ══════════════════════════════════════════════
-if [[ $choose_domain == "2" ]]; then # // Menggunakan domain KaizenVPN
+if [[ $choose_domain == "2" ]]; then # // Menggunakan domain automatik
 clear;
 echo -e "${OKEY} Mulai membuat certificate";
 rm -rf /root/.acme.sh;
