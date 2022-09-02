@@ -242,4 +242,4 @@ rm -f /root/xray-mini.sh;
 # // Selesai
 # ══════════
 clear;
-echo -e "${OKEY} Berjaya Memasang Servis XRay-Mini 1.5.5";
+echo -e "${OKEY} Berjaya Memasang Servis Xray-Mini 1.5.5";
