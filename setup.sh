@@ -58,7 +58,7 @@ export OS_ARCH=$( uname -m );
 # ═══════════════════════════════════
 # // String Untuk Membantu Pemasangan
 # ═══════════════════════════════════
-export VERSION="1.0";
+export VERSION="2.0";
 export EDITION="Stable";
 export AUTHER="KaizenVPN";
 export ROOT_DIRECTORY="/etc/kaizenvpn";
@@ -179,7 +179,7 @@ cat /etc/kaizenvpn/Rules;
 echo "";
 echo -e "Untuk meneruskan pemasangan skrip, sila baca dan setuju dengan peraturan kami dengan menaip '${YELLOW}okey${NC}'";
 echo "";
-read -p 'Sila taip 'okey' : ' accepted_rules;
+read -p 'Sila taip 'okey' sebagai tanda setuju : ' accepted_rules;
 if [[ $accepted_rules == "okey" ]]; then
     echo "";
     echo -e "${OKEY} Anda telah bersetuju dengan peraturan kami. Sistem akan memulakan pemasangan skrip dalam masa 3 saat.";
@@ -245,7 +245,7 @@ export TIME_NYA="$TIMEZONE";
 # ═══════════════════
 clear
 echo -e "${CYAN}═══════════════════════════════════════════════════${NC}
-   Selamat Datang ke KaizenVPN Skrip V1.0 Stable
+   Selamat Datang ke KaizenVPN Skrip V2.0 Stable
 Skrip ini akan memasang server vpn secara automatik
                  Owner : ${GREEN}KaizenVPN${NC}
         © Copyright 2022-2023 By ${GREEN}KaizenVpn${NC}
@@ -328,58 +328,6 @@ else
     exit 1;
 fi
 
-# ══════════════════════
-# // Menyemak IP Address
-# ══════════════════════
-if [[ $IP_NYA == "" ]]; then
-    echo -e "${ERROR} IP Address tidak berjaya dikesan";
-    exit 1;
-else
-    echo -e "${OKEY} IP Address berjaya dikesan [ ${GREEN}$IP_NYA${NC} ]";
-fi
-
-# ═══════════════
-# // Menyemak ISP
-# ═══════════════
-if [[ $ISP_NYA == "" ]]; then
-    echo -e "${ERROR} ISP tidak berjaya dikesan";
-    exit 1;
-else
-    echo -e "${OKEY} ISP berjaya dikesan [ ${GREEN}$ISP_NYA${NC} ]";
-fi
-
-# ══════════════════
-# // Menyemak Negara
-# ══════════════════
-if [[ $COUNTRY_NYA == "" ]]; then
-    echo -e "${ERROR} Negara tidak berjaya dikesan";
-    exit 1;
-else
-    echo -e "${OKEY} Negara berjaya dikesan [ ${GREEN}$COUNTRY_NYA${NC} ]";
-fi
-
-# ══════════════════
-# // Menyemak Negeri
-# ══════════════════
-if [[ $REGION_NYA == "" ]]; then
-    echo -e "${ERROR} Negari tidak berjaya dikesan";
-    exit 1;
-else
-    echo -e "${OKEY} Negari berjaya dikesan [ ${GREEN}$REGION_NYA${NC} ]";
-fi
-# ══════════════════
-# // Menyemak Bandar
-# ══════════════════
-if [[ $CITY_NYA == "" ]]; then
-    echo -e "${ERROR} Bandar tidak berjaya dikesan";
-    exit 1;
-else
-    echo -e "${OKEY} Bandar berjaya dikesan [ ${GREEN}$CITY_NYA${NC} ]";
-fi
-echo -e "${YELLOW}══════════════════════════════════════════════════${NC}"
-echo "";
-#read -p "$(echo -e "${YELLOW} ~~~>${NC}") Sila masukkan Lesen Skrip anda : " lcn_key_inputed
-
 # ═══════════════
 # // Maklumat Ram
 # ═══════════════
@@ -413,7 +361,7 @@ clear && echo -e "${OKEY} Memulakan proses pemasangan skrip.";
 # ═══════════════════
 # // Info Versi Skrip
 # ═══════════════════
-printf 'VERSION=1.0\nPATCH="4"\nNAME=Stable\nVERSION_ID="KaizenV1"' > /etc/kaizenvpn/version
+printf 'VERSION=2.0\nPATCH="4"\nNAME=Stable\nVERSION_ID="KaizenV2"' > /etc/kaizenvpn/version
 
 # ════════════════════════════════════
 # // Membuang Apache / Nginx kalau ada
