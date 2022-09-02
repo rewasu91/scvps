@@ -412,9 +412,9 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}                  [ Maklumat Bandwith ]                    ${NC}";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   ";
-echo -e "  Download      $dtoday        $dyest          $dmon       ";
-echo -e "  Upload        $utoday        $uyest          $umon       ";
-echo -e "  Total         $ttoday        $tyest          $tmon       ";
+echo -e "  Download      $dtoday         $dyest          $dmon      ";
+echo -e "  Upload        $utoday         $uyest          $umon      ";
+echo -e "  Total         $ttoday         $tyest          $tmon      ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "${WBBG}                     [ Servis Status ]                      {NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
