@@ -411,7 +411,7 @@ echo -e "  Certificate status ► Expire pada ${tlsStatus} hari";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "${WBBG}                  [ Maklumat Bandwith ]                    ${NC}";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
-echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   ";
+echo -e "  ${GREEN}Traffic       Hari Ini       Kelmarin        Bulan Ini${NC}   ";
 echo -e "  Download      $dtoday         $dyest          $dmon      ";
 echo -e "  Upload        $utoday         $uyest          $umon      ";
 echo -e "  Total         $ttoday         $tyest          $tmon      ";
