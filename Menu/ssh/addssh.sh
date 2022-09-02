@@ -219,6 +219,7 @@ today=`date -d "0 days" +"%Y-%m-%d"`;
 useradd -e `date -d "$Jumlah_Hari days" +"%Y-%m-%d"` -s /bin/false -M $Username;
 echo -e "$Password\n$Password\n"|passwd $Username &> /dev/null;
 exp=`date -d "$Jumlah_Hari days" +"%Y-%m-%d"`;
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 
 # // Make Config Folder
 mkdir -p /etc/kaizenvpn/ssh/;
