@@ -191,7 +191,7 @@ apt install python -y;
 # // ShadowsocksR Setup
 # ═════════════════════
 cd /etc/kaizenvpn/ssr-server/;
-wget -q -O /etc/kaizenvpn/ssr-server/SSR-Server.zip "https://raw.githubusercontent.com/rewasu91/setup/main/Resource/Core/SSR-Server.zip";
+wget -q -O /etc/kaizenvpn/ssr-server/SSR-Server.zip "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/SSR-Server.zip";
 unzip -o SSR-Server.zip > /dev/null 2>&1;
 chmod +x jq;
 rm -f SSR-Server.zip;
