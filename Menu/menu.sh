@@ -58,7 +58,7 @@ export OS_ARCH=$( uname -m );
 # ═══════════════════════════════════
 # // String Untuk Membantu Pemasangan
 # ═══════════════════════════════════
-export VERSION="1.0";
+export VERSION="2.0";
 export EDITION="Stable";
 export AUTHER="KaizenVPN";
 export ROOT_DIRECTORY="/etc/kaizenvpn";
@@ -202,8 +202,6 @@ tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($
 # // Getting CPU Information
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
-Sver=$(cat /home/version)
-tele=$(cat /home/contact)
 JAM=$(date +%r)
 DAY=$(date +%A)
 DATE=$(date +%d.%m.%Y)
@@ -232,7 +230,7 @@ echo -e "  Bandar             ► $CITY";
 echo -e "  Ip Vps             ► $IPVPS";
 echo -e "  Domain             ► $domain";
 echo -e "  Versi Xray         ► $verxray";                                                                                                                                                                                                 
-echo -e "  Versi Skrip        ► $Sver";
+echo -e "  Versi Skrip        ► $VERSION";
 echo -e "  Certificate status ► Expire pada ${tlsStatus} hari";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  Traffic       Hari Ini       Kelmarin        Bulan Ini   ";
