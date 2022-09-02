@@ -172,6 +172,10 @@ echo -e "";
         fi
         if [[ $dns2nya == "" ]]; then
             echo "nameserver $dns1nya" > /etc/resolv.conf
+	    echo "nameserver $dns1nya" > /etc/resolvconf/resolv.conf.d/head
+	    systemctl stop resolvconf.service
+	    systemctl enable resolvconf.service
+	    systemctl start resolvconf.service
             clear;
             echo "";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -183,7 +187,12 @@ echo -e "";
             echo -e "${OKEY} Berjaya! DNS anda telah ditukar kepada $dns1nya";
         else
             echo "nameserver $dns1nya" > /etc/resolv.conf
+	    echo "nameserver $dns1nya" > /etc/resolvconf/resolv.conf.d/head
             echo "nameserver $dns2nya" >> /etc/resolv.conf
+	    echo "nameserver $dns2nya" > /etc/resolvconf/resolv.conf.d/head
+	    systemctl stop resolvconf.service
+	    systemctl enable resolvconf.service
+	    systemctl start resolvconf.service
             clear;
             echo "";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
