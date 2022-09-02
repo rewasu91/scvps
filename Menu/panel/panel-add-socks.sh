@@ -58,8 +58,8 @@ export OS_ARCH=$( uname -m );
 # ═══════════════════════════════════
 # // String Untuk Membantu Pemasangan
 # ═══════════════════════════════════
-export VERSION="1.0";
-export EDITION="Stable";
+export VERSION="2.0";
+export EDITION="Multiport Edition";
 export AUTHER="KaizenVPN";
 export ROOT_DIRECTORY="/etc/kaizenvpn";
 export CORE_DIRECTORY="/usr/local/kaizenvpn";
