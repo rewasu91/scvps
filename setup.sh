@@ -59,7 +59,7 @@ export OS_ARCH=$( uname -m );
 # // String Untuk Membantu Pemasangan
 # ═══════════════════════════════════
 export VERSION="2.0";
-export EDITION="Stable";
+export EDITION="Multiport Edition";
 export AUTHER="KaizenVPN";
 export ROOT_DIRECTORY="/etc/kaizenvpn";
 export CORE_DIRECTORY="/usr/local/kaizenvpn";
@@ -361,7 +361,7 @@ clear && echo -e "${OKEY} Memulakan proses pemasangan skrip.";
 # ═══════════════════
 # // Info Versi Skrip
 # ═══════════════════
-printf 'VERSION=2.0\nPATCH="4"\nNAME=Stable\nVERSION_ID="KaizenV2"' > /etc/kaizenvpn/version
+printf 'VERSION=2.0\nNAME=Multiport Edition' > /etc/kaizenvpn/version
 
 # ════════════════════════════════════
 # // Membuang Apache / Nginx kalau ada
