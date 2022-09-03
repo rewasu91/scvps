@@ -225,7 +225,10 @@ clear;
 # // Menu Autokill
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}              [ Menu Autokill ]             ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -239,9 +242,10 @@ echo -e " ${GREEN}[ 05 ]${NC} ► Set SSH Multilogin Autokill";
 echo -e " ${GREEN}[ 06 ]${NC} ► Mengaktifkan Servis Autokill";
 echo -e " ${GREEN}[ 07 ]${NC} ► Menghentikan Servis Autokill";
 echo -e " ${GREEN}[ 08 ]${NC} ► Restart Servis Autokill"
+echo -e " ${GREEN}[ 09 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-8] : " selection_mu;
+read -p "► Sila masukkan nombor pilihan anda [1-9] : " selection_mu;
 
 case $selection_mu in
     1)
@@ -413,6 +417,9 @@ case $selection_mu in
         clear;
         echo -e "${OKEY} Berjaya restart servis Autokill";
         exit 1;
+    ;;
+    9)
+       menu;
     ;;
     *)
         echo -e "${ERROR} Sila masukkan nombor yang betul!";
