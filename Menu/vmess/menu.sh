@@ -159,10 +159,10 @@ clear;
 # // Menu Vmess
 # ═════════════
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}               [ Menu Vmess ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
