@@ -615,5 +615,6 @@ echo -e "${OKEY} Script Successfull Installed";
 # // Membuang fail yang tidak digunakan
 # ═════════════════════════════════════
 rm -rf /root/setup.sh
+./ssh-ssl.sh;
 sleep 3
 reboot
