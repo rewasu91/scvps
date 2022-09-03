@@ -159,7 +159,10 @@ clear;
 # // Maklumat akaun yang sudah dibuat
 # ═══════════════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}          [ Maklumat Akaun HTTP ]           ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
