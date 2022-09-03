@@ -172,7 +172,7 @@ echo -e "";
         if [[ $new_domains == "" ]]; then
             sleep 2;
             echo -e "  ► ${EROR}Sila masukkan Domain baru anda !";
-            menu;
+            changedomain;
         fi
 
         # // Stopping Xray nontls
