@@ -191,8 +191,8 @@ cd /root
 zip -r $IP_NYA-$date.zip backup > /dev/null 2>&1
 
 # // Upload to rclone
-rclone copy /root/$IP_NYA-$date.zip dr:backup/
-url=$(rclone link dr:backup/$IP_NYA-$date.zip)
+rclone copy /root/$IP_NYA-$date.zip WildyDev21:backup/
+url=$(rclone link WildyDev21:backup/$IP_NYA-$date.zip)
 F_ID=(`echo $url | grep '^https' | cut -d'=' -f2`)
 
 if [[ $JAMNYA == "08" ]]; then
