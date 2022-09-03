@@ -162,22 +162,25 @@ ssl_xray=$( cat /etc/xray-mini/tls.json | grep -w port | awk '{print $2}' | head
 # // Tukar Port
 # ═════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}               [ Tukar Port ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 echo -e " ${GREEN}[ 01 ]${NC} ► Tukar Port SSH | ${ssh_ssl}";
 echo -e " ${GREEN}[ 02 ]${NC} ► Tukar Port Xray TLS | ${ssl_xray}";
+echo -e " ${GREEN}[ 03 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-2] : " choosemu_lah
+read -p "  ► Sila masukkan nombor pilihan anda [1-3] : " choosemu_lah
 
 if [[ $choosemu_lah == "1" ]]; then
-        read -p "► Sila masukkan Port baru SSH : " new_port;
+        read -p "  ► Sila masukkan Port baru SSH : " new_port;
         if [[ $new_port == "" ]]; then
-            clear;
-            echo -e "${ERROR} Sila masukkan Port baru SSH !";
+            echo -e "  ${ERROR} Sila masukkan Port baru SSH !";
             change-port;
         else
             sed -i "s/127.0.0.1:${ssh_ssl}/127.0.0.1:${new_port}/g" /etc/stunnel5/stunnel5.conf;
@@ -186,38 +189,46 @@ if [[ $choosemu_lah == "1" ]]; then
             systemctl restart sslh;
             systemctl restart stunnel5;
         fi
-            clear;
-            echo "";
+	    clear;
+	    echo -e "";
+	    echo -e "";
+	    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	    echo -e "";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "${WBBG}                [ Tukar Port ]              ${NC}";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "";
-            echo -e "${OKEY} Port SSH : ${new_port}";
+            echo -e "  ${OKEY} Port SSH : ${new_port}";
             sleep 1;
-            echo -e "${OKEY} Berjaya! Port SSH telah ditukar kepada ${new_port}";
+            echo -e "  ${OKEY} Berjaya! Port SSH telah ditukar kepada ${new_port}";
 elif [[ $choosemu_lah == "2" ]]; then
-        clear;
-        read -p "Sila masukkan Port baru Xray TLS : " new_port
+        read -p "  ► Sila masukkan Port baru Xray TLS : " new_port
         if [[ $new_port == "" ]]; then
             clear;
-            echo -e "${ERROR} Sila masukkan Port baru Xray TLS !";
+            echo -e "  ${ERROR} Sila masukkan Port baru Xray TLS !";
             change-port;
         else
             sed -i "s/${ssl_xray}/${new_port}/g" /etc/xray-mini/tls.json;
             systemctl daemon-reload;
             systemctl restart xray-mini@tls;
         fi
-            clear;
-            echo "";
+	    clear;
+	    echo -e "";
+	    echo -e "";
+	    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	    echo -e "";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "${WBBG}                [ Tukar Port ]              ${NC}";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "";
-            echo -e "${OKEY} Port Xray TLS : ${new_port}";
+            echo -e "  ${OKEY} Port Xray TLS : ${new_port}";
             sleep 1;
-            echo -e "${OKEY} Berjaya! Port Xray TLS telah ditukar kepada ${new_port}"; 
+            echo -e "  ${OKEY} Berjaya! Port Xray TLS telah ditukar kepada ${new_port}"; 
+elif [[ $choosemu_lah == "3" ]]; then
+        clear;
+	menu;
 else
     clear;
-    echo -e "${ERROR} Sila masukkan nombor yang betul !";
+    echo -e "  ${ERROR} Sila masukkan nombor yang betul !";
     change-port;
 fi
