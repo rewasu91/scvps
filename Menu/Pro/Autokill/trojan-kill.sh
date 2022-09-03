@@ -178,12 +178,15 @@ fi
 # // Start
 # ════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Setting Trojan Autokill ]        ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo "$(date) Autokill Trojan Multilogin Versi 1.0 Stable.";
+echo "$(date) Autokill Trojan Multilogin Versi 2.0 (Multiport).";
 echo "$(date) Dipasang oleh KaizenVPN.";
 echo "$(date) Memulakan Servis Trojan Autokill.";
 
