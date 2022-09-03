@@ -159,15 +159,18 @@ clear;
 # // Maklumat akaun yang sudah dibuat
 # ═══════════════════════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}   [ Maklumat Akaun Yang Sudah Dibuat ]     ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username yang ingin disemak maklumatnya : " Pengguna;
+read -p "  ► Sila masukkan Username yang ingin disemak maklumatnya : " Pengguna;
 
 if [[ $Pengguna == "root" ]]; then
-    echo -e "${ERROR} Maaf, akaun Root tidak boleh dipadam !";
+    echo -e "  ${ERROR} Maaf, akaun Root tidak boleh dipadam !";
     exit 1;
 fi
 if getent passwd $Pengguna > /dev/null 2>&1; then
@@ -178,9 +181,9 @@ tglexp=`date -d @$userexpireinseconds +"%Y-%m-%d"`;
 clear;
 cat /etc/kaizenvpn/ssh/${Pengguna}/config.log;
 echo "";
-echo -e "${INFO} Selesai export config untuk akaun [ ${YELLOW}${Pengguna}${NC} ]";
+echo -e "  ${INFO} Selesai export config untuk akaun [ ${YELLOW}${Pengguna}${NC} ]";
 else
         clear;
-        echo -e "${ERROR} Username ( ${YELLOW}$Pengguna${NC} ) tidak wujud !";
+        echo -e "  ${ERROR} Username ( ${YELLOW}$Pengguna${NC} ) tidak wujud !";
         exit 1
 fi
