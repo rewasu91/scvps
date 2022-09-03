@@ -178,12 +178,15 @@ fi
 # // Start
 # ════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "${WBBG}    [ Setting Shadowsocks Autokill ]      ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo "$(date) Autokill Shadowsocks Multilogin Versi 1.0 Stable.";
+echo "$(date) Autokill Shadowsocks Multilogin Versi 2.0";
 echo "$(date) Dipasang oleh KaizenVPN.";
 echo "$(date) Memulakan Servis Shadowsocks Autokill.";
 
