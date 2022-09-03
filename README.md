@@ -7,6 +7,13 @@ Autoskrip KaizenVPN
 <p align="center"><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%209&message=Stretch&color=purple"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2010&message=Buster&color=purple"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2011&message=Bulsseye&color=purple"> </p><p align="center"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2018&message=Lts&color=red"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2020&message=Lts&color=red"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2021&message=Lts&color=red">
 </p>
 
+## ⏩ MAKLUMAT AUTOSKRIP ⏪
+<b>
+💵 Harga Sewa Autoskrip : 1 IP RM10 untuk sebulan 💵 <br>
+<br>
+♦️ PM Telegram :: https://t.me/KaizenA <br>
+ <br>
+
 ### STEP PERTAMA
 Sila copy skrip dibawah dan paste kedalam VPS anda. Selepas selesai, sistem akan reboot sebentar. Sila tunggu sistem reboot, kemudian sambung step kedua dibawah.
 
