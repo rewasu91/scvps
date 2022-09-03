@@ -159,10 +159,10 @@ clear;
 # // Link Config Akaun Vmess
 # ══════════════════════════
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}        [ Link Config Akaun Vmess ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
