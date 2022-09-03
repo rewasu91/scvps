@@ -159,7 +159,10 @@ clear;
 # // Link Config Akaun Trojan
 # ═══════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Link Config Akaun Trojan ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
