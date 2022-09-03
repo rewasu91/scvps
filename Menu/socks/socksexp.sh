@@ -182,13 +182,17 @@ if [[ $sisa_hari -lt 1 ]]; then
     systemctl restart xray-mini@socks;
 
     # // Successfull Deleted Expired Client
-    echo "";
+    clear;
+    echo -e "";
+    echo -e "";
+    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+    echo -e "";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
     echo -e "${WBBG}     [ Memadam Akaun Expire Socks 4/5 ]     ${NC}";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
     echo -e "";
-    echo "Username : $username | Expire Pada : $expired | Dipadam Pada : $now" >> /etc/kaizenvpn/socks-expired-deleted.db;
-    echo "Username : $username | Expire Pada : $expired | Dipadam Pada : $now";
+    echo "  Username : $username | Expire Pada : $expired | Dipadam Pada : $now" >> /etc/kaizenvpn/socks-expired-deleted.db;
+    echo "  Username : $username | Expire Pada : $expired | Dipadam Pada : $now";
 else
     Skip="true";
 fi
