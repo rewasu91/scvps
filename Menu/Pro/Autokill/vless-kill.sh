@@ -186,9 +186,9 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}       [ Setting Vless Autokill ]         ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo "$(date) Autokill Vless Multilogin Versi 2.0 (Multiport).";
-echo "$(date) Dipasang oleh KaizenVPN.";
-echo "$(date) Memulakan Servis Vless Autokill.";
+echo "  $(date) Autokill Vless Multilogin Versi 2.0 (Multiport).";
+echo "  $(date) Dipasang oleh KaizenVPN.";
+echo "  $(date) Memulakan Servis Vless Autokill.";
 
 while true; do
 sleep 30
