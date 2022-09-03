@@ -159,7 +159,10 @@
 	# // Membuat Akaun Percubaan SSH & OpenVPN
 	# ════════════════════════════════════════
 	clear;
-	echo "";
+	echo -e ""
+	echo -e ""
+	cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+	echo -e ""
 	echo -e "${CYAN}════════════════════════════════════════════${NC}";
 	echo -e "${WBBG} [ Membuat Akaun Percubaan SSH & OpenVPN ]  ${NC}";
 	echo -e "${CYAN}════════════════════════════════════════════${NC}";
