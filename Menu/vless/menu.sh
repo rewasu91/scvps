@@ -167,7 +167,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}               [ Menu Vless ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e " ${CYAN}Vless GRPC, WS TLS & WS NON TLS${NC}";
+echo -e " ${CYAN}Vless Grpc, Ws Tls & Ws Non Tls${NC}";
 echo -e " ${GREEN}[ 01 ]${NC} ► Membuat akaun";
 echo -e " ${GREEN}[ 02 ]${NC} ► Membuat akaun percubaan";
 echo -e " ${GREEN}[ 03 ]${NC} ► Memadam akaun";
