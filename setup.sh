@@ -470,6 +470,8 @@ read -p "$( echo -e "${GREEN}Sila masukkan nombor pilihan anda${NC} (${YELLOW}1/
 # ══════════════════════════════════════════════
 if [[ $choose_domain == "2" ]]; then # // Menggunakan domain automatik
 clear;
+wget https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/freedomain.sh && chmod +x freedomain.sh && ./freedomain.sh
+clear;
 echo -e "${OKEY} Mulai membuat certificate";
 rm -rf /root/.acme.sh;
 mkdir -p /root/.acme.sh;
@@ -487,6 +489,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
+domain=$( cat /etc/kaizenvpn/domain.txt );
 echo -e "${OKEY} Domain anda : $domain";
 sleep 2;
 clear;
