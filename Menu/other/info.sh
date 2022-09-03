@@ -467,7 +467,7 @@ echo -e "  SSH                 ► ${SSH_STT}	|	Port	► ${openssh}";
 echo -e "  Dropbear            ► ${DROPBEAR_STT}	|	Port	► ${dropbear1},${dropbear2}";	
 echo -e "  Stunnel4            ► ${STUNNEL4_STT}	|	Port	► ${stunnel_dropbear}";
 echo -e "  OpenVPN TCP         ► ${OVPN_TCP}	|	Port	► ${ovpn_tcp}";
-echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	|	Port	► ${ovpn_udp";
+echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	|	Port	► ${ovpn_udp}";
 echo -e "  OpenVPN SSL         ► ${OVPNSTUNNEL4_STT}	|	Port	► ${stunnel_ovpn_tcp}";
 echo -e "  OHP OpenSSH         ► ${OHP_1}	|	Port	► ${ohp_1}";
 echo -e "  OHP Dropbear        ► ${OHP_2}	|	Port	► ${ohp_2}";
