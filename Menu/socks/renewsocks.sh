@@ -159,7 +159,10 @@ clear;
 # // Perbaharui Akaun 
 # ═══════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Perbaharui Akaun Socks 4/5 ]        ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -185,7 +188,7 @@ clear;
 read -p " Tambah berapa hari? : " Jumlah_Hari;
 if [[ $Jumlah_Hari == "" ]]; then
     clear;
-    echo -e "${ERROR} Sila taip ingin tambah berapa hari!";
+    echo -e "  ${ERROR} Sila taip ingin tambah berapa hari!";
     exit 1;
 fi
 
@@ -202,9 +205,12 @@ sed -i "/\b$client\b/d" /etc/xray-mini/client.conf;
 echo -e "Socks $client $exp4" >> /etc/xray-mini/client.conf;
 
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Perbaharui Akaun Socks 4/5 ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "${OKEY} Akaun ( ${YELLOW}${client}${NC} ) telah berjaya diperbaharui dan expire pada ( ${YELLOW}$exp4${NC} )";
+echo -e "  ${OKEY} Akaun ( ${YELLOW}${client}${NC} ) telah berjaya diperbaharui dan expire pada ( ${YELLOW}$exp4${NC} )";
