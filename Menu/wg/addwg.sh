@@ -159,15 +159,18 @@ clear;
 # // Membuat Wireguard
 # ════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}        [ Membuat Akaun Wireguard ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username            : " Username;
+read -p "  ► Sila masukkan Username            : " Username;
 if [[ $Username == "" ]]; then
     clear;
-    echo -e "${EROR} Sila masukkan Username !";
+    echo -e "  ${EROR} Sila masukkan Username !";
     exit 1;
 fi
 
@@ -175,12 +178,12 @@ if [[ $( cat /etc/wireguard/wg0.conf | grep -w $Username ) == "" ]]; then
     Skip=true;
 else
     clear;
-    echo -e "${ERROR} User ( ${YELLOW}$Username${NC} ) sudah dipakai !";
+    echo -e "  ${ERROR} User ( ${YELLOW}$Username${NC} ) sudah dipakai !";
     exit 1;
 fi
 
 # // Read Expired Date
-read -p "► Sila masukkan Tempoh Aktif (hari) : " Jumlah_Hari;
+read -p "  ► Sila masukkan Tempoh Aktif (hari) : " Jumlah_Hari;
 
 # // Count Expired Date
 exp=`date -d "$Jumlah_Hari days" +"%Y-%m-%d"`;
