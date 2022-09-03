@@ -411,10 +411,15 @@ dyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $2" "substr ($3, 1, 1)}
 uyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $5" "substr ($6, 1, 1)}')"
 tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
 
-# // Download/Upload current month
-dmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $3" "substr ($4, 1, 1)}')"
-umon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $6" "substr ($7, 1, 1)}')"
-tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($10, 1, 1)}')"
+# Debian 10// Download/Upload current month
+# dmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $3" "substr ($4, 1, 1)}')"
+# umon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $6" "substr ($7, 1, 1)}')"
+# tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($10, 1, 1)}')"
+
+# Debian 11// Download/Upload current month
+dmon="$(vnstat -i eth0 -m | grep "`date +"%Y-%m"`" | awk '{print $2" "substr ($3, 1, 1)}')"
+umon="$(vnstat -i eth0 -m | grep "`date +"%Y-%m"`" | awk '{print $5" "substr ($6, 1, 1)}')"
+tmon="$(vnstat -i eth0 -m | grep "`date +"%Y-%m"`" | awk '{print $8" "substr ($9, 1, 1)}')"
 
 # // Getting CPU Information
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
