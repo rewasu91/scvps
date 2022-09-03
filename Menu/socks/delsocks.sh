@@ -159,7 +159,10 @@ clear;
 # // Memadam Akaun 
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Memadam Akaun Socks 4/5 ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -185,7 +188,10 @@ rm -rf /etc/kaizenvpn/socks/${client};
 sed -i "/\b$client\b/d" /etc/xray-mini/client.conf;
 systemctl restart xray-mini@socks;
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Memadam Akaun Socks 4/5 ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
