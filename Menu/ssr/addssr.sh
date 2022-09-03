@@ -154,7 +154,10 @@ export TIME_NYA="$TIMEZONE";
 # // Pilih Protocols
 # ══════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}           [ Menu ShadowsocksR ]            ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -164,9 +167,11 @@ echo -e " ${GREEN}[ 01 ]${NC} ► origin";
 echo -e " ${GREEN}[ 02 ]${NC} ► auth_sha1";
 echo -e " ${GREEN}[ 03 ]${NC} ► auth_sha1_v2";
 echo -e " ${GREEN}[ 04 ]${NC} ► auth_sha1_v4";
+echo -e " ${GREEN}[ 05 ]${NC} ► Kembali ke menu ShadowsocksR";
+echo -e " ${GREEN}[ 06 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-4] : " choose_protocols;
+read -p "► Sila masukkan nombor pilihan anda [1-6] : " choose_protocols;
 
 case $choose_protocols in
     1) # Origin
@@ -181,6 +186,12 @@ case $choose_protocols in
     4) # auth_sha1_v4
         Protocols="auth_sha1_v4";
     ;;
+    5)
+       ssr-menu;
+    ;;
+    6)
+       menu;
+    ;;
     *) # No Choose
         clear;
         echo -e "${ERROR} Sila pilih salah satu protocols !";
@@ -192,7 +203,10 @@ esac
 # // Pilih Obfs
 # ════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}           [ Menu ShadowsocksR ]            ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -203,9 +217,11 @@ echo -e " ${GREEN}[ 02 ]${NC} ► http_simple";
 echo -e " ${GREEN}[ 03 ]${NC} ► http_post";
 echo -e " ${GREEN}[ 04 ]${NC} ► tls_simple";
 echo -e " ${GREEN}[ 05 ]${NC} ► tls1.2_ticket_auth";
+echo -e " ${GREEN}[ 06 ]${NC} ► Kembali ke menu ShadowsocksR";
+echo -e " ${GREEN}[ 07 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-5] : " choose_obfs;
+read -p "► Sila masukkan nombor pilihan anda [1-7] : " choose_obfs;
 
 case $choose_obfs in
     1) # plain
@@ -222,6 +238,12 @@ case $choose_obfs in
     ;;
     5) # tls1.2_ticket_auth_compatible
         obfs="tls1.2_ticket_auth_compatible";
+    ;;
+    6)
+       ssr-menu;
+    ;;
+    7)
+       menu;
     ;;
     *) # No Choose
         clear;
