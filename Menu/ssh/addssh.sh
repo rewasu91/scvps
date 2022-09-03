@@ -158,19 +158,21 @@ clear;
 # ════════════════
 # // Membuat Akaun
 # ════════════════
-clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Membuat Akaun SSH & OpenVPN ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username            : " Username;
+read -p "  ► Sila masukkan Username            : " Username;
 Username="$(echo ${Username} | sed 's/ //g' | tr -d '\r' | tr -d '\r\n' )";
 
 # // Validate Input
 if [[ $Username == "" ]]; then
     clear;
-    echo -e "${EROR} Sila masukkan Username !";
+    echo -e "  ${EROR} Sila masukkan Username !";
     exit 1;
 fi
 
@@ -179,12 +181,12 @@ if [[ $( cat /etc/shadow | cut -d: -f1,8 | sed /:$/d | grep -w $Username ) == ""
     Skip="true";
 else
     clear;
-    echo -e "${ERROR} User ( ${YELLOW}$Username${NC} ) sudah dipakai !";
+    echo -e "  ${ERROR} User ( ${YELLOW}$Username${NC} ) sudah dipakai !";
     exit 1;
 fi
 
-read -p "► Sila masukkan Password : " Password;
-read -p "► Sila masukkan Tempoh Aktif (hari) : " Jumlah_Hari;
+read -p "  ► Sila masukkan Password : " Password;
+read -p "  ► Sila masukkan Tempoh Aktif (hari) : " Jumlah_Hari;
 
 # // String For IP & Port
 domain=$( cat /etc/kaizenvpn/domain.txt );
