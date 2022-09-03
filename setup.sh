@@ -367,7 +367,7 @@ clear && echo -e "${OKEY} Memulakan proses pemasangan skrip.";
 # ═══════════════════
 # // Info Versi Skrip
 # ═══════════════════
-printf 'VERSION=2.0\nNAME=Multiport Edition' > /etc/kaizenvpn/version
+printf 'VERSION=2.0\nPATCH="1"\nNAME=Multiport Edition\nVERSION_ID="Multi"' > /etc/kaizenvpn/version
 
 # ════════════════════════════════════
 # // Membuang Apache / Nginx kalau ada
