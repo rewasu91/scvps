@@ -159,7 +159,10 @@ clear;
 # // Renew Certificate
 # ════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}           [ Renew Certificate ]            ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -167,18 +170,19 @@ echo -e "";
         
         domain=$(cat /etc/kaizenvpn/domain.txt);
         if [[ $domain == "" ]]; then
-            clear;
-            echo -e "${ERROR} Domain tidak berjaya dikesan !";
+            echo -e "  ${ERROR} Domain tidak berjaya dikesan !";
             exit 1
         fi
-        echo -e "$OKEY Starting Certificate Renewal";
-        sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256;
-        
-        clear;
-        echo "";
+        echo -e "  $OKEY Memulakan pembaharuan Certificate..";
+        sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256;    
+	clear;
+	echo -e "";
+	echo -e "";
+	cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	echo -e "";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "${WBBG}           [ Renew Certificate ]            ${NC}";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "";
-        echo -e "${OKEY} Berjaya! Certificate xray anda telah diperbaharui !";
+        echo -e "  ${OKEY} Berjaya! Certificate Xray anda telah diperbaharui !";
         exit 1;
