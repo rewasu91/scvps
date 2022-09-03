@@ -187,10 +187,10 @@ if [[ $sisa_hari -lt 1 ]]; then
 
     # // Successfull Deleted Expired Client
     clear;
-    echo -e ""
-    echo -e ""
-    cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-    echo -e ""
+    echo -e "";
+    echo -e "";
+    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+    echo -e "";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
     echo -e "${WBBG}       [ Memadam Akaun Expire Vmess ]       ${NC}";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
