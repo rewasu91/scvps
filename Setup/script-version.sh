@@ -154,5 +154,13 @@ clear;
 #fi
 
 clear;
-echo "KaizenVPN Script V${VERSION} ( ${NAME} ) | Ubuntu - Debian";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}               [ VERSI SKRIP ]              ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "";
+echo "KaizenVPN Skrip V${VERSION} ( ${NAME} Patch ${PATCH} ) | Ubuntu - Debian";
 echo "(C) Copyright 2022 By KaizenVPN";
