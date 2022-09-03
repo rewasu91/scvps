@@ -159,15 +159,18 @@ clear;
 # // Tukar DNS
 # ════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}                [ Tukar DNS ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-        read -p "► Sila masukkan DNS baru anda (DNS 1) : " dns1nya
-        read -p "► Sila masukkan DNS kedua anda (Optional) : " dns2nya
+        read -p "  ► Sila masukkan DNS baru anda (DNS 1) : " dns1nya
+        read -p "  ► Sila masukkan DNS kedua anda (Optional) : " dns2nya
         if [[ $dns1nya == "" ]]; then
-            echo -e "${ERROR} ► Sila masukkan DNS baru anda (DNS 1) !";
+            echo -e "  ${ERROR} ► Sila masukkan DNS baru anda (DNS 1) !";
             changedns;
         fi
         if [[ $dns2nya == "" ]]; then
@@ -176,15 +179,18 @@ echo -e "";
 	    systemctl stop resolvconf.service
 	    systemctl enable resolvconf.service
 	    systemctl start resolvconf.service
-            clear;
-            echo "";
+	    clear;
+	    echo -e "";
+	    echo -e "";
+	    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	    echo -e "";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "${WBBG}                [ Tukar DNS ]               ${NC}";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "";
-            echo -e "${OKEY} DNS anda : $dns1nya";
+            echo -e "  ${OKEY} DNS anda : $dns1nya";
             sleep 1;
-            echo -e "${OKEY} Berjaya! DNS anda telah ditukar kepada $dns1nya";
+            echo -e "  ${OKEY} Berjaya! DNS anda telah ditukar kepada $dns1nya";
         else
             echo "nameserver $dns1nya" > /etc/resolv.conf
 	    echo "nameserver $dns1nya" > /etc/resolvconf/resolv.conf.d/head
@@ -193,13 +199,16 @@ echo -e "";
 	    systemctl stop resolvconf.service
 	    systemctl enable resolvconf.service
 	    systemctl start resolvconf.service
-            clear;
-            echo "";
+	    clear;
+	    echo -e "";
+	    echo -e "";
+	    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	    echo -e "";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "${WBBG}                [ Tukar DNS ]               ${NC}";
             echo -e "${CYAN}════════════════════════════════════════════${NC}";
             echo -e "";
-            echo -e "${OKEY} DNS anda : $dns1nya & $dns2nya";
+            echo -e "  ${OKEY} DNS anda : $dns1nya & $dns2nya";
             sleep 1;
-            echo -e "${OKEY} Berjaya! DNS anda telah ditukar kepada $dns1nya & $dns2nya";
+            echo -e "  ${OKEY} Berjaya! DNS anda telah ditukar kepada $dns1nya & $dns2nya";
         fi
