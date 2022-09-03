@@ -159,7 +159,10 @@ clear;
 # // Memadam Akaun 
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Memadam Akaun HTTP ]             ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -185,9 +188,12 @@ rm -rf /etc/kaizenvpn/http/${client};
 sed -i "/\b$client\b/d" /etc/xray-mini/client.conf;
 systemctl restart xray-mini@http;
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Memadam Akaun HTTP ]             ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "${OKEY} Username ( ${YELLOW}$client${NC} ) telah dipadam !";
+echo -e "  ${OKEY} Username ( ${YELLOW}$client${NC} ) telah dipadam !";
