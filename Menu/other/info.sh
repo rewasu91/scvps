@@ -441,7 +441,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "  Server Uptime      ► $( uptime -p  | cut -d " " -f 2-10000 ) ";
 echo -e "  Waktu Sekarang     ► $( date -d "0 days" +"%d-%m-%Y | %X" )";
 echo -e "  Nama ISP           ► $ISP";
-echo -e "  Operating Sistem   ► $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )";
+echo -e "  Operating Sistem   ► $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )";
 echo -e "  Bandar             ► $CITY";
 echo -e "  Ip Vps             ► $IPVPS";
 echo -e "  Domain             ► $domain";
