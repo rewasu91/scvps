@@ -488,8 +488,8 @@ echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
 domain=$( cat /etc/kaizenvpn/domain.txt );
-echo -e "  ${OKEY} Domain anda   : $domain";
-echo -e "  ${OKEY} Wildcard anda : bug.com.$domain";
+echo -e "  ${OKEY} Domain anda ialah : ${domain}";
+echo -e "  ${OKEY} Wildcard anda     : bug.com.${domain}";
 echo -e "  Tukarkan bug.com kepada apa-apa sahaja bug anda.";
 sleep 4;
 clear;
@@ -530,7 +530,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "  ${OKEY} Domain anda : $domain";
+echo -e "  ${OKEY} Domain anda ialah : ${domain}";
 sleep 4;
 clear;
 
