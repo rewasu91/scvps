@@ -183,6 +183,6 @@ echo -e "";
         echo -e "${WBBG}           [ Tambah Email Backup ]          ${NC}";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "";
-        echo -e "  ${OKEY} Email anda : $email";
+        echo -e "  ${OKEY} Email anda ialah : ${email_input}";
         sleep 1;
-        echo -e "  ${OKEY} Berjaya! Email anda $email telah didaftarkan.";
+        echo -e "  ${OKEY} Berjaya! Email anda ${email_input} telah didaftarkan.";
