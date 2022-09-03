@@ -187,33 +187,31 @@ cp -r /etc/wireguard /root/backup/;
 echo "$(date)" > created.date;
 echo "(C) Copyright by kaizenvpn" > Copyright;
 echo "1.0" > script-version;
-cd /root
-zip -r $IP_NYA-$date.zip backup > /dev/null 2>&1
+zip -r backup.zip * > /dev/null 2>&1;
+cp backup.zip /root/;
+cd;
+rm -rf /root/backup/;
+cd /root/
+mv backup.zip $IP_NYA-$date.zip
 
 # // Upload to rclone
-rclone copy /root/$IP_NYA-$date.zip WildyDev21:backup/
-url=$(rclone link WildyDev21:backup/$IP_NYA-$date.zip)
+rclone copy /root/$IP_NYA-$date.zip KaizenVPN:backup/
+url=$(rclone link KaizenVPN:backup/$IP_NYA-$date.zip)
 F_ID=(`echo $url | grep '^https' | cut -d'=' -f2`)
-
-if [[ $JAMNYA == "08" ]]; then
-    JAMNYA="MY";
-fi
-
-msgl="===================================<br> VPS Data Backup Information<br>===================================<br>IP : ${IP_NYA}<br>ID Backup : ${F_ID}<br>Date : ${tanggal} ( $JAMNYA )<br>===================================<br>(C) Copyright 2022 By KaizenVPN"
-subject_nya="Maklumat Backup | ${IP_NYA}";
 email_nya="$email_mu";
-html_parse='true';
-Result=$( wget -qO- 'https://api.kaizenvpn.me/email/send_mail.php?security_id=1c576a16-eb7f-46fb-91b6-ce0e2d4a98ee&subject='"$subject_nya"'&email='"$email_nya"'&html='"$html_parse"'&message='"$msgl"'' );
+mail -s "Backup Data" $email_mu
 
-if [[ $( echo $Result | jq -r '.respon_code' ) == "107" ]]; then
-    clear;
-    echo -e "  ${OKEY} Backup fail telah dihantar ke email ${email_nya}";
-    exit 1;
-else
-    clear;
-    echo -e "  ${ERROR} Terdapat setting yang tidak betul!";
-    exit 1;
-fi
+clear;
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}               [ Menu Vmess ]               ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "";
+echo -e "  ► ID Backup anda ialah: ${F_ID}";
+echo -e "  ► Sila copy ID ini dan gunakan di menu Restore";
+echo -e "";
 
-rm -rf /root/backup/
 rm -f $IP_NYA-$date.zip
