@@ -158,6 +158,7 @@ clear;
 # ════════════════
 # // Memadam Akaun 
 # ════════════════
+clear;
 echo -e ""
 echo -e ""
 cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
