@@ -159,18 +159,21 @@ clear;
 # // Membuat Akaun
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Membuat Akaun Trojan ]           ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username            : " Username;
+read -p "  ► Sila masukkan Username            : " Username;
 Username="$(echo ${Username} | sed 's/ //g' | tr -d '\r' | tr -d '\r\n' )";
 
 # // Validate Input
 if [[ $Username == "" ]]; then
     clear;
-    echo -e "${ERROR} Sila masukkan Username !";
+    echo -e "  ${ERROR} Sila masukkan Username !";
     exit 1;
 fi
 
@@ -182,12 +185,12 @@ if [[ "$( cat /etc/xray-mini/client.conf | grep -w ${Username})" == "" ]]; then
     Do=Nothing;
 else
     clear;
-    echo -e "${ERROR} Username ( ${YELLOW}$Username${NC} ) sudah dipakai !";
+    echo -e "  ${ERROR} Username ( ${YELLOW}$Username${NC} ) sudah dipakai !";
     exit 1;
 fi
 
 # // Expired Date
-read -p "► Sila masukkan Tempoh Aktif (hari) : " Jumlah_Hari;
+read -p "  ► Sila masukkan Tempoh Aktif (hari) : " Jumlah_Hari;
 exp=`date -d "$Jumlah_Hari days" +"%Y-%m-%d"`;
 hariini=`date -d "0 days" +"%Y-%m-%d"`;
 
@@ -207,7 +210,7 @@ nontls_port=$( cat /etc/xray-mini/nontls.json | grep -w port | awk '{print $2}' 
 export CHK=$( cat /etc/xray-mini/tls.json );
 if [[ $CHK == "" ]]; then
     clear;
-    echo -e "${ERROR} Terdapat masalah teknikal didalam VPS anda. Sila hubungi admin untuk fixkan VPS anda !";
+    echo -e "  ${ERROR} Terdapat masalah teknikal didalam VPS anda. Sila hubungi admin untuk fixkan VPS anda !";
     exit 1;
 fi
 
