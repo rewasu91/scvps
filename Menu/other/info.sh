@@ -416,39 +416,39 @@ echo -e "  Download      $dtoday         $dyest          $dmon      ";
 echo -e "  Upload        $utoday         $uyest          $umon      ";
 echo -e "  Total         $ttoday         $tyest          $tmon      ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${WBBG}                     [ Servis Status ]                      {NC}"
+echo -e "${WBBG}                  [ Servis Status & Port]                  ${NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "  SSH                 ► ${SSH_STT}";
-echo -e "  Dropbear            ► ${DROPBEAR_STT}";
-echo -e "  Stunnel4            ► ${STUNNEL4_STT}";
-echo -e "  OpenVPN TCP         ► ${OVPN_TCP}"
-echo -e "  OpenVPN UDP         ► ${OVPN_UDP}"
-echo -e "  WS-ePro             ► ${WSEPRO_STT}";
-echo -e "  OHP OpenSSH         ► ${OHP_1}"
-echo -e "  OHP Dropbear        ► ${OHP_2}"
-echo -e "  OHP OpenVPN         ► ${OHP_3}"
-echo -e "  OHP Universal       ► ${OHP_4}"
-echo -e "  Squid Proxy         ► ${SQUID_STT}"
-echo -e "  SSLH                ► ${SSLH_SST}"
-echo -e "  Nginx               ► ${NGINX_STT}";
-echo -e "  Vmess Ws TLS        ► ${XRAY_TCP}"
-echo -e "  Vmess Ws NonTLS     ► ${XRAY_NTLS}"
-echo -e "  Vmess GRPC WS-TLS   ► ${XRAY_TCP}"
-echo -e "  Vless Ws TLS        ► ${XRAY_TCP}"
-echo -e "  Vless Ws NonTLS     ► ${XRAY_NTLS}"
-echo -e "  Vless GRPC WS-TLS   ► ${XRAY_TCP}"
-echo -e "  Trojan WS TLS       ► ${XRAY_TCP}"
-echo -e "  Trojan TCP TLS      ► ${XRAY_TCP}"
-echo -e "  Trojan GRPC WS TCP  ► ${XRAY_TCP}"
-echo -e "  Shadowsocks UDP     ► ${SS_UDP}"
-echo -e "  ShadowsocksR        ► ${SSR_UDP}"
-echo -e "  HTTP Proxy          ► ${HTTP_STT}"
-echo -e "  Socks 4/5 Proxy     ► ${SOCKS_STT}"
-echo -e "  WireGuard           ► ${WG_STT}"
-echo -e "  Vmess AutoKill      ► ${VMESS_KILL}"
-echo -e "  Vless AutoKill      ► ${VLESS_KILL}"
-echo -e "  Trojan AutoKill     ► ${TROJAN_KILL}"
-echo -e "  SS AutoKill         ► ${SS_KILL}"
-echo -e "  SSH AutoKill        ► ${SSH_KILL}"
-echo -e "  AutoBackup          ► ${STT_EMM}"
+echo -e "  SSH                 ► ${SSH_STT}	Port	► ";
+echo -e "  Dropbear            ► ${DROPBEAR_STT}	Port	► ";	
+echo -e "  Stunnel4            ► ${STUNNEL4_STT}	Port	► ";
+echo -e "  OpenVPN TCP         ► ${OVPN_TCP}	Port	► ";
+echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	Port	► ";
+echo -e "  WS-ePro             ► ${WSEPRO_STT}	Port	► ";
+echo -e "  OHP OpenSSH         ► ${OHP_1}	Port	► ";
+echo -e "  OHP Dropbear        ► ${OHP_2}	Port	► ";
+echo -e "  OHP OpenVPN         ► ${OHP_3}	Port	► ";
+echo -e "  OHP Universal       ► ${OHP_4}	Port	► ";
+echo -e "  Squid Proxy         ► ${SQUID_STT}	Port	► ";
+echo -e "  SSLH                ► ${SSLH_SST}	Port	► ";
+echo -e "  Nginx               ► ${NGINX_STT}	Port	► ";
+echo -e "  Vmess Ws TLS        ► ${XRAY_TCP}	Port	► ";
+echo -e "  Vmess Ws NonTLS     ► ${XRAY_NTLS}	Port	► ";
+echo -e "  Vmess GRPC WS-TLS   ► ${XRAY_TCP}	Port	► ";
+echo -e "  Vless Ws TLS        ► ${XRAY_TCP}	Port	► ";
+echo -e "  Vless Ws NonTLS     ► ${XRAY_NTLS}	Port	► ";
+echo -e "  Vless GRPC WS-TLS   ► ${XRAY_TCP}	Port	► ";
+echo -e "  Trojan WS TLS       ► ${XRAY_TCP}	Port	► ";
+echo -e "  Trojan TCP TLS      ► ${XRAY_TCP}	Port	► ";
+echo -e "  Trojan GRPC WS TCP  ► ${XRAY_TCP}	Port	► ";
+echo -e "  Shadowsocks UDP     ► ${SS_UDP}	Port	► ";
+echo -e "  ShadowsocksR        ► ${SSR_UDP}	Port	► ";
+echo -e "  HTTP Proxy          ► ${HTTP_STT}	Port	► ";
+echo -e "  Socks 4/5 Proxy     ► ${SOCKS_STT}	Port	► ";
+echo -e "  WireGuard           ► ${WG_STT}	Port	► ";
+echo -e "  Vmess AutoKill      ► ${VMESS_KILL}	Port	► ";
+echo -e "  Vless AutoKill      ► ${VLESS_KILL}	Port	► ";
+echo -e "  Trojan AutoKill     ► ${TROJAN_KILL}	Port	► ";
+echo -e "  SS AutoKill         ► ${SS_KILL}	Port	► ";
+echo -e "  SSH AutoKill        ► ${SSH_KILL}	Port	► ";
+echo -e "  AutoBackup          ► ${STT_EMM}	Port	► ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
