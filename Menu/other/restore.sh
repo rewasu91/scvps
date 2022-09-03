@@ -154,11 +154,18 @@ export TIME_NYA="$TIMEZONE";
 # // Clear Data
 # ═════════════
 clear;
-
-read -p "► Sila masukkan Backup ID anda : " Backup_ID
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}             [ Sistem Restore ]             ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "";
+read -p "  ► Sila masukkan Backup ID anda : " Backup_ID
 if [[ $Backup_ID == "" ]]; then
     clear;
-    echo -e "${ERROR} Sila masukkan Backup ID anda !";
+    echo -e "  ${ERROR} Sila masukkan Backup ID anda !";
     exit 1;
 fi
 
@@ -175,7 +182,7 @@ else
     cd /root/;
     rm -rf /root/cache-restore/;
     clear;
-    echo -e "${ERROR} Terdapat kesilapan didalam Backup ID anda !";
+    echo -e "  ${ERROR} Terdapat kesilapan didalam Backup ID anda !";
     exit 1;
 fi
 
@@ -196,7 +203,7 @@ rm -rf /root/cache-restore/;
 domain=$( cat /etc/kaizenvpn/domain.txt );
 if [[ $domain == "" ]]; then
     clear;
-    echo -e "${ERROR} Domain tidak dikesan !";
+    echo -e "  ${ERROR} Domain tidak dikesan !";
     exit 1;
 fi
 
@@ -221,11 +228,14 @@ systemctl restart vless-kill;
 systemctl restart trojan-kill;
 systemctl restart ss-kill;
 systemctl restart ssh-kill;
-        clear;
-        echo "";
+	clear;
+	echo -e "";
+	echo -e "";
+	cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	echo -e "";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "${WBBG}             [ Sistem Restore ]             ${NC}";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "";
-        echo -e "${OKEY} Berjaya! Sistem telah selesai Restore semua fail anda.";
+        echo -e "  ${OKEY} Berjaya! Sistem telah selesai Restore semua fail anda.";
         exit 1;
