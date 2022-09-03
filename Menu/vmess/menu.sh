@@ -180,7 +180,7 @@ echo -e " ${GREEN}[ 09 ]${NC} ► Log akses akaun";
 echo -e " ${GREEN}[ 10 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-10] : " selection_mu;
+read -p "  ► Sila masukkan nombor pilihan anda [1-10] : " selection_mu;
 
 case $selection_mu in
     1)
