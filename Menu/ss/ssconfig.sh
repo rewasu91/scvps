@@ -159,7 +159,10 @@ clear;
 # // Link Config Akaun Shadowsocks
 # ════════════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}     [ Link Config Akaun Shadowsocks ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
