@@ -159,7 +159,10 @@ clear;
 # // Membuat Akaun Percubaan
 # ══════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}    [ Membuat Akaun Percubaan Vless ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -170,7 +173,7 @@ Username="$(echo ${Username} | sed 's/ //g' | tr -d '\r' | tr -d '\r\n' )"; # > 
 # // Validate Input
 if [[ $Username == "" ]]; then
     clear;
-    echo -e "${EROR} Sila masukkan Username !";
+    echo -e "  ${EROR} Sila masukkan Username !";
     exit 1;
 fi
 
@@ -182,7 +185,7 @@ if [[ "$( cat /etc/xray-mini/client.conf | grep -w ${Username})" == "" ]]; then
     Do=Nothing;
 else
     clear;
-    echo -e "${ERROR} User ( ${YELLOW}$Username${NC} ) sudah dipakai !";
+    echo -e "  ${ERROR} User ( ${YELLOW}$Username${NC} ) sudah dipakai !";
     exit 1;
 fi
 
