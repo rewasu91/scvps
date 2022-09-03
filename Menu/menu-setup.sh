@@ -310,6 +310,7 @@ wget -q -O /usr/local/sbin/speedtest "https://raw.githubusercontent.com/rewasu91
 wget -q -O /usr/local/sbin/ram-usage "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Core/ram-usage.sh"; chmod +x /usr/local/sbin/ram-usage;
 wget -q -O /usr/local/sbin/autoexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/autoexp.sh"; chmod +x /usr/local/sbin/autoexp;
 wget -q -O /usr/local/sbin/clearlog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/clearlog.sh"; chmod +x /usr/local/sbin/clearlog;
+wget -q -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/rclone_conf";
 
 # ═════════════════════════════════════
 # // Membuang fail yang tidak digunakan
