@@ -159,7 +159,10 @@ clear;
 # // Perbaharui Akaun 
 # ═══════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Perbaharui Akaun Wireguard ]        ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -202,9 +205,12 @@ systemctl daemon-reload;
 systemctl restart wg-quick@wg0;
 
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Perbaharui Akaun Wireguard ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "${OKEY} Akaun ( ${YELLOW}${user}${NC} ) telah berjaya diperbaharui dan expire pada ( ${YELLOW}$exp4${NC} )";
+echo -e "  ${OKEY} Akaun ( ${YELLOW}${user}${NC} ) telah berjaya diperbaharui dan expire pada ( ${YELLOW}$exp4${NC} )";
