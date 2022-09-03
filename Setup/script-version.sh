@@ -146,12 +146,12 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-source /etc/kaizenvpn/version;
-if [[ $PATCH == "" ]]; then
-    clear;
-    echo -e "${ERROR} Version Data Not Found";
-    exit 1;
-fi
+#source /etc/kaizenvpn/version;
+#if [[ $PATCH == "" ]]; then
+#    clear;
+#    echo -e "${ERROR} Version Data Not Found";
+#    exit 1;
+#fi
 
 clear;
 echo "KaizenVPN Script V${VERSION} ( ${NAME} ) | Ubuntu - Debian";
