@@ -159,7 +159,10 @@ clear;
 # // Tukar Timezone
 # ═════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}             [ Tukar Timezone ]             ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -167,22 +170,26 @@ echo -e "";
 echo -e " ${GREEN}[ 01 ]${NC} ► Asia / Jakarta ( GMT+7 )";
 echo -e " ${GREEN}[ 02 ]${NC} ► Asia / Kuala Lumpur ( GMT+8 )";
 echo -e " ${GREEN}[ 03 ]${NC} ► America / Chicago ( GMT-6 )";
+echo -e " ${GREEN}[ 04 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-9] : " selection_mu;
+read -p "► Sila masukkan nombor pilihan anda [1-4] : " selection_mu;
 
         read -p "Choose one : " soefiewjfwefw
         if [[ $selection_mu == "1" ]]; then
                 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime;
-                echo -e "${OKEY} Timezone telah ditukar ke Jakarta ( GMT +7 )";
+                echo -e "  ${OKEY} Timezone telah ditukar ke Jakarta ( GMT +7 )";
         elif [[ $selection_mu == "2" ]]; then
                 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
-                echo -e "${OKEY} Timezone telah ditukar ke Malaysia ( GMT +8 )";
+                echo -e "  ${OKEY} Timezone telah ditukar ke Malaysia ( GMT +8 )";
         elif [[ $selection_mu == "2" ]]; then
                 ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime;
-                echo -e "${OKEY} Timezone telah ditukar ke Chicago ( GMT +6 )";
+                echo -e "  ${OKEY} Timezone telah ditukar ke Chicago ( GMT +6 )";
+	elif [[ $selection_mu == "3" ]]; then
+                clear;
+                menu";
         else
                 sleep 2;
-                echo -e "${ERROR} Sila masukkan nombor yang betul !";
+                echo -e "  ${ERROR} Sila masukkan nombor yang betul !";
                 changetime;
         fi
