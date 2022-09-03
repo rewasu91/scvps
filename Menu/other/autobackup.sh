@@ -154,7 +154,10 @@ export TIME_NYA="$TIMEZONE";
 # // Clear Data
 # ═════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}           [ Menu Autobackup 00:00]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -162,24 +165,28 @@ echo -e "";
 echo -e " ${CYAN}Autobackup pada pukul 12.00am${NC}";
 echo -e " ${GREEN}[ 01 ]${NC} ► Mengaktifkan autobackup";
 echo -e " ${GREEN}[ 02 ]${NC} ► Menghentikan autobackup";
+echo -e " ${GREEN}[ 03 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-2] : " choosenya
+read -p "  ► Sila masukkan nombor pilihan anda [1-3] : " choosenya
         
         read -p "Choose one " choosenya
         if [[ $choosenya == "1" ]]; then 
             echo "0 */12 * * * root /usr/local/sbin/backup" > /etc/cron.d/auto-backup;
             /etc/init.d/cron restart;
-            echo -e "${OKEY} Berjaya mengaktifkan autobackup";
+            echo -e "  ${OKEY} Berjaya mengaktifkan autobackup";
             exit 1;
         elif [[ $choosenya == "2" ]]; then
             rm -rf /etc/cron.d/auto-backup;
             /etc/init.d/cron restart;
-            echo -e "${OKEY} Berjaya menghentikan autobackup";
+            echo -e "  ${OKEY} Berjaya menghentikan autobackup";
             exit 1;
+	 elif [[ $choosenya == "3" ]]; then
+            clear;
+	    menu;
         else
             clear;
-            echo -e "${ERROR} Sila masukkan nombor yang betul!";
+            echo -e "  ${ERROR} Sila masukkan nombor yang betul!";
             sleep 1;
             autobackup;
         fi
