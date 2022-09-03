@@ -159,24 +159,30 @@ clear;
 # // Tambah Email untuk Backup
 # ════════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}           [ Tambah Email Backup ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-        read -p "► Sila masukkan Email anda : " email_input
+        read -p "  ► Sila masukkan Email anda : " email_input
         if [[ $email_input == "" ]]; then
             clear;
-            echo -e "${ERROR} ► Sila masukkan Email anda !";
+            echo -e "  ${ERROR} ► Sila masukkan Email anda !";
             exit 1;
         fi
         echo $email_input > /etc/kaizenvpn/email.txt
-        clear;
-        echo "";
+	clear;
+	echo -e "";
+	echo -e "";
+	cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+	echo -e "";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "${WBBG}           [ Tambah Email Backup ]          ${NC}";
         echo -e "${CYAN}════════════════════════════════════════════${NC}";
         echo -e "";
-        echo -e "${OKEY} Email anda : $email";
+        echo -e "  ${OKEY} Email anda : $email";
         sleep 1;
-        echo -e "${OKEY} Berjaya! Email anda $email telah didaftarkan.";
+        echo -e "  ${OKEY} Berjaya! Email anda $email telah didaftarkan.";
