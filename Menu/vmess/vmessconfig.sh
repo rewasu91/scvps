@@ -159,7 +159,10 @@ clear;
 # // Link Config Akaun Vmess
 # ══════════════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}        [ Link Config Akaun Vmess ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -183,4 +186,4 @@ expired=$(grep "^Vmess " "/etc/xray-mini/client.conf" | cut -d ' ' -f 3 | sed -n
 clear;
 cat /etc/kaizenvpn/vmess/${client}/config.log;
 echo "";
-echo -e "${INFO} Selesai export config untuk akaun [ ${YELLOW}${client}${NC} ]";
+echo -e "  ${INFO} Selesai export config untuk akaun [ ${YELLOW}${client}${NC} ]";
