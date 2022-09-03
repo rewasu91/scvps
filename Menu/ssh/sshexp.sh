@@ -185,10 +185,10 @@ if [ $userexpireinseconds -ge $todaystime ]; then
 else
     # // Successfull Deleted Expired Client
     clear;
-    echo -e ""
-    echo -e ""
-    cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-    echo -e ""
+    echo -e "";
+    echo -e "";
+    cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+    echo -e "";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
     echo -e "${WBBG}   [ Memadam Akaun Expire SSH & OpenVPN ]   ${NC}";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
