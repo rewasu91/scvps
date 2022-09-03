@@ -159,7 +159,10 @@ clear;
 # // Log Akses Akaun Vmess
 # ════════════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Log Akses Akaun Vmess ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -184,7 +187,10 @@ expired=$(grep "^Vmess " "/etc/xray-mini/client.conf" | cut -d ' ' -f 3 | sed -n
 # // Log Akses Akaun Vmess
 # ════════════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Log Akses Akaun Vmess ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
