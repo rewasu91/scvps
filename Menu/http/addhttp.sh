@@ -208,7 +208,7 @@ port=$( cat /etc/xray-mini/http.json | grep -w port | awk '{print $2}' | head -n
 export CHK=$( cat /etc/xray-mini/http.json );
 if [[ $CHK == "" ]]; then
     clear;
-    echo -e "${ERROR} Terdapat masalah teknikal didalam VPS anda. Sila hubungi admin untuk fixkan VPS anda !";
+    echo -e "  ${ERROR} Terdapat masalah teknikal didalam VPS anda. Sila hubungi admin untuk fixkan VPS anda !";
     exit 1;
 fi
 
