@@ -159,7 +159,10 @@ clear;
 # // Memadam Akaun 
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}     [ Memadam Akaun ShadowsocksR ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -188,7 +191,10 @@ rm -rf /etc/kaizenvpn/ssr/${client};
 sed -i "/\b$client\b/d" /etc/kaizenvpn/ssr-client.conf;
 /etc/init.d/ssr-server restart;
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}     [ Memadam Akaun ShadowsocksR ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
