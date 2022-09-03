@@ -186,9 +186,9 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}    [ Setting Shadowsocks Autokill ]      ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo "$(date) Autokill Shadowsocks Multilogin Versi 2.0 (Multiport).";
-echo "$(date) Dipasang oleh KaizenVPN.";
-echo "$(date) Memulakan Servis Shadowsocks Autokill.";
+echo "  $(date) Autokill Shadowsocks Multilogin Versi 2.0 (Multiport).";
+echo "  $(date) Dipasang oleh KaizenVPN.";
+echo "  $(date) Memulakan Servis Shadowsocks Autokill.";
 
 while true; do
 sleep 30
