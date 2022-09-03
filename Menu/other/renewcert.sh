@@ -174,7 +174,25 @@ echo -e "";
             exit 1
         fi
         echo -e "  $OKEY Memulakan pembaharuan Certificate..";
-        sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256;    
+        rm -rf /root/.acme.sh;
+        mkdir -p /root/.acme.sh;
+        wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
+        chmod +x /root/.acme.sh/acme.sh;
+        sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
+        sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
+
+        # // Successfull Change Path to xray
+        key_path_default=$( cat /etc/xray-mini/tls.json | jq '.inbounds[0].streamSettings.xtlsSettings.certificates[]' | jq -r '.certificateFile' );
+        cp /etc/xray-mini/tls.json /etc/xray-mini/tls.json_temp;
+        cat /etc/xray-mini/tls.json_temp | jq 'del(.inbounds[0].streamSettings.xtlsSettings.certificates[] | select(.certificateFile == "'${key_path_default}'"))' > /etc/xray-mini/tls2.json_temp;
+        cat /etc/xray-mini/tls2.json_temp | jq '.inbounds[0].streamSettings.xtlsSettings.certificates += [{"certificateFile": "'/root/.acme.sh/${domain}_ecc/fullchain.cer'","keyFile": "'/root/.acme.sh/${domain}_ecc/${domain}.key'"}]' > /etc/xray-mini/tls.json;
+        rm -rf /etc/xray-mini/tls2.json_temp;
+        rm -rf /etc/xray-mini/tls.json_temp;
+
+        # // Restart
+        systemctl restart xray-mini@tls > /dev/null 2>&1
+        systemctl restart xray-mini@nontls > /dev/null 2>&1
+	
 	clear;
 	echo -e "";
 	echo -e "";
