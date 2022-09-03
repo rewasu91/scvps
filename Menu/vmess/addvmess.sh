@@ -283,12 +283,12 @@ echo -e " Port TLS    ► ${tls_port}" | tee -a /etc/kaizenvpn/vmess/${Username}
 echo -e " Port NTLS   ► ${nontls_port}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e " User ID     ► ${uuid}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
-echo -e " GRPC VMESS CONFIG LINK" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
+echo -e " VMESS GRPC CONFIG LINK" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e " ${grpc_link}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
-echo -e " WS TLS VMESS CONFIG LINK" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
+echo -e " VMESS WS TLS CONFIG LINK" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e " ${ws_tls_link}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
-echo -e " WS NTLS VMESS CONFIG LINK" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
+echo -e " VMESS WS NONE TLS CONFIG LINK" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e " ${ws_nontls_link}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
 echo -e "${CYAN}════════════════════════════════════════════${NC}" | tee -a /etc/kaizenvpn/vmess/${Username}/config.log;
