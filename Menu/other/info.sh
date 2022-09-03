@@ -178,7 +178,12 @@ ohp_4="$( cat /etc/systemd/system/ohp-mini-4.service | grep -i Port | awk '{prin
 udp_1=$( cat /etc/systemd/system/udp-mini-1.service | grep -i listen-addr | awk '{print $3}' | head -n1 | sed 's/127.0.0.1//g' | sed 's/://g' | tr -d '\r' );
 udp_2=$( cat /etc/systemd/system/udp-mini-2.service | grep -i listen-addr | awk '{print $3}' | head -n1 | sed 's/127.0.0.1//g' | sed 's/://g' | tr -d '\r' );
 udp_3=$( cat /etc/systemd/system/udp-mini-3.service | grep -i listen-addr | awk '{print $3}' | head -n1 | sed 's/127.0.0.1//g' | sed 's/://g' | tr -d '\r' );
-
+tls_port=$( cat /etc/xray-mini/tls.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
+nontls_port=$( cat /etc/xray-mini/nontls.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
+ssport=$( cat /etc/xray-mini/shadowsocks.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
+ssrport=$(( $(cat /etc/kaizenvpn/ssr-server/mudb.json | grep '"port": ' | tail -n1 | awk '{print $2}' | cut -d "," -f 1 | cut -d ":" -f 1 ) + 1 ));
+httpport=$( cat /etc/xray-mini/http.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
+sockssport=$( cat /etc/xray-mini/socks.json | grep -w port | awk '{print $2}' | head -n1 | sed 's/,//g' | tr '\n' ' ' | tr -d '\r' | tr -d '\r\n' | sed 's/ //g' );
 
 waktu_sekarang=$(date -d "0 days" +"%Y-%m-%d");
 #expired_date="$EXPIRED";
@@ -212,10 +217,15 @@ if [[ $(systemctl status dropbear | grep Active | awk '{print $2}' | sed 's/(//g
 else
     DROPBEAR_STT="${RED}Not Running${NC}";
 fi
-if [[ $(systemctl status ws-epro | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
-    WSEPRO_STT="${GREEN}Running${NC}";
+if [[ $(systemctl status ws-epro | grep Active | awk '{print $1}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+    WSEPRO_STT1="${GREEN}Running${NC}";
 else
-    WSEPRO_STT="${RED}Not Running${NC}";
+    WSEPRO_STT1="${RED}Not Running${NC}";
+fi
+if [[ $(systemctl status ws-epro | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+    WSEPRO_STT2="${GREEN}Running${NC}";
+else
+    WSEPRO_STT2="${RED}Not Running${NC}";
 fi
 if [[ $(systemctl status ohp-mini-1 | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     OHP_1="${GREEN}Running${NC}";
@@ -242,10 +252,15 @@ if [[ $(systemctl status ohp-mini-4 | grep Active | awk '{print $2}' | sed 's/(/
 else
     OHP_4="${RED}Not Running${NC}";
 fi
-if [[ $(systemctl status squid | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+if [[ $(systemctl status squid | grep Active | awk '{print $1}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     SQUID_STT="${GREEN}Running${NC}";
 else
     SQUID_STT="${RED}Not Running${NC}";
+fi
+if [[ $(systemctl status squid | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+    SQUID2_STT="${GREEN}Running${NC}";
+else
+    SQUID2_STT="${RED}Not Running${NC}";
 fi
 if [[ $(systemctl status sslh | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     SSLH_STT="${GREEN}Running${NC}";
@@ -446,41 +461,44 @@ echo -e "  Download      $dtoday         $dyest          $dmon      ";
 echo -e "  Upload        $utoday         $uyest          $umon      ";
 echo -e "  Total         $ttoday         $tyest          $tmon      ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${WBBG}                  [ Servis Status & Port]                  ${NC}"
+echo -e "${WBBG}             [ Servis Status & Maklumat Port ]             ${NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "  SSH                 ► ${SSH_STT}	Port	► ${openssh}";
-echo -e "  Dropbear            ► ${DROPBEAR_STT}	Port	► ${dropbear1}";	
-echo -e "  Stunnel4            ► ${STUNNEL4_STT}	Port	► ${ssh_ssl2}";
-echo -e "  OpenVPN TCP         ► ${OVPN_TCP}	Port	► ${ovpn_tcp}";
-echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	Port	► ${ovpn_udp";
-echo -e "  OpenVPN SSL         ► ${OVPNSTUNNEL4_STT}	Port	► ${stunnel_ovpn_tcp}";
-echo -e "  Squid Proxy 1       ► ${SQUID_STT}	Port	► ${squid1}";
-echo -e "  Squid Proxy 2       ► ${SQUID2_STT}	Port	► ${squid2}";
-echo -e "  WS-ePro             ► ${WSEPRO_STT}	Port	► ";
-echo -e "  OHP OpenSSH         ► ${OHP_1}	Port	► ";
-echo -e "  OHP Dropbear        ► ${OHP_2}	Port	► ";
-echo -e "  OHP OpenVPN         ► ${OHP_3}	Port	► ";
-echo -e "  OHP Universal       ► ${OHP_4}	Port	► ";
-echo -e "  SSLH                ► ${SSLH_SST}	Port	► ";
-echo -e "  Nginx               ► ${NGINX_STT}	Port	► ";
-echo -e "  Vmess Ws TLS        ► ${XRAY_TCP}	Port	► ";
-echo -e "  Vmess Ws NonTLS     ► ${XRAY_NTLS}	Port	► ";
-echo -e "  Vmess GRPC WS-TLS   ► ${XRAY_TCP}	Port	► ";
-echo -e "  Vless Ws TLS        ► ${XRAY_TCP}	Port	► ";
-echo -e "  Vless Ws NonTLS     ► ${XRAY_NTLS}	Port	► ";
-echo -e "  Vless GRPC WS-TLS   ► ${XRAY_TCP}	Port	► ";
-echo -e "  Trojan WS TLS       ► ${XRAY_TCP}	Port	► ";
-echo -e "  Trojan TCP TLS      ► ${XRAY_TCP}	Port	► ";
-echo -e "  Trojan GRPC WS TCP  ► ${XRAY_TCP}	Port	► ";
-echo -e "  Shadowsocks UDP     ► ${SS_UDP}	Port	► ";
-echo -e "  ShadowsocksR        ► ${SSR_UDP}	Port	► ";
-echo -e "  HTTP Proxy          ► ${HTTP_STT}	Port	► ";
-echo -e "  Socks 4/5 Proxy     ► ${SOCKS_STT}	Port	► ";
-echo -e "  WireGuard           ► ${WG_STT}	Port	► ";
-echo -e "  Vmess AutoKill      ► ${VMESS_KILL}	Port	► ";
-echo -e "  Vless AutoKill      ► ${VLESS_KILL}	Port	► ";
-echo -e "  Trojan AutoKill     ► ${TROJAN_KILL}	Port	► ";
-echo -e "  SS AutoKill         ► ${SS_KILL}	Port	► ";
-echo -e "  SSH AutoKill        ► ${SSH_KILL}	Port	► ";
-echo -e "  AutoBackup          ► ${STT_EMM}	Port	► ";
+echo -e "  SSH                 ► ${SSH_STT}	|	Port	► ${openssh}";
+echo -e "  Dropbear            ► ${DROPBEAR_STT}	|	Port	► ${dropbear1},${dropbear2}";	
+echo -e "  Stunnel4            ► ${STUNNEL4_STT}	|	Port	► ${stunnel_dropbear}";
+echo -e "  OpenVPN TCP         ► ${OVPN_TCP}	|	Port	► ${ovpn_tcp}";
+echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	|	Port	► ${ovpn_udp";
+echo -e "  OpenVPN SSL         ► ${OVPNSTUNNEL4_STT}	|	Port	► ${stunnel_ovpn_tcp}";
+echo -e "  OHP OpenSSH         ► ${OHP_1}	|	Port	► ${ohp_1}";
+echo -e "  OHP Dropbear        ► ${OHP_2}	|	Port	► ${ohp_2}";
+echo -e "  OHP OpenVPN         ► ${OHP_3}	|	Port	► ${ohp_3}";
+echo -e "  OHP Universal       ► ${OHP_4}	|	Port	► ${ohp_4}";
+echo -e "  SSH WS CDN          ► ${SSLH_SST}	|	Port	► ${ssh_ssl2}";
+echo -e "  SSH WS TLS          ► ${WSEPRO_STT2}	|	Port	► ${ssh_ssl}";
+echo -e "  SSH WS None TLS     ► ${WSEPRO_STT1}	|	Port	► ${ssh_nontls}";
+echo -e "  Squid Proxy         ► ${SQUID_STT}	|	Port	► ${squid1},${squid2}";
+echo -e "  Nginx               ► ${NGINX_STT}	|	Port	► 85";
+echo -e "  Vmess WS TLS        ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Vmess WS None TLS   ► ${XRAY_NTLS}	|	Port	► ${nontls_port}";
+echo -e "  Vmess GRPC WS TLS   ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Vless WS TLS        ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Vless WS None TLS   ► ${XRAY_NTLS}	|	Port	► ${nontls_port}";
+echo -e "  Vless GRPC WS TLS   ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Trojan WS TLS       ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Trojan TCP TLS      ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Trojan GRPC WS TLS  ► ${XRAY_TCP}	|	Port	► ${tls_port}";
+echo -e "  Shadowsocks UDP     ► ${SS_UDP}	|	Port	► ${ssport}";
+echo -e "  ShadowsocksR        ► ${SSR_UDP}	|	Port	► ${ssrport}";
+echo -e "  HTTP Proxy          ► ${HTTP_STT}	|	Port	► ${httpport}";
+echo -e "  Socks 4/5 Proxy     ► ${SOCKS_STT}	|	Port	► ${sockssport}";
+echo -e "  WireGuard           ► ${WG_STT}	|	Port	► 2048";
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
+echo -e "${WBBG}        [ Status Autokill Multilogin & Autobackup]         ${NC}"
+echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
+echo -e "  Vmess AutoKill      ► ${VMESS_KILL}";
+echo -e "  Vless AutoKill      ► ${VLESS_KILL}";
+echo -e "  Trojan AutoKill     ► ${TROJAN_KILL}";
+echo -e "  SS AutoKill         ► ${SS_KILL}";
+echo -e "  SSH AutoKill        ► ${SSH_KILL}";
+echo -e "  Autobackup          ► ${STT_EMM}";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
