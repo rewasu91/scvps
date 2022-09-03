@@ -159,7 +159,10 @@ clear;
 # // Log Akses Akaun Shadowsocks
 # ══════════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Log Akses Akaun Shadowsocks ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -184,7 +187,10 @@ expired=$(grep "^Shadowsocks " "/etc/xray-mini/client.conf" | cut -d ' ' -f 3 | 
 # // Log Akses Akaun Shadowsocks
 # ══════════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Log Akses Akaun Shadowsocks ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
