@@ -458,7 +458,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "";
 echo -e " ${CYAN}Guna domain sendiri / domain automatik?${NC}";
 echo -e " ${GREEN}[ 01 ]${NC} ► Guna domain sendiri";
-echo -e " ${GREEN}[ 02 ]${NC} ► Guna domain automatik";
+echo -e " ${GREEN}[ 02 ]${NC} ► Guna domain automatik (free wildcard)";
 
 echo -e "";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
@@ -490,7 +490,9 @@ echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
 domain=$( cat /etc/kaizenvpn/domain.txt );
-echo -e "${OKEY} Domain anda : $domain";
+echo -e "  ${OKEY} Domain anda   : $domain";
+echo -e "  ${OKEY} Wildcard anda : bug.com.$domain";
+echo -e "  Tukarkan bug.com kepada apa-apa sahaja bug anda.";
 sleep 2;
 clear;
 
@@ -503,11 +505,11 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}           [ Setting Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-read -p "Sila masukkan Domain anda : " domain
+read -p "  Sila masukkan Domain anda : " domain
 domain=$( echo $domain | sed 's/ //g' );
 if [[ $domain == "" ]]; then
     clear;
-    echo -e "${ERROR} Tiada input dikesan, sila taip domain anda !";
+    echo -e "  ${ERROR} Tiada input dikesan, sila taip domain anda !";
     exit 1;
 fi
 echo "$domain" > /etc/kaizenvpn/domain.txt;
@@ -530,12 +532,12 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "${OKEY} Domain anda : $domain";
+echo -e "  ${OKEY} Domain anda : $domain";
 sleep 2;
 clear;
 
 else
-    echo -e "${ERROR} Sila pilih 1 atau 2 sahaja !";
+    echo -e "  ${ERROR} Sila pilih 1 atau 2 sahaja !";
     exit 1;
 fi
 
