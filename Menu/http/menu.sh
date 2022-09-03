@@ -159,7 +159,10 @@ clear;
 # // Menu HTTP
 # ════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}                [ Menu HTTP ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -172,9 +175,10 @@ echo -e " ${GREEN}[ 04 ]${NC} ► Perbaharui akaun";
 echo -e " ${GREEN}[ 05 ]${NC} ► Senarai akaun yang sudah dibuat";
 echo -e " ${GREEN}[ 06 ]${NC} ► Maklumat akaun yang sudah dibuat";
 echo -e " ${GREEN}[ 07 ]${NC} ► Memadam akaun yang sudah expire";
+echo -e " ${GREEN}[ 08 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-7] : " selection_mu;
+read -p "► Sila masukkan nombor pilihan anda [1-8] : " selection_mu;
 
 case $selection_mu in
     1)
@@ -197,6 +201,9 @@ case $selection_mu in
     ;;
     7)
         httpexp;
+    ;;
+    8)
+       menu;
     ;;
     *)
         echo -e "${ERROR} Sila masukkan nombor yang betul!";
