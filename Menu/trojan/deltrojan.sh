@@ -159,7 +159,10 @@ clear;
 # // Memadam Akaun 
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Memadam Akaun Trojan ]           ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -187,7 +190,10 @@ rm -rf /etc/kaizenvpn/trojan/${client};
 sed -i "/\b$client\b/d" /etc/xray-mini/client.conf;
 systemctl restart xray-mini@tls;
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Memadam Akaun Trojan ]           ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
