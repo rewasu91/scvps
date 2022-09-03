@@ -153,6 +153,10 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 # // Clear Data
 # ═════════════
+date=$(date +"%Y-%m-%d-%H-%M");
+tanggal=$(date +"%Y-%m-%d %X");
+JAM=$(date +%Z);
+JAMNYA=$( echo $JAM | sed 's/+//g' ); 
 clear;
 echo -e "";
 echo -e "";
@@ -170,42 +174,32 @@ fi
 email_mu=$( cat /etc/kaizenvpn/email.txt );
 
 # // Backup your data
-rm -rf /root/backup-dir-cache/;
-mkdir -p /root/backup-dir-cache/;
-cd /root/backup-dir-cache/;
-cp -r /etc/xray-mini /root/backup-dir-cache/;
-cp -r /etc/kaizenvpn /root/backup-dir-cache/;
-cp /etc/passwd /root/backup-dir-cache/;
-cp /etc/group /root/backup-dir-cache/;
-cp /etc/gshadow /root/backup-dir-cache/;
-cp /etc/shadow /root/backup-dir-cache/;
-cp -r /etc/wireguard /root/backup-dir-cache/;
+rm -rf /root/backup/;
+mkdir -p /root/backup/;
+cd /root/backup;
+cp -r /etc/xray-mini /root/backup/;
+cp -r /etc/kaizenvpn /root/backup/;
+cp /etc/passwd /root/backup/;
+cp /etc/group /root/backup/;
+cp /etc/gshadow /root/backup/;
+cp /etc/shadow /root/backup/;
+cp -r /etc/wireguard /root/backup/;
 echo "$(date)" > created.date;
 echo "(C) Copyright by kaizenvpn" > Copyright;
 echo "1.0" > script-version;
-zip -r backup.zip * > /dev/null 2>&1;
-cp backup.zip /root/;
-cd;
-rm -rf /root/backup-dir-cache/;
-date=$(date +"%Y-%m-%d-%H-%M");
-cd /root/
-mv backup.zip $IP_NYA-$date.zip
-tanggal=$(date +"%Y-%m-%d %X");
+cd /root
+zip -r $IP_NYA-$date.zip backup > /dev/null 2>&1
 
 # // Upload to rclone
-rclone copy "$IP_NYA-$date.zip" kaizenvpn:Script-VPN-Backup/
-url=$(rclone link "kaizenvpn:Script-VPN-Backup/$IP_NYA-$date.zip")
+rclone copy /root/$IP_NYA-$date.zip dr:backup/
+url=$(rclone link dr:backup/$IP_NYA-$date.zip)
 F_ID=(`echo $url | grep '^https' | cut -d'=' -f2`)
-rm -f /root/.config/rclone/rclone.conf
-rm -f $IP_NYA-$date.zip
-JAM=$(date +%Z);
-JAMNYA=$( echo $JAM | sed 's/+//g' ); 
 
 if [[ $JAMNYA == "08" ]]; then
     JAMNYA="MY";
 fi
 
-msgl="===================================<br> VPS Data Backup Information<br>===================================<br>IP : ${IP_NYA}<br>ID Backup : ${F_ID}<br>Date : ${tanggal} ( $JAMNYA )<br>===================================<br>(C) Copyright 2022 By kaizenvpn"
+msgl="===================================<br> VPS Data Backup Information<br>===================================<br>IP : ${IP_NYA}<br>ID Backup : ${F_ID}<br>Date : ${tanggal} ( $JAMNYA )<br>===================================<br>(C) Copyright 2022 By KaizenVPN"
 subject_nya="Maklumat Backup | ${IP_NYA}";
 email_nya="$email_mu";
 html_parse='true';
@@ -220,3 +214,6 @@ else
     echo -e "  ${ERROR} Terdapat setting yang tidak betul!";
     exit 1;
 fi
+
+rm -rf /root/backup/
+rm -f $IP_NYA-$date.zip
