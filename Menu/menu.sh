@@ -260,7 +260,7 @@ echo -e "  ${GREEN}[ 19 ]${NC} ► Restore";
 echo -e "  ${GREEN}[ 20 ]${NC} ► Autobackup";
 echo -e "  ${GREEN}[ 21 ]${NC} ► Tukar DNS";
 echo -e "  ${GREEN}[ 22 ]${NC} ► Tukar Port";
-echo -e "  ${GREEN}[ 23 ]${NC} ► Cek Maklumat Servis & Sistem";
+echo -e "  ${GREEN}[ 23 ]${NC} ► Cek Maklumat Sistem & Port";
 echo -e "  ${GREEN}[ 24 ]${NC} ► Cek versi skrip";
 echo -e "  ${GREEN}[ 25 ]${NC} ► Reboot Server";
 echo -e "  ${GREEN}[ 26 ]${NC} ► Restart Semua Servis";
