@@ -191,10 +191,10 @@ egrep "^$User" /etc/passwd > /dev/null 2>&1;
 echo -e "$Pass\n$Pass\n"|passwd $User > /dev/null 2>&1;
 
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}    [ Perbaharui Akaun SSH & OpenVPN ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
