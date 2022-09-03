@@ -193,7 +193,6 @@ mv backup.zip $IP_NYA-$date.zip
 tanggal=$(date +"%Y-%m-%d %X");
 
 # // Upload to rclone
-wget -q -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/rclone_conf";
 rclone copy "$IP_NYA-$date.zip" kaizenvpn:Script-VPN-Backup/
 url=$(rclone link "kaizenvpn:Script-VPN-Backup/$IP_NYA-$date.zip")
 F_ID=(`echo $url | grep '^https' | cut -d'=' -f2`)
