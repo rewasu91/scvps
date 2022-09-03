@@ -159,10 +159,10 @@ clear;
 # // Mengganti Password Akaun
 # ═══════════════════════════
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG} [ Mengganti Password Akaun SSH & OpenVPN ] ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -175,10 +175,10 @@ clear
 egrep "^$Username" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass" | passwd $Login
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Maklumat Akaun SSH & OpenVPN ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
