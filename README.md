@@ -1,3 +1,7 @@
+<h2 align="center">
+Autoskrip KaizenVPN
+<img src="https://img.shields.io/badge/Version-2.0-blue.svg"></h2>
+
 ### STEP PERTAMA
 Sila copy skrip dibawah dan paste kedalam VPS anda. Selepas selesai, sistem akan reboot sebentar. Sila tunggu sistem reboot, kemudian sambung step kedua dibawah.
 
