@@ -182,12 +182,12 @@ read -p "► Sila masukkan nombor pilihan anda [1-4] : " selection_mu;
         elif [[ $selection_mu == "2" ]]; then
                 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
                 echo -e "  ${OKEY} Timezone telah ditukar ke Malaysia ( GMT +8 )";
-        elif [[ $selection_mu == "2" ]]; then
+        elif [[ $selection_mu == "3" ]]; then
                 ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime;
                 echo -e "  ${OKEY} Timezone telah ditukar ke Chicago ( GMT +6 )";
-	elif [[ $selection_mu == "3" ]]; then
+	elif [[ $selection_mu == "4" ]]; then
                 clear;
-                menu";
+                menu;
         else
                 sleep 2;
                 echo -e "  ${ERROR} Sila masukkan nombor yang betul !";
