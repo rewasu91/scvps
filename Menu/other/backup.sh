@@ -154,13 +154,17 @@ export TIME_NYA="$TIMEZONE";
 # // Clear Data
 # ═════════════
 clear;
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 
 # // Check Email
 if [[ -f /etc/kaizenvpn/email.txt ]]; then
     Skip=true;
 else 
     clear;
-    echo -e "${ERROR} Sila set email anda terlebih dahulu untuk backup";
+    echo -e "  ${ERROR} Sila set email anda terlebih dahulu untuk backup";
     exit 1;
 fi
 email_mu=$( cat /etc/kaizenvpn/email.txt );
@@ -210,10 +214,10 @@ Result=$( wget -qO- 'https://api.kaizenvpn.me/email/send_mail.php?security_id=1c
 
 if [[ $( echo $Result | jq -r '.respon_code' ) == "107" ]]; then
     clear;
-    echo -e "${OKEY} Backup fail telah dihantar ke email ${email_nya}";
+    echo -e "  ${OKEY} Backup fail telah dihantar ke email ${email_nya}";
     exit 1;
 else
     clear;
-    echo -e "${ERROR} Terdapat setting yang tidak betul!";
+    echo -e "  ${ERROR} Terdapat setting yang tidak betul!";
     exit 1;
 fi
