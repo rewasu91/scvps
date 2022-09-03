@@ -159,17 +159,19 @@ clear;
 # // Tukar Domain
 # ═══════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}              [ Tukar Domain ]              ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 
-        read -p "► Sila masukkan Domain baru anda: " new_domains
+        read -p "  ► Sila masukkan Domain baru anda: " new_domains
         if [[ $new_domains == "" ]]; then
-            clear;
             sleep 2;
-            echo -e "► ${EROR}Sila masukkan Domain baru anda !";
+            echo -e "  ► ${EROR}Sila masukkan Domain baru anda !";
             menu;
         fi
 
@@ -182,7 +184,7 @@ echo -e "";
 
         # // Making Certificate
         clear;
-        echo -e "${OKEY} Starting Generating Certificate";
+        echo -e "  ${OKEY} Mula membuat Certificate untuk domain baru..";
         rm -rf /root/.acme.sh;
         mkdir -p /root/.acme.sh;
         wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
