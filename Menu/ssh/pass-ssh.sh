@@ -159,30 +159,36 @@ clear;
 # // Mengganti Password Akaun
 # ═══════════════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG} [ Mengganti Password Akaun SSH & OpenVPN ] ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username yang akan diganti Passwordnya: " Username;
+read -p "  ► Sila masukkan Username yang akan diganti Passwordnya: " Username;
 egrep "^$Username" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 read -p "► Sila masukkan Password baru untuk user $Username: " Pass
 clear
 egrep "^$Username" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass" | passwd $Login
-clear
+clear;
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
 echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Maklumat Akaun SSH & OpenVPN ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e ""
-echo -e "► Password untuk user ${GREEN}$Username${NC} sudah berjaya diganti."
-echo -e "► Password baru untuk user ${GREEN}$Username${NC} adalah ${GREEN}$Pass${NC}"
+echo -e "  ► Password untuk user ${GREEN}$Username${NC} sudah berjaya diganti."
+echo -e "  ► Password baru untuk user ${GREEN}$Username${NC} adalah ${GREEN}$Pass${NC}"
 echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo ""
 else
-echo -e "Username ${GREEN}$Username${NC} tidak dijumpai di VPS anda"
+echo -e "  Username ${GREEN}$Username${NC} tidak dijumpai di VPS anda"
 exit 0
 fi
