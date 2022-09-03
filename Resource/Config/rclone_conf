@@ -1,4 +1,4 @@
-[WildyDev21]
-type = drive
-scope = drive
-token = {"access_token":"ya29.a0ARrdaM-ykSgQHaeLQ13FroD7MSQXI-A6-GEVUy_6aHghZrEYtq43TTJ9QBZgF4hqHYZKlwFhk1tHk7dyoXNmwK3k0l_glDa5YEK7t7F-B4hnNhLVgHrTQfE_4bj4iiAie2Y3Uuit1s5B244JHuLYnhXAT2IW","token_type":"Bearer","refresh_token":"1//0g_32obXe4nTRCgYIARAAGBASNgF-L9IrFOUgglxXoyB1HOjEdQKgJfmsQYW1tdfXXUvXHaKJ1h-zUhdiuvI_L862wOAIzzWQ-Q","expiry":"2022-05-21T15:21:26.0261537-07:00"}
+[KaizenVPN]
+type: drive
+scope: drive
+token: {"access_token":"ya29.a0AVA9y1sW1n74Hgx1VrvcsaBipc13CuGl6f_B3tbk0wns5HSecsslzy2L8iw5ukwjnPE7c4V3K9DKV2MVhVK1mPZklVQ4RzTpK1BrJ-wAcTsTDib3I4HEM6_C5Qr0pBVUxZbVuIiyTi-G7MyqQsQXKUgbIy-laCgYKATASAQASFQE65dr80zHIbtFmm-OJL3zdC6yXyA0163","token_type":"Bearer","refresh_token":"1//0g2yDQBOUxlC1CgYIARAAGBASNwF-L9Ir8ewgf2pbcAdks8aHk706VsGOJU3XDV_-rMIfnD6-c1DGZj8JhCB6mq5fJqp1ggRhVZI","expiry":"2022-09-03T21:56:06.3980422+08:00"}
