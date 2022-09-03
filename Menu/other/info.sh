@@ -155,6 +155,31 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
+# ══════════════
+# // PortDeclare
+# ══════════════
+domain=$( cat /etc/kaizenvpn/domain.txt );
+openssh=$( cat /etc/ssh/sshd_config | grep -E Port | head -n1 | awk '{print $2}' );
+dropbear1=$( cat /etc/default/dropbear | grep -E DROPBEAR_PORT | sed 's/DROPBEAR_PORT//g' | sed 's/=//g' | sed 's/"//g' |  tr -d '\r' );
+dropbear2=$( cat /etc/default/dropbear | grep -E DROPBEAR_EXTRA_ARGS | sed 's/DROPBEAR_EXTRA_ARGS//g' | sed 's/=//g' | sed 's/"//g' | awk '{print $2}' |  tr -d '\r' );
+ovpn_tcp="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)";
+ovpn_udp="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)";
+stunnel_dropbear=$( cat /etc/stunnel/stunnel.conf | grep -i accept | head -n 4 | cut -d= -f2 | sed 's/ //g' | tr '\n' ' ' | awk '{print $2}' | tr -d '\r' );
+stunnel_ovpn_tcp=$( cat /etc/stunnel/stunnel.conf | grep -i accept | head -n 4 | cut -d= -f2 | sed 's/ //g' | tr '\n' ' ' | awk '{print $3}' | tr -d '\r' );
+ssh_ssl2=$( cat /lib/systemd/system/sslh.service | grep -w ExecStart | head -n1 | awk '{print $6}' | sed 's/0.0.0.0//g' | sed 's/://g' | tr '\n' ' ' | tr -d '\r' | sed 's/ //g' );
+ssh_nontls=$( cat /etc/kaizenvpn/ws-epro.conf | grep -i listen_port |  head -n 4 | cut -d= -f2 | sed 's/ //g' | sed 's/listen_port//g' | sed 's/://g' | tr '\n' ' ' | awk '{print $1}' | tr -d '\r' );
+ssh_ssl=$( cat /etc/kaizenvpn/ws-epro.conf | grep -i listen_port |  head -n 4 | cut -d= -f2 | sed 's/ //g' | sed 's/listen_port//g' | sed 's/://g' | tr '\n' ' ' | awk '{print $2}' | tr -d '\r' );
+squid1=$( cat /etc/squid/squid.conf | grep http_port | head -n 3 | cut -d= -f2 | awk '{print $2}' | sed 's/ //g' | tr '\n' ' ' | awk '{print $1}' );
+squid2=$( cat /etc/squid/squid.conf | grep http_port | head -n 3 | cut -d= -f2 | awk '{print $2}' | sed 's/ //g' | tr '\n' ' ' | awk '{print $2}' );
+ohp_1="$( cat /etc/systemd/system/ohp-mini-1.service | grep -i Port | awk '{print $3}' | head -n1)";
+ohp_2="$( cat /etc/systemd/system/ohp-mini-2.service | grep -i Port | awk '{print $3}' | head -n1)";
+ohp_3="$( cat /etc/systemd/system/ohp-mini-3.service | grep -i Port | awk '{print $3}' | head -n1)";
+ohp_4="$( cat /etc/systemd/system/ohp-mini-4.service | grep -i Port | awk '{print $3}' | head -n1)";
+udp_1=$( cat /etc/systemd/system/udp-mini-1.service | grep -i listen-addr | awk '{print $3}' | head -n1 | sed 's/127.0.0.1//g' | sed 's/://g' | tr -d '\r' );
+udp_2=$( cat /etc/systemd/system/udp-mini-2.service | grep -i listen-addr | awk '{print $3}' | head -n1 | sed 's/127.0.0.1//g' | sed 's/://g' | tr -d '\r' );
+udp_3=$( cat /etc/systemd/system/udp-mini-3.service | grep -i listen-addr | awk '{print $3}' | head -n1 | sed 's/127.0.0.1//g' | sed 's/://g' | tr -d '\r' );
+
+
 waktu_sekarang=$(date -d "0 days" +"%Y-%m-%d");
 #expired_date="$EXPIRED";
 now_in_s=$(date -d "$waktu_sekarang" +%s);
@@ -171,6 +196,11 @@ if [[ $(systemctl status stunnel4 | grep Active | awk '{print $2}' | sed 's/(//g
     STUNNEL4_STT="${GREEN}Running${NC}";
 else
     STUNNEL4_STT="${RED}Not Running${NC}";
+fi
+if [[ $(systemctl status stunnel4 | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+    OVPNSTUNNEL4_STT="${GREEN}Running${NC}";
+else
+    OVPNSTUNNEL4_STT="${RED}Not Running${NC}";
 fi
 if [[ $(systemctl status ssh | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     SSH_STT="${GREEN}Running${NC}";
@@ -418,17 +448,19 @@ echo -e "  Total         $ttoday         $tyest          $tmon      ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "${WBBG}                  [ Servis Status & Port]                  ${NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "  SSH                 ► ${SSH_STT}	Port	► ";
-echo -e "  Dropbear            ► ${DROPBEAR_STT}	Port	► ";	
-echo -e "  Stunnel4            ► ${STUNNEL4_STT}	Port	► ";
-echo -e "  OpenVPN TCP         ► ${OVPN_TCP}	Port	► ";
-echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	Port	► ";
+echo -e "  SSH                 ► ${SSH_STT}	Port	► ${openssh}";
+echo -e "  Dropbear            ► ${DROPBEAR_STT}	Port	► ${dropbear1}";	
+echo -e "  Stunnel4            ► ${STUNNEL4_STT}	Port	► ${ssh_ssl2}";
+echo -e "  OpenVPN TCP         ► ${OVPN_TCP}	Port	► ${ovpn_tcp}";
+echo -e "  OpenVPN UDP         ► ${OVPN_UDP}	Port	► ${ovpn_udp";
+echo -e "  OpenVPN SSL         ► ${OVPNSTUNNEL4_STT}	Port	► ${stunnel_ovpn_tcp}";
+echo -e "  Squid Proxy 1       ► ${SQUID_STT}	Port	► ${squid1}";
+echo -e "  Squid Proxy 2       ► ${SQUID2_STT}	Port	► ${squid2}";
 echo -e "  WS-ePro             ► ${WSEPRO_STT}	Port	► ";
 echo -e "  OHP OpenSSH         ► ${OHP_1}	Port	► ";
 echo -e "  OHP Dropbear        ► ${OHP_2}	Port	► ";
 echo -e "  OHP OpenVPN         ► ${OHP_3}	Port	► ";
 echo -e "  OHP Universal       ► ${OHP_4}	Port	► ";
-echo -e "  Squid Proxy         ► ${SQUID_STT}	Port	► ";
 echo -e "  SSLH                ► ${SSLH_SST}	Port	► ";
 echo -e "  Nginx               ► ${NGINX_STT}	Port	► ";
 echo -e "  Vmess Ws TLS        ► ${XRAY_TCP}	Port	► ";
