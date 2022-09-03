@@ -159,7 +159,10 @@ clear;
 # // Link Config Akaun Wireguard
 # ══════════════════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Link Config Akaun Wireguard ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
