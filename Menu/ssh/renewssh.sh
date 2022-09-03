@@ -159,20 +159,23 @@ clear;
 # // Perbaharui Akaun 
 # ═══════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}    [ Perbaharui Akaun SSH & OpenVPN ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username yang ingin diperbaharui : " Username;
+read -p "  ► Sila masukkan Username yang ingin diperbaharui : " Username;
 
 # // Checking User Avaiable Or No
 if [[ $( cat /etc/shadow | cut -d: -f1,8 | sed /:$/d | grep -w $Username ) == "" ]]; then
     clear;
-    echo -e "${ERROR} Username ( ${YELLOW}$Username${NC} ) tidak wujud !";
+    echo -e "  ${ERROR} Username ( ${YELLOW}$Username${NC} ) tidak wujud !";
     exit 1;
 else
-read -p "► Sila masukkan Tempoh Aktif (hari) : " Days;
+read -p "  ► Sila masukkan Tempoh Aktif (hari) : " Days;
 
 # // String For Date Details
 Today=`date +%s`;
@@ -188,10 +191,13 @@ egrep "^$User" /etc/passwd > /dev/null 2>&1;
 echo -e "$Pass\n$Pass\n"|passwd $User > /dev/null 2>&1;
 
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}    [ Perbaharui Akaun SSH & OpenVPN ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "${OKEY} Username ( ${YELLOW}${Username}${NC} ) telah berjaya diperbaharui dan expire pada ( ${YELLOW}$Expired${NC} )";
+echo -e "  ${OKEY} Username ( ${YELLOW}${Username}${NC} ) telah berjaya diperbaharui dan expire pada ( ${YELLOW}$Expired${NC} )";
 fi
