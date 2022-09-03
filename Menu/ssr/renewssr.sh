@@ -159,7 +159,10 @@ clear;
 # // Perbaharui Akaun 
 # ═══════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}     [ Perbaharui Akaun ShadowsocksR ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -183,10 +186,10 @@ port=$(grep "^SSR " "/etc/kaizenvpn/ssr-client.conf" | cut -d ' ' -f 4 | sed -n 
 
 # // Extending Days
 clear;
-read -p "Tambah berapa hari? : " Jumlah_Hari;
+read -p "  Tambah berapa hari? : " Jumlah_Hari;
 if [[ $Jumlah_Hari == "" ]]; then
     clear;
-    echo -e "${ERROR} Sila taip ingin tambah berapa hari!";
+    echo -e "  ${ERROR} Sila taip ingin tambah berapa hari!";
     exit 1;
 fi
 
@@ -203,7 +206,10 @@ sed -i "/\b$client\b/d" /etc/kaizenvpn/ssr-client.conf;
 echo -e "SSR $client $exp4 $port" >> /etc/kaizenvpn/ssr-client.conf;
 
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}     [ Perbaharui Akaun ShadowsocksR ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
