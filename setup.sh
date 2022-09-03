@@ -552,7 +552,9 @@ clear;
 # ═══════════════════════════
 # // Memasang SSH & Websocket
 # ═══════════════════════════
-wget https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ssh-ssl.sh && chmod +x ssh-ssl.sh && ./ssh-ssl.sh
+wget -q -O /root/ssh-ssl.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Setup/ssh-ssl.sh";
+chmod +x ssh-ssl.sh;
+./ssh-ssl.sh;
 clear;
 
 # ═════════════════
