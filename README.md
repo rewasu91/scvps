@@ -1,5 +1,4 @@
-### STEP PERTAMA
-Sila copy skrip dibawah dan paste kedalam VPS anda. Selepas selesai, sistem akan reboot sebentar. Sila tunggu sistem reboot, kemudian sambung step kedua dibawah.
+### 1) Sila copy skrip dibawah dan paste kedalam VPS anda. Selepas selesai, sistem akan reboot sebentar. Sila tunggu sistem reboot, kemudian sambung step kedua dibawah.
 
 ```
 apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
