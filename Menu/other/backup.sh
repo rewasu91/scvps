@@ -210,7 +210,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}               [ Menu Vmess ]               ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-echo -e "  ► ID Backup anda ialah: ${F_ID}";
+echo -e "  ► ID Backup anda ialah: ${GREEN}${F_ID}${NC}";
 echo -e "  ► Sila copy ID ini dan gunakan di menu Restore";
 echo -e "";
 
