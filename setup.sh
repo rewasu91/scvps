@@ -191,8 +191,6 @@ if [[ $accepted_rules == "okey" ]]; then
     sleep 2;
     clear;
 else
-    rm -rf /etc/kaizenvpn/;
-    rm -rf /usr/local/kaizenvpn/;
     echo "";
     echo -e "    ${ERROR} Maaf, anda tidak boleh meneruskan pemasangan skrip";
     echo -e "    kerana anda tidak bersetuju dengan peraturan kami.";
@@ -493,7 +491,7 @@ domain=$( cat /etc/kaizenvpn/domain.txt );
 echo -e "  ${OKEY} Domain anda   : $domain";
 echo -e "  ${OKEY} Wildcard anda : bug.com.$domain";
 echo -e "  Tukarkan bug.com kepada apa-apa sahaja bug anda.";
-sleep 2;
+sleep 4;
 clear;
 
 # ═════════════════════════════
@@ -533,7 +531,7 @@ echo -e "${WBBG}          [ Maklumat Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
 echo -e "  ${OKEY} Domain anda : $domain";
-sleep 2;
+sleep 4;
 clear;
 
 else
