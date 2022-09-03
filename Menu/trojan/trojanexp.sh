@@ -184,7 +184,11 @@ if [[ $sisa_hari -lt 1 ]]; then
     systemctl restart xray-mini@tls;
 
 # // Successfull Deleted Expired Client
-echo "";
+clear;
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}      [ Memadam Akaun Expire Trojan ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
