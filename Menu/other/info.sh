@@ -202,7 +202,7 @@ if [[ $(systemctl status stunnel4 | grep Active | awk '{print $2}' | sed 's/(//g
 else
     STUNNEL4_STT="${RED}Not Running${NC}";
 fi
-if [[ $(systemctl status stunnel4 | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+if [[ $(systemctl status stunnel4 | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     OVPNSTUNNEL4_STT="${GREEN}Running${NC}";
 else
     OVPNSTUNNEL4_STT="${RED}Not Running${NC}";
@@ -217,7 +217,7 @@ if [[ $(systemctl status dropbear | grep Active | awk '{print $2}' | sed 's/(//g
 else
     DROPBEAR_STT="${RED}Not Running${NC}";
 fi
-if [[ $(systemctl status ws-epro | grep Active | awk '{print $1}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+if [[ $(systemctl status ws-epro | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     WSEPRO_STT1="${GREEN}Running${NC}";
 else
     WSEPRO_STT1="${RED}Not Running${NC}";
@@ -252,15 +252,10 @@ if [[ $(systemctl status ohp-mini-4 | grep Active | awk '{print $2}' | sed 's/(/
 else
     OHP_4="${RED}Not Running${NC}";
 fi
-if [[ $(systemctl status squid | grep Active | awk '{print $1}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
+if [[ $(systemctl status squid | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     SQUID_STT="${GREEN}Running${NC}";
 else
     SQUID_STT="${RED}Not Running${NC}";
-fi
-if [[ $(systemctl status squid | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
-    SQUID2_STT="${GREEN}Running${NC}";
-else
-    SQUID2_STT="${RED}Not Running${NC}";
 fi
 if [[ $(systemctl status sslh | grep Active | awk '{print $2}' | sed 's/(//g' | sed 's/)//g' | sed 's/ //g') == "active" ]]; then
     SSLH_STT="${GREEN}Running${NC}";
