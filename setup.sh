@@ -456,7 +456,7 @@ echo -e "${CYAN}═════════════════════�
 echo -e "${WBBG}           [ Setting Domain ]             ${NC}";
 echo -e "${CYAN}══════════════════════════════════════════${NC}";
 echo -e "";
-echo -e " ${PURPLE}Guna domain sendiri / domain automatik?${NC}";
+echo -e " ${CYAN}Guna domain sendiri / domain automatik?${NC}";
 echo -e " ${GREEN}[ 01 ]${NC} ► Guna domain sendiri";
 echo -e " ${GREEN}[ 02 ]${NC} ► Guna domain automatik";
 
