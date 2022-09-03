@@ -159,7 +159,10 @@ clear;
 # // Menu Wireguard
 # ═════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}             [ Menu Wireguard ]             ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -173,9 +176,10 @@ echo -e " ${GREEN}[ 05 ]${NC} ► Senarai akaun yang sudah dibuat";
 echo -e " ${GREEN}[ 06 ]${NC} ► Link config setiap akaun";
 echo -e " ${GREEN}[ 07 ]${NC} ► Memadam akaun yang sudah expire";
 echo -e " ${GREEN}[ 08 ]${NC} ► Senarai akaun yang sedang login";
+echo -e " ${GREEN}[ 09 ]${NC} ► Kembali ke menu utama";
 echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-8] : " selection_mu;
+read -p "► Sila masukkan nombor pilihan anda [1-9] : " selection_mu;
 
 case $selection_mu in
     1)
@@ -201,6 +205,9 @@ case $selection_mu in
     ;;
     8)
         chkwg;
+    ;;
+    9)
+       menu;
     ;;
     *)
         echo -e "${ERROR} Sila masukkan nombor yang betul!";
