@@ -202,8 +202,6 @@ tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($
 # // Getting CPU Information
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
-Sver=$(cat /home/version)
-tele=$(cat /home/contact)
 JAM=$(date +%r)
 DAY=$(date +%A)
 DATE=$(date +%d.%m.%Y)
