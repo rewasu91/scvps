@@ -200,6 +200,7 @@ apt install g++ -y;
 apt install libreadline-dev -y;
 apt install zlib1g-dev -y;
 apt install libssl-dev -y;
+apt install neofetch -y;
 
 # ════════════════════
 # // Memasang Neofetch
@@ -364,8 +365,8 @@ apt install fail2ban -y;
 # ═══════════════════════════
 # // Set kepada default login
 # ═══════════════════════════
-echo "clearlog && clear" >> /etc/profile
-echo "autoexp && clear" >> /etc/profile
+echo "clearlog && clear && neofetch" >> /etc/profile
+echo "autoexp && clear" >> /etc/profile 
 
 # ════════════════════
 # // Memasang RC-Local
