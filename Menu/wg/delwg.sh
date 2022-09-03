@@ -159,7 +159,10 @@ clear;
 # // Memadam Akaun 
 # ════════════════
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Memadam Akaun Wireguard ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -189,7 +192,10 @@ rm -rf /etc/kaizenvpn/wireguard/$client;
 systemctl daemon-reload;
 systemctl restart wg-quick@wg0;
 clear;
-echo "";
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}       [ Memadam Akaun Wireguard ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
