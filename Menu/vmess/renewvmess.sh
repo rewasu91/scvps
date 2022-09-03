@@ -159,10 +159,10 @@ clear;
 # // Perbaharui Akaun 
 # ═══════════════════
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}        [ Perbaharui Akaun Vmess ]          ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
@@ -205,10 +205,10 @@ sed -i "/\b$client\b/d" /etc/xray-mini/client.conf;
 echo -e "Vmess $client $exp4" >> /etc/xray-mini/client.conf;
 
 clear;
-echo -e ""
-echo -e ""
-cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
-echo -e ""
+echo -e "";
+echo -e "";
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}         [ Perbaharui Akaun Vmess ]         ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
