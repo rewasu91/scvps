@@ -159,28 +159,31 @@ clear;
 # // Membuat Akaun
 # ════════════════
 clear;
-echo "";
+echo -e ""
+echo -e ""
+cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+echo -e ""
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}      [ Membuat Akaun SSH & OpenVPN ]       ${NC}";
+echo -e "${WBBG}      [ Memadam Akaun SSH & OpenVPN ]       ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
-read -p "► Sila masukkan Username yang ingin dipadam : " Pengguna;
+read -p "  ► Sila masukkan Username yang ingin dipadam : " Pengguna;
 
 if [[ $Pengguna == "root" ]]; then
-    echo -e "${ERROR} Maaf, akaun Root tidak boleh dipadam !";
+    echo -e "  ${ERROR} Maaf, akaun Root tidak boleh dipadam !";
     exit 1;
 fi
 if [[ $Pengguna == "" ]]; 
     clear;
-    echo -e "${ERROR} Sila masukkan Username yang ingin dipadam !";
+    echo -e "  ${ERROR} Sila masukkan Username yang ingin dipadam !";
     exit 1;
 fi
 if getent passwd $Pengguna > /dev/null 2>&1; then
         userdel -f $Pengguna;
         rm -rf /etc/kaizenvpn/ssh/${Pengguna};
-        echo -e "${OKEY} Username ( ${YELLOW}$Pengguna${NC} ) telah dipadam !";
+        echo -e "  ${OKEY} Username ( ${YELLOW}$Pengguna${NC} ) telah dipadam !";
 else
         clear;
-        echo -e "${ERROR} Username ( ${YELLOW}$Pengguna${NC} ) tidak wujud !";
+        echo -e "  ${ERROR} Username ( ${YELLOW}$Pengguna${NC} ) tidak wujud !";
         exit 1;
 fi
