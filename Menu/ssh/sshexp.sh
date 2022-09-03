@@ -184,13 +184,17 @@ if [ $userexpireinseconds -ge $todaystime ]; then
     SKip="true"
 else
     # // Successfull Deleted Expired Client
-    echo "";
+    clear;
+    echo -e ""
+    echo -e ""
+    cowsay -f ghostbusters "SELAMAT DATANG BOSKU."
+    echo -e ""
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
     echo -e "${WBBG}   [ Memadam Akaun Expire SSH & OpenVPN ]   ${NC}";
     echo -e "${CYAN}════════════════════════════════════════════${NC}";
     echo -e "";
-    echo "Username : $username | Expire Pada : $tgl $bulantahun | Dipadam Pada : $hariini" >> /etc/kaizenvpn/ssh-expired-deleted.db
-    echo "Username : $username | Expire Pada : $tgl $bulantahun | Dipadam Pada : $hariini"
+    echo "  Username : $username | Expire Pada : $tgl $bulantahun | Dipadam Pada : $hariini" >> /etc/kaizenvpn/ssh-expired-deleted.db
+    echo "  Username : $username | Expire Pada : $tgl $bulantahun | Dipadam Pada : $hariini"
     userdel -f $username;
     rm -rf /etc/kaizenvpn/ssh/${username};
 fi
