@@ -172,8 +172,8 @@ rm menu
 wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/menuspecial.sh"; chmod +x /usr/local/sbin/menu;
 wget -q -O /usr/local/sbin/menutelco "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/menutelco.sh"; chmod +x /usr/local/sbin/menutelco;
 wget -q -O /usr/local/sbin/adddigi "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/adddigi.sh"; chmod +x /usr/local/sbin/adddigi;
-wget -q -O /usr/local/sbin/addmaxis"https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/addmaxis.sh"; chmod +x /usr/local/sbin/addmaxis;
-wget -q -O /usr/local/sbin/addcelcom"https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/addcelcom.sh"; chmod +x /usr/local/sbin/addcelcom;
+wget -q -O /usr/local/sbin/addmaxis "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/addmaxis.sh"; chmod +x /usr/local/sbin/addmaxis;
+wget -q -O /usr/local/sbin/addcelcom "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/Pro/Telco/addcelcom.sh"; chmod +x /usr/local/sbin/addcelcom;
 clear;
 echo -e "";
 echo -e "";
