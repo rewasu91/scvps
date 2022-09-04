@@ -194,7 +194,7 @@ echo -e "";
         else
             echo "nameserver $dns1nya" > /etc/resolv.conf
 	    echo "nameserver $dns1nya" > /etc/resolvconf/resolv.conf.d/head
-            echo "nameserver $dns2nya" >> /etc/resolv.conf
+            echo "nameserver $dns2nya" > /etc/resolv.conf
 	    echo "nameserver $dns2nya" > /etc/resolvconf/resolv.conf.d/head
 	    systemctl stop resolvconf.service
 	    systemctl enable resolvconf.service
