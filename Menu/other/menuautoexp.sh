@@ -180,23 +180,25 @@ read -p "► Sila masukkan nombor pilihan anda [1-3] : " selection_mu;
             if [[ $STATUS_AUTOEXP == "0 0 * * * root /usr/local/sbin/autoexp" ]]; then
                 echo "";
                 clear;
-                echo -e "${ERROR} Autoexpire sudah diaktifkan didalam server ini";
+                echo -e "  ${ERROR} Autoexpire sudah diaktifkan didalam server ini";
                 exit 1;
             fi
             echo "0 0 * * * root /usr/local/sbin/autoexp" > /etc/cron.d/autoexp
             echo "";
             clear;
-            echo -e "${OKEY} Berjaya mengaktifkan Autoexpire";
+            echo -e "  ${OKEY} Berjaya mengaktifkan Autoexpire";
+	    echo -e "  Sistem akan memadam akaun yang sudah expire secara automatik";
+	    echo -e "  pada pukul 12.00 malam setiap hari.";
                   
         elif [[ $selection_mu == "2" ]]; then
             STATUS_AUTOEXP=$( cat /etc/cron.d/autoexp );
             if [[ $STATUS_AUTOEXP == "cat: /etc/cron.d/autoexp: No such file or directory" ]]; then
                 clear;
-                echo -e "${ERROR} Autoexpire sudah dihentikan didalam server ini";
+                echo -e "  ${ERROR} Autoexpire sudah dihentikan didalam server ini";
                 exit 1;
             fi
             sed -i 's/0 0 * * * root /usr/local/sbin/autoexp//g'  /etc/cron.d/autoexp
-            echo -e "${OKEY} Berjaya menghentikan Autoexpire";      
+            echo -e "  ${OKEY} Berjaya menghentikan Autoexpire";      
 	      elif [[ $selection_mu == "3" ]]; then
                 clear;
                 menu;
