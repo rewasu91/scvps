@@ -174,6 +174,8 @@ echo -e "";
             exit 1
         fi
         echo -e "  $OKEY Memulakan pembaharuan Certificate..";
+	lsof -t -i tcp:80 -s tcp:listen | xargs kill > /dev/null 2>&1
+	lsof -t -i tcp:443 -s tcp:listen | xargs kill > /dev/null 2>&1
 	rm -rf /root/.acme.sh;
 	mkdir -p /root/.acme.sh;
 	wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
@@ -192,6 +194,8 @@ echo -e "";
         # // Restart
         systemctl restart xray-mini@tls > /dev/null 2>&1
         systemctl restart xray-mini@nontls > /dev/null 2>&1
+	lsof -t -i tcp:80 -s tcp:listen | xargs restart > /dev/null 2>&1
+	lsof -t -i tcp:443 -s tcp:listen | xargs restart > /dev/null 2>&1
 	
 	clear;
 	echo -e "";
