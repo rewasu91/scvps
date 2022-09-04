@@ -164,9 +164,6 @@ echo -n > /etc/kaizenvpn/cache/vmess_temp.txt;
 echo -n > /etc/kaizenvpn/cache/vmess_temp2.txt;
 data=(`cat /etc/xray-mini/client.conf | grep '^Vmess' | cut -d " " -f 2`);
 echo "";
-echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}       [ Senarai Login Akaun Vmess ]        ${NC}";
-echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 for akun in "${data[@]}"
 do
@@ -197,8 +194,11 @@ echo "$jum2";
 echo "";
 fi
 done
+
+clear;
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}    [ Senarai Login WebSocket NonTLS ]      ${NC}";
+echo -e "${WBBG}     [ Senarai Login Vmess WS None TLS ]    ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -n > /etc/kaizenvpn/cache/vmess_temp3.txt;
 data=(`cat /etc/xray-mini/client.conf | grep '^Vmess' | cut -d " " -f 2`);
@@ -218,6 +218,33 @@ echo "$jum5";
 echo "";
 fi
 done
+
+echo -e "";
+echo -e "";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -e "${WBBG}       [ Senarai Login Vmess WS TLS ]       ${NC}";
+echo -e "${CYAN}════════════════════════════════════════════${NC}";
+echo -n > /etc/kaizenvpn/cache/vmess_temp3.txt;
+data=(`cat /etc/xray-mini/client.conf | grep '^Vmess' | cut -d " " -f 2`);
+for akun in "${data[@]}"
+do
+if [[ -z "$akun" ]]; then
+akun="tidakada";
+fi
+ip=$( cat /etc/kaizenvpn/xray-mini-tls/access.log | grep "$(date -d "0 days" +"%H:%M" )" | grep -w $akun | tail -n100 | awk '{print $3}' | cut -d: -f1 | sort | uniq );
+if [[ -z "$ip" ]]; then
+echo > /dev/null
+else
+jum5=$(echo $ip | nl);
+hariini=`date -d "0 days" +"%Y-%m-%d"`;
+echo "Username : $akun";
+echo "$jum5";
+echo "";
+fi
+done
+
+echo -e "";
+echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "${WBBG}    [ Senarai Login Akaun GRPC Vmess ]      ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
