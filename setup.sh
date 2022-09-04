@@ -475,6 +475,7 @@ rm -rf /root/.acme.sh;
 mkdir -p /root/.acme.sh;
 wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
 chmod +x /root/.acme.sh/acme.sh;
+sudo /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
 sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
 sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256 --force;
 
@@ -518,6 +519,7 @@ rm -rf /root/.acme.sh;
 mkdir -p /root/.acme.sh;
 wget -q -O /root/.acme.sh/acme.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/acme.sh";
 chmod +x /root/.acme.sh/acme.sh;
+sudo /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
 sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@kaizenvpn.me;
 sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256 --force;
 
