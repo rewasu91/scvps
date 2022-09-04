@@ -174,7 +174,6 @@ echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 read -p "► Sila masukkan nombor pilihan anda [1-3] : " selection_mu;
 
-        read -p "Choose one : " selection_mu
         if [[ $selection_mu == "1" ]]; then
             STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
             if [[ $STATUS_IPV6 == "0" ]]; then
