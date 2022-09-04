@@ -169,7 +169,7 @@ if [[ -f /etc/kaizenvpn/email.txt ]]; then
 else 
     clear;
     echo -e "  ${ERROR} Sila set email anda terlebih dahulu untuk backup";
-    exit 1;
+    addemailbackup;
 fi
 email_mu=$( cat /etc/kaizenvpn/email.txt );
 
