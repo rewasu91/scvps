@@ -365,7 +365,6 @@ apt install fail2ban -y;
 # ═══════════════════════════
 # // Set kepada default login
 # ═══════════════════════════
-echo "autoexp && clear" >> /etc/profile 
 echo "clearlog && clear && neofetch" >> /etc/profile
 
 # ════════════════════
