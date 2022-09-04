@@ -312,6 +312,7 @@ wget -q -O /usr/local/sbin/autoexp "https://raw.githubusercontent.com/rewasu91/s
 wget -q -O /usr/local/sbin/clearlog "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/clearlog.sh"; chmod +x /usr/local/sbin/clearlog;
 wget -q -O /usr/local/sbin/menubackup "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/menubackup.sh"; chmod +x /usr/local/sbin/menubackup;
 wget -q -O /usr/local/sbin/menuipv6 "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/menuipv6.sh"; chmod +x /usr/local/sbin/menuipv6;
+wget -q -O /usr/local/sbin/menuautoexp "https://raw.githubusercontent.com/rewasu91/scvps/main/Menu/other/menuautoexp.sh"; chmod +x /usr/local/sbin/menuautoexp;
 wget -q -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Config/rclone_conf";
 
 # ═════════════════════════════════════
