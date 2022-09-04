@@ -352,7 +352,6 @@ printf "q\n" | rclone config > /dev/null 2>&1
 # ══════════════════════════════════════
 # // Input auto expired untuk semua user
 # ══════════════════════════════════════
-echo "0 0 * * * root /usr/local/sbin/autoexp" > /etc/cron.d/autoexp
 echo "0 * * * * root /usr/local/sbin/clearlog" > /etc/cron.d/clearlog
 systemctl restart cron
 
