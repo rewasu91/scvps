@@ -270,7 +270,7 @@ echo -e "  ${GREEN}[ 05 ]${NC} ► Menu Shadowsocks    ${GREEN}[ 10 ]${NC} ► M
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  ${GREEN}[ 11 ]${NC} ► Backup & Restore";
 echo -e "  ${GREEN}[ 12 ]${NC} ► ON/OFF Autobackup";
-echo -e "  ${GREEN}[ 13 ]${NC} ► ON/OFF Autoexpire
+echo -e "  ${GREEN}[ 13 ]${NC} ► ON/OFF Autoexpire";
 echo -e "  ${GREEN}[ 14 ]${NC} ► Tukar Domain";
 echo -e "  ${GREEN}[ 15 ]${NC} ► Renew Certificate";
 echo -e "  ${GREEN}[ 16 ]${NC} ► Tukar DNS";
