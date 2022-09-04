@@ -164,7 +164,7 @@ echo -e "";
 cowsay -f ghostbusters "SELAMAT DATANG BOSKU.";
 echo -e "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
-echo -e "${WBBG}               [ Menu Autoexpire ]                ${NC}";
+echo -e "${WBBG}            [ Menu Autoexpire ]             ${NC}";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 echo -e "";
 echo -e " ${GREEN}[ 01 ]${NC} ► ON Autoexpire";
@@ -174,7 +174,6 @@ echo "";
 echo -e "${CYAN}════════════════════════════════════════════${NC}";
 read -p "► Sila masukkan nombor pilihan anda [1-3] : " selection_mu;
 
-        read -p "Choose one : " selection_mu
         if [[ $selection_mu == "1" ]]; then
             STATUS_AUTOEXP=$( cat /etc/cron.d/autoexp );
             if [[ $STATUS_AUTOEXP == "0 0 * * * root /usr/local/sbin/autoexp" ]]; then
@@ -188,8 +187,7 @@ read -p "► Sila masukkan nombor pilihan anda [1-3] : " selection_mu;
             clear;
             echo -e "  ${OKEY} Berjaya mengaktifkan Autoexpire";
 	    echo -e "  Sistem akan memadam akaun yang sudah expire secara automatik";
-	    echo -e "  pada pukul 12.00 malam setiap hari.";
-                  
+	    echo -e "  pada pukul 12.00 malam setiap hari.";            
         elif [[ $selection_mu == "2" ]]; then
             STATUS_AUTOEXP=$( cat /etc/cron.d/autoexp );
             if [[ $STATUS_AUTOEXP == "cat: /etc/cron.d/autoexp: No such file or directory" ]]; then
