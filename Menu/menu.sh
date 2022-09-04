@@ -268,31 +268,31 @@ echo -e "  ${GREEN}[ 03 ]${NC} ► Menu Vless          ${GREEN}[ 08 ]${NC} ► M
 echo -e "  ${GREEN}[ 04 ]${NC} ► Menu Trojan         ${GREEN}[ 09 ]${NC} ► Menu HTTP          ";
 echo -e "  ${GREEN}[ 05 ]${NC} ► Menu Shadowsocks    ${GREEN}[ 10 ]${NC} ► Menu Autokill      ";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
-echo -e "  ${GREEN}[ 11 ]${NC} ► Speedtest";
-echo -e "  ${GREEN}[ 12 ]${NC} ► Cek RAM";
-echo -e "  ${GREEN}[ 13 ]${NC} ► Cek Bandwith";
-echo -e "  ${GREEN}[ 14 ]${NC} ► Tukar Timezone";
-echo -e "  ${GREEN}[ 15 ]${NC} ► Tukar Domain";
-echo -e "  ${GREEN}[ 16 ]${NC} ► Renew Certificate";
-echo -e "  ${GREEN}[ 17 ]${NC} ► Backup & Restore";
-echo -e "  ${GREEN}[ 18 ]${NC} ► Autobackup";
-echo -e "  ${GREEN}[ 19 ]${NC} ► Tukar DNS";
-echo -e "  ${GREEN}[ 20 ]${NC} ► Tukar Port";
-echo -e "  ${GREEN}[ 21 ]${NC} ► Cek Maklumat Sistem & Port";
-echo -e "  ${GREEN}[ 22 ]${NC} ► Cek versi skrip";
-echo -e "  ${GREEN}[ 23 ]${NC} ► Reboot Server";
-echo -e "  ${GREEN}[ 24 ]${NC} ► Restart Semua Servis";
-echo -e "  ${GREEN}[ 25 ]${NC} ► Update Skrip";
-echo -e "  ${GREEN}[ 26 ]${NC} ► Melajukan VPS (Buang log & Cache)";
-echo -e "  ${GREEN}[ 27 ]${NC} ► Mengaktifkan IPV6";
-echo -e "  ${GREEN}[ 28 ]${NC} ► Matikan IPV6";
+echo -e "  ${GREEN}[ 11 ]${NC} ► Backup & Restore";
+echo -e "  ${GREEN}[ 12 ]${NC} ► ON/OFF Autobackup";
+echo -e "  ${GREEN}[ 13 ]${NC} ► ON/OFF Autoexpire
+echo -e "  ${GREEN}[ 14 ]${NC} ► Tukar Domain";
+echo -e "  ${GREEN}[ 15 ]${NC} ► Renew Certificate";
+echo -e "  ${GREEN}[ 16 ]${NC} ► Tukar DNS";
+echo -e "  ${GREEN}[ 17 ]${NC} ► Tukar Port";
+echo -e "  ${GREEN}[ 18 ]${NC} ► Cek Maklumat Sistem & Port";
+echo -e "  ${GREEN}[ 19 ]${NC} ► Melajukan VPS (Buang log & Cache)";
+echo -e "  ${GREEN}[ 20 ]${NC} ► Speedtest";
+echo -e "  ${GREEN}[ 21 ]${NC} ► Cek RAM";
+echo -e "  ${GREEN}[ 22 ]${NC} ► Cek Bandwith";
+echo -e "  ${GREEN}[ 23 ]${NC} ► Tukar Timezone";
+echo -e "  ${GREEN}[ 24 ]${NC} ► Cek versi skrip";
+echo -e "  ${GREEN}[ 25 ]${NC} ► Reboot Server";
+echo -e "  ${GREEN}[ 26 ]${NC} ► Restart Semua Servis";
+echo -e "  ${GREEN}[ 27 ]${NC} ► Update Skrip";
+echo -e "  ${GREEN}[ 28 ]${NC} ► ON/OFF IPV6";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "${WBBG}                   [ Maklumat Client ]                     ${NC}";
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
 echo -e "  Nama Client       ► $name";                                                                                                                                                                              
 echo -e "  Skrip Expire Pada ► $exp";    
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}";
-read -p "► Sila masukkan nombor pilihan anda [1-30] : " choosemu
+read -p "► Sila masukkan nombor pilihan anda [1-28] : " choosemu
 
 case $choosemu in
     1) clear && ssh-menu ;;
@@ -305,26 +305,15 @@ case $choosemu in
     8) clear && socks-menu ;;
     9) clear && http-menu ;;
     10) clear && autokill-menu ;;
-    11) clear && speedtest ;;
-    12) clear && ram-usage ;;
-    13) clear && vnstat ;;
-    14) clear && changetime ;;
-    15) clear && changedomain ;;
-    16) clear && renewcert ;;
-    17) clear && menubackup ;;
-    18) clear && autobackup ;;
-    19) clear && changedns ;;
-    20) clear && change-port ;;
-    21) clear && infonya ;;
-    22) clear && vpnscript ;;
-    23) clear && reboot ;;
-    24) systemctl restart xray-mini@tls; systemctl restart xray-mini@nontls; systemctl restart xray-mini@socks; systemctl restart xray-mini@shadowsocks; systemctl restart xray-mini@http;
-        systemctl restart nginx; systemctl restart fail2ban; systemctl restart ssr-server; systemctl restart dropbear; systemctl restart ssh; systemctl restart stunnel4; systemctl restart sslh;
-        clear; echo -e "${OKEY} Selesai Restart Semua Servis !";
-	clear;
-    ;;
-    25) cd /root/; wget -q -O /root/update.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
-    26)
+    11) clear && menubackup ;;
+    12) clear && autobackup ;;
+    13) clear && menuautoexp ;;
+    14) clear && changedomain ;;
+    15) clear && renewcert ;;
+    16) clear && changedns ;;
+    17) clear && change-port ;;
+    18) clear && infonya ;;
+    19)
             clear
             # // clearlog
             echo -e "${OKEY} Cleaning Your VPS Cache & Logs";
@@ -357,35 +346,21 @@ case $choosemu in
             sleep 1;
             clear;
             echo -e "${OKEY} Selesai membuang semua log & cache server";
+    ;;  
+    20) clear && speedtest ;;
+    21) clear && ram-usage ;;
+    22) clear && vnstat ;;
+    23) clear && changetime ;;
+    24) clear && vpnscript ;;
+    25) clear && reboot ;;
+    26) systemctl restart xray-mini@tls; systemctl restart xray-mini@nontls; systemctl restart xray-mini@socks; systemctl restart xray-mini@shadowsocks; systemctl restart xray-mini@http;
+        systemctl restart nginx; systemctl restart fail2ban; systemctl restart ssr-server; systemctl restart dropbear; systemctl restart ssh; systemctl restart stunnel4; systemctl restart sslh;
+        clear; echo -e "${OKEY} Selesai Restart Semua Servis !";
+	clear;
     ;;
-    27) 
-            STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
-            if [[ $STATUS_IPV6 == "0" ]]; then
-                clear;
-                echo -e "${ERROR} IPv6 sudah diaktifkan didalam server ini";
-                exit 1;
-            fi
-            sed -i 's/net.ipv6.conf.all.disable_ipv6 = 1/net.ipv6.conf.all.disable_ipv6 = 0/g' /etc/sysctl.conf;
-            sed -i 's/net.ipv6.conf.default.disable_ipv6 = 1/net.ipv6.conf.default.disable_ipv6 = 0/g' /etc/sysctl.conf;
-            sed -i 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /etc/sysctl.conf;
-            sysctl -p;
-            clear;
-            echo -e "${OKEY} Berjaya mengaktifkan IPv6";
-    ;;
-    28) 
-            STATUS_IPV6=$( cat /etc/sysctl.conf | grep net.ipv6.conf.all.disable_ipv6 | awk '{print $3}' | cut -d " " -f 1 | sed 's/ //g' );
-            if [[ $STATUS_IPV6 == "1" ]]; then
-                clear;
-                echo -e "${ERROR} IPv6 sudah dihentikan didalam server ini";
-                exit 1;
-            fi
-            sed -i 's/net.ipv6.conf.all.disable_ipv6 = 0/net.ipv6.conf.all.disable_ipv6 = 1/g' /etc/sysctl.conf;
-            sed -i 's/net.ipv6.conf.default.disable_ipv6 = 0/net.ipv6.conf.default.disable_ipv6 = 1/g' /etc/sysctl.conf;
-            sed -i 's/net.ipv6.conf.lo.disable_ipv6 = 0/net.ipv6.conf.lo.disable_ipv6 = 1/g' /etc/sysctl.conf;
-            sysctl -p;
-            clear;
-            echo -e "${OKEY} Berjaya menghentikan IPv6";
-    ;;
+    27) cd /root/; wget -q -O /root/update.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/update.sh"; chmod +x /root/update.sh; ./update.sh; rm -f /root/update.sh ;;
+    
+    28) clear && menuipv6 ;;
     *)
         clear;
         sleep 2
