@@ -365,8 +365,8 @@ apt install fail2ban -y;
 # ═══════════════════════════
 # // Set kepada default login
 # ═══════════════════════════
-echo "clearlog && clear && neofetch" >> /etc/profile
 echo "autoexp && clear" >> /etc/profile 
+echo "clearlog && clear && neofetch" >> /etc/profile
 
 # ════════════════════
 # // Memasang RC-Local
