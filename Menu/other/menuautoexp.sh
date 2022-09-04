@@ -190,12 +190,13 @@ read -p "► Sila masukkan nombor pilihan anda [1-3] : " selection_mu;
 	    echo -e "  pada pukul 12.00 malam setiap hari.";            
         elif [[ $selection_mu == "2" ]]; then
             STATUS_AUTOEXP=$( cat /etc/cron.d/autoexp );
-            if [[ $STATUS_AUTOEXP == "cat: /etc/cron.d/autoexp: No such file or directory" ]]; then
+            if [[ $STATUS_AUTOEXP == "" ]]; then
+                echo "";
                 clear;
                 echo -e "  ${ERROR} Autoexpire sudah dihentikan didalam server ini";
                 exit 1;
             fi
-            sed -i 's/0 0 * * * root /usr/local/sbin/autoexp//g'  /etc/cron.d/autoexp
+            rm /etc/cron.d/autoexp
             echo -e "  ${OKEY} Berjaya menghentikan Autoexpire";      
 	      elif [[ $selection_mu == "3" ]]; then
                 clear;
