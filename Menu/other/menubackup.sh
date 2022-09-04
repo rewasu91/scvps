@@ -155,9 +155,9 @@ export TIME_NYA="$TIMEZONE";
 # ═════════════
 clear;
 
-# ═════════════════
-# // Tukar Timezone
-# ═════════════════
+# ════════════════════════
+# // Menu Backup & Restore
+# ════════════════════════
 clear;
 echo -e "";
 echo -e "";
