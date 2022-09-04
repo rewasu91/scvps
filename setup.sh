@@ -608,7 +608,7 @@ clear;
 # ══════════
 # // Selesai
 # ══════════
-./ssh-ssl.sh;
+#./ssh-ssl.sh;
 clear;
 echo -e "${OKEY} Script Successfull Installed";
 
