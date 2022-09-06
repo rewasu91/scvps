@@ -203,7 +203,7 @@ echo -e "";
 
 clear;
 cd /root/;
-wget -q -O /root/version.sh "https://raw.githubusercontent.com/rewasu91/scvpssettings/main/version.sh"; chmod +x /root/version.sh; ./version.sh;
+wget -q -O /root/version.sh "https://raw.githubusercontent.com/rewasu91/scvps/main/Resource/Version/version.sh"; chmod +x /root/version.sh;
 CEKVERSI=$( cat version.sh );
 if [[ $CEKVERSI == "$( cat /etc/kaizenvpn/version )" ]]; then
     versionini;
