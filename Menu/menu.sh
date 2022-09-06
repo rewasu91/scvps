@@ -416,5 +416,3 @@ if [[ $CEKVERSI == "$( cat /etc/kaizenvpn/version )" ]]; then
 elif [[ $CEKVERSI != "$( cat /etc/kaizenvpn/version )" ]]; then
     perluupdate;
 fi
-
-rm version.sh
