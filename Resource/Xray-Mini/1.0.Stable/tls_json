@@ -64,7 +64,7 @@
         }
       }
     },
-	{
+    {
       "port": 54801,
       "listen": "127.0.0.1",
       "protocol": "trojan",
@@ -74,7 +74,7 @@
       },
       "streamSettings": {
         "network": "tcp",
-        "security": "none",
+        "security": "xtls",
         "xtlsSettings": {
           "acceptProxyProtocol": true
         }
@@ -119,11 +119,7 @@
       "listen": "127.0.0.1",
       "protocol": "vless",
       "settings": {
-        "clients": [
-					{
-		            "flow": "xtls-rprx-direct"
-					}
-		],
+        "clients": [],
         "decryption": "none"
       },
       "streamSettings": {
