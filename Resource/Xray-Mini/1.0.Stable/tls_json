@@ -76,7 +76,7 @@
         "network": "tcp",
         "security": "none",
         "xtlsSettings": {
-          "acceptProxyProtocol": true,
+          "acceptProxyProtocol": true
         }
       }
     },
