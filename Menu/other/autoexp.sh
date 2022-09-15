@@ -1,12 +1,3 @@
-chmod +x /usr/local/sbin/sshexp
-chmod +x /usr/local/sbin/vmessexp
-chmod +x /usr/local/sbin/vlessexp
-chmod +x /usr/local/sbin/ssexp
-chmod +x /usr/local/sbin/wgexp
-chmod +x /usr/local/sbin/trojanexp
-chmod +x /usr/local/sbin/socksexp
-chmod +x /usr/local/sbin/httpexp
-chmod +x /usr/local/sbin/ssrexp
 /usr/local/sbin/sshexp
 /usr/local/sbin/vmessexp
 /usr/local/sbin/vlessexp
