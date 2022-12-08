@@ -3,7 +3,7 @@
 cat > /lib/systemd/system/sslh.service << END
 [Unit]
 Description=SSLH Server
-Documentation=https://kaizenvpn.com
+Documentation=https://github.com/rewasu91/scvps
 After=syslog.target network-online.target
 
 [Service]
