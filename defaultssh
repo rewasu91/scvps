@@ -65,7 +65,7 @@ connect = 127.0.0.1:1194
 END
 
 sed -i "s/8443/443/g" /etc/xray-mini/tls.json
-#sed -i "s/8881/80/g" /etc/xray-mini/nontls.json
+sed -i "s/8881/80/g" /etc/xray-mini/nontls.json
 
 systemctl stop xray-mini@tls
 systemctl stop xray-mini@nontls
