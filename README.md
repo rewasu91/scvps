@@ -34,3 +34,16 @@ Masuk kedalam VPS anda, dan taip Menu. Sila semak status sistem menggunakan Menu
 ```
 ./ssh-ssl.sh
 ```
+
+## ⏩ CONTOH GAMBAR AUTOSKRIP ⏪
+<b>
+<br>
+</b>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/95635242/217461133-3ff31afe-2c6e-43db-8b09-e920ba442b91.jpg" width="400" title="Menu1"><br>
+<br>
+ <img src="https://user-images.githubusercontent.com/95635242/217461147-7e44393e-6fe4-49c5-b41e-bb98e99eb902.jpg" width="400" title="Menu2"><br>
+<br>
+<img src="https://user-images.githubusercontent.com/95635242/217461150-6ffffa56-104f-40e8-a801-4295990e7eae.jpg" width="400" title="Menu3"><br>
+<br>                                                                                                                                       
+</p>
