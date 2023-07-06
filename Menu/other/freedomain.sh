@@ -6,8 +6,8 @@ MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 rm -f /etc/kaizenvpn/domain.txt;
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-DOMAIN=kaizendomain.web.id
-SUB_DOMAIN=${sub}.kaizendomain.web.id
+DOMAIN=kaizenvpsdomain.com
+SUB_DOMAIN=${sub}.kaizenvpsdomain.com
 CF_ID=hazboyz@gmail.com
 CF_KEY=4edad025afe10f3c7adeabe95f810c00a1b5f
 set -euo pipefail
