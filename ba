@@ -72,7 +72,6 @@ laneTop
 	echo -e ""
 	echo -e "${BlueCyan}───────────────────────────────────────────────────${Suffix}"
 	echo -e ""
-	read -rp " Username         : " -e user
 
 echo -e ""
 LOGO
@@ -81,6 +80,17 @@ echo -e "     2.)  Trojan WS"
 echo -e "     3.)  Trojan GRPC"
 echo -e "     4.)  Kembali ke Menu Utama"
 echo -e "     x.)  Exit"
+echo -e ""
+echo -e "${BlueCyan}───────────────────────────────────────────────────${plain}"
+echo -e ""
+
+echo -e ""
+LOGO
+echo -e "     ${green}[ 1 ]${plain} ► Semua Jenis Akaun Trojan"
+echo -e "     ${green}[ 2 ]${plain} ► Trojan WS"
+echo -e "     ${green}[ 3 ]${plain} ► Trojan GRPC"
+echo -e "     ${green}[ 4 ]${plain} ► Kembali ke Menu Utama"
+echo -e "     ${green}[ x ]${plain} ► Exit"
 echo -e ""
 echo -e "${BlueCyan}───────────────────────────────────────────────────${plain}"
 echo -e ""
