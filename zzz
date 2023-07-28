@@ -54,7 +54,7 @@ function Credit_KaizenVPS() {
 	echo -e ""
 	exit 0
 }
-
+	clear
 	laneTop
 	echo -e "${keatas} ${bgPutih}             MEMBUAT AKAUN TRIAL               ${plain} ${keatas}"
 	laneBot
