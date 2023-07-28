@@ -13,7 +13,7 @@ Green_background="\033[42;37m"
 Red_background="\033[41;37m"
 Suffix="\033[0m"
 
-bgPutih="\e[1;44;41m"
+bgPutih="\e[1;47;30m"
 BlueCyan="\e[38;1;36m"
 yellow='\e[38;1;33m'
 red='\e[38;1;31m'
@@ -63,11 +63,12 @@ function Credit_KaizenVPS() {
 	sleep 1
 	echo -e ""
 	echo -e " ${BlueCyan}————————————————————————————————————————"
-	echo -e "      ${bgPutih}Terima kasih kerana menggunakan"
-	echo -e "            Autoskrip KaizenVPS${plain}"
+	echo -e " ${bgPutih}     Terima kasih kerana menggunakan     ${plain}"
+	echo -e " ${bgPutih}          Autoskrip KaizenVPS            ${plain}"
 	echo -e " ${BlueCyan}————————————————————————————————————————${Suffix}"
 	echo -e ""
 	exit 0
+}
 
 
 LOGO2
