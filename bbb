@@ -71,7 +71,7 @@ function Credit_KaizenVPS() {
 laneTop
 echo -e "${keatas}${bgPutih} TERIMA KASIH KERANA MENGGUNAKAN AUTOSKRIP INI   ${plain}${keatas}"
 laneBot
-exit 0
+#exit 0
 }
 
 function Credit_KaizenVPS2() {
@@ -79,7 +79,7 @@ function Credit_KaizenVPS2() {
 laneTop
 echo -e "${keatas} ${bgPutih} TERIMA KASIH KERANA MENGGUNAKAN AUTOSKRIP INI   ${plain} ${keatas}"
 laneBot
-exit 0
+#exit 0
 }
 
 LOGO2
