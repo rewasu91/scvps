@@ -13,7 +13,7 @@ Green_background="\033[42;37m"
 Red_background="\033[41;37m"
 Suffix="\033[0m"
 
-bgPurple="\e[1;44;41m"
+bgPutih="\e[1;44;41m"
 BlueCyan="\e[38;1;36m"
 yellow='\e[38;1;33m'
 red='\e[38;1;31m'
@@ -55,28 +55,20 @@ function laneBot2() {
 function LOGO2() {
 clear
 laneTop
-echo -e "${keatas} ${bgPurple}              AUTOSKRIP KAIZENVPS              ${plain} ${keatas}"
+echo -e "${keatas} ${bgPutih}              AUTOSKRIP KAIZENVPS              ${plain} ${keatas}"
 laneBot
 }
 
-	
 function Credit_KaizenVPS() {
 	sleep 1
 	echo -e ""
 	echo -e " ${BlueCyan}————————————————————————————————————————"
-	echo -e "      ${ungu}Terima kasih kerana menggunakan"
-	echo -e "            Autoskrip KaizenVPS"
+	echo -e "      ${bgPutih}Terima kasih kerana menggunakan"
+	echo -e "            Autoskrip KaizenVPS${plain}"
 	echo -e " ${BlueCyan}————————————————————————————————————————${Suffix}"
 	echo -e ""
-}
+	exit 0
 
-function LOGO() {
-	clear
-	echo -e ""
-	echo -e " ${BlueCyan}————————————————————————————————————————"
-	echo -e "|            ${ungu}Autoskrip KaizenVPS${BlueCyan}            |"
-	echo -e " ————————————————————————————————————————${Suffix}"
-	echo -e ""
-}
 
 LOGO2
+Credit_KaizenVPS
