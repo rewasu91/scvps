@@ -60,12 +60,12 @@ laneBot
 }
 
 function Credit_KaizenVPS() {
-	echo -e "";
-	echo -e " ${BlueCyan}════════════════════════════════════════";
-	echo -e " ${bgPutih}     Terima kasih kerana menggunakan    ${plain}";
-	echo -e " ${bgPutih}          Autoskrip KaizenVPS           ${plain}";
-	echo -e " ${BlueCyan}════════════════════════════════════════"${Suffix}";
-	echo -e "";
+	echo -e ""
+	echo -e " ${BlueCyan}════════════════════════════════════════"
+	echo -e " ${bgPutih}     Terima kasih kerana menggunakan    ${plain}"
+	echo -e " ${bgPutih}          Autoskrip KaizenVPS           ${plain}"
+	echo -e " ${BlueCyan}════════════════════════════════════════${Suffix}"
+	echo -e ""
 	exit 0
 }
 
