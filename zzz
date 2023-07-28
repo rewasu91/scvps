@@ -55,15 +55,13 @@ function Credit_KaizenVPS() {
 	exit 0
 }
 
-
+	laneTop
 	echo -e "${keatas} ${bgPutih}             MEMBUAT AKAUN TRIAL               ${plain} ${keatas}"
 	laneBot
 	echo -e ""
 	echo -e "  Format Masa :"
-	echo -e ""
 	echo -e "  ${green}h - H (Hours)${Suffix}"
 	echo -e "  ${green}m - M (Minutes)${Suffix}"
-	echo -e ""
 	echo -e "  Contoh1 : ${yellow}1h${Suffix} untuk ${yellow}1 jam${Suffix}"
 	echo -e "  Contoh2 : ${yellow}10m${Suffix} untuk ${yellow}10 minit${Suffix}"
 	echo -e ""
