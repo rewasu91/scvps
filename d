@@ -31,3 +31,5 @@ function LOGO() {
 	echo -e " ————————————————————————————————————————${Suffix}"
 	echo -e ""
 }
+Credit_KaizenVPS
+LOGO
