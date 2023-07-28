@@ -39,7 +39,6 @@ function laneBot2() {
   echo -e "     ${BlueCyan}└───────────────────────────────────────┘${plain}"
 }
 function LOGO() {
-	clear
 	laneTop
 	echo -e "${keatas} ${bgPutih}              AUTOSKRIP KAIZENVPS              ${plain} ${keatas}"
 	laneBot
