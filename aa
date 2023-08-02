@@ -51,7 +51,6 @@ function Credit_KaizenVPS() {
 	echo -e "${keatas} ${bgPutih} TERIMA KASIH KERANA MENGGUNAKAN AUTOSKRIP INI ${plain} ${keatas}"
 	laneBot
 	echo -e ""
-	exit 0
 }
 LOGO
 echo -e "             ${yellow}L2TP/PPTP VPN Users Login${plain}";
@@ -66,20 +65,20 @@ echo -e ""
 echo -e ""
 LOGO
 echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}";
-echo -e "    ${yellow}USERNAME          EXP DATE          ${plain}STATUS";
+echo -e "    ${yellow}USERNAME          EXP DATE          STATUS${plain}";
 echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}";
 echo -e "    fiezlan	       Aug 28, 2023      Online"
 echo -e "    adsadfs	       Aug 28, 2023      Online"
 echo -e "    eqgfaes	       Aug 28, 2023      Online"
 echo -e "    rwgdgdas	       Aug 28, 2023      Online"
-Credit_KaizenVPS()
+Credit_KaizenVPS
 echo -e ""
 echo -e ""
 LOGO
-echo -e "    ${yellow}USERNAME          EXP DATE          ${plain}STATUS";
+echo -e "    ${yellow}USERNAME          EXP DATE         STATUS${plain}";
 echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}";
 echo -e "    fiezlan	       Aug 28, 2023      Online"
 echo -e "    adsadfs	       Aug 28, 2023      Online"
 echo -e "    eqgfaes	       Aug 28, 2023      Online"
 echo -e "    rwgdgdas	       Aug 28, 2023      Online"
-Credit_KaizenVPS()
+Credit_KaizenVPS
