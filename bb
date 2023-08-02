@@ -11,7 +11,7 @@ BlueCyan="\e[38;1;36m"
 Green_background="\033[42;37m"
 Red_background="\033[41;37m"
 bgPutih="\e[1;47;30m"
-bgYellow="\e[1;33;30m"
+bgMerah="\e[0;1;30m"
 white='\e[0;37m'
 plain='\e[0m'
 Suffix="\033[0m"
@@ -55,11 +55,11 @@ function Credit_KaizenVPS() {
 }
 
 LOGO
-echo -e "${BlueCyan} ══════════════════════════════════════════════════ ${plain}"
+echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}"
 echo -e "${bgPutih}                 TROJAN USER LOGIN                 ${plain}"
-echo -e "${BlueCyan} ══════════════════════════════════════════════════ ${plain}"
+echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}"
 echo -e "    ${yellow}USERNAME          EXP DATE          STATUS${plain}";
-echo -e "${BlueCyan} ══════════════════════════════════════════════════ ${plain}"
+echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}"
 echo -e "    fiezlan	       Aug 28, 2023      Online"
 echo -e "    adsadfs	       Aug 28, 2023      Online"
 echo -e "    eqgfaes	       Aug 28, 2023      Online"
@@ -68,11 +68,11 @@ Credit_KaizenVPS
 echo -e ""
 echo -e ""
 LOGO
-echo -e "${BlueCyan} ═════════════════════════════════════════════════ ${plain}"
-echo -e "${bgYellow}                 TROJAN USER LOGIN                 ${plain}"
-echo -e "${BlueCyan} ══════════════════════════════════════════════════ ${plain}"
+echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}"
+echo -e "${bgMerah}                 TROJAN USER LOGIN                 ${plain}"
+echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}"
 echo -e "    ${yellow}USERNAME          EXP DATE          STATUS${plain}";
-echo -e "${BlueCyan} ══════════════════════════════════════════════════ ${plain}"
+echo -e "${BlueCyan}═══════════════════════════════════════════════════${plain}"
 echo -e "    fiezlan	       Aug 28, 2023      Online"
 echo -e "    adsadfs	       Aug 28, 2023      Online"
 echo -e "    eqgfaes	       Aug 28, 2023      Online"
