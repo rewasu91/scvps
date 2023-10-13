@@ -4,7 +4,7 @@ server {
 
         root /var/www/html;
 
-        index helium.html;
+        index rkd.html;
 
         server_name DOMAIN_NAME;
 
