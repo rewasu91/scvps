@@ -20,7 +20,7 @@ function revokeIptv() {
 			cp -f /etc/kaizensystem/iptv/exp.html /var/www/html/iptv/${UUID}.html
 			echo -e ${USERNAME}
 		fi
-	done </etc/kaizensystem/iptv/userlist.txt
+	done < /etc/kaizensystem/iptv/userlist.txt
 }
 rm -rf /var/log/letsencrypt/letsencrypt.log*
 revokeIptv
