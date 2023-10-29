@@ -10,4 +10,3 @@ else
   echo
 fi
 done </etc/kaizensystem/iptv/user_access.txt
-rm -rf /var/log/nginx/check.log
