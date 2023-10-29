@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat /var/log/nginx/access.log >> /var/log/nginx/check.log
 sed -ne 's|.*iptv/\(.*\).html.*; \(.*\))"$|\1 \2|p' /var/log/nginx/check.log | sed '/unverified/d' | sed '/^exp/d' | sort | uniq >/etc/kaizensystem/iptv/user_access.txt
 while IFS= read -r LINE; do
@@ -8,6 +10,6 @@ UUID=$(grep -w "${USERNAME}" /etc/kaizensystem/iptv/userlist.txt | sed -ne "s|.*
 if [[ $(grep -c -w "${FILE_ID}" /etc/kaizensystem/iptv/user_access.txt) > 1 ]]; then
   cp -f /etc/kaizensystem/iptv/banned.html /var/www/html/iptv/${UUID}.html
 else
-  echo
+  clear
 fi
 done </etc/kaizensystem/iptv/user_access.txt
