@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cat /var/log/nginx/access.log >> /var/log/nginx/check.log
+sed -ne 's|.*iptv/\(.*\).html.*; \(.*\))"$|\1 \2|p' /var/log/nginx/check.log | sed '/unverified/d' | sed '/^exp/d' | sort | uniq >/etc/rkdsystem/iptv/user_access.txt
+while IFS= read -r LINE; do
+FILE_ID=$(echo ${LINE} | cut -d' ' -f1)
+USERNAME=$(grep -w "${FILE_ID}" /etc/rkdsystem/iptv/userlist.txt | sed -ne "s|.*USERNAME=\(.*\) EXP_DATE.*$|\1|p")
+DEVICE_ID=$(echo ${LINE} | cut -d' ' -f2)
+UUID=$(grep -w "${USERNAME}" /etc/rkdsystem/iptv/userlist.txt | sed -ne "s|.*UUID=\(.*\) USERNAME.*$|\1|p")
+if [[ $(grep -c -w "${FILE_ID}" /etc/rkdsystem/iptv/user_access.txt) > 1 ]]; then
+  cp -f /etc/rkdsystem/iptv/banned.html /var/www/html/iptv/${UUID}.html
+else
+  clear
+fi
+done </etc/rkdsystem/iptv/user_access.txt
