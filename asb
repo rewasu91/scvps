@@ -382,13 +382,6 @@ https://sghost.mobileads.uno/uni5/uni5.mpd?id=CAN
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstreamadaptive.license_key={"keys":[{"kty":"oct","k":"ncWxTafDwNidY72SQsLasA","kid":"Z/SUjNr6Ruu9cerodSNwIw"}],"type":"temporary"}
-#EXTINF:-1 tvg-id="612.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/98415BAC-8D06-4614-8459-7C0E306DA785/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV" group-logo="https://bv83.short.gy/gilatvpng", UnifiTV EuroNews
-https://sghost.mobileads.uno/uni5/uni5.mpd?id=EuroN
-
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"V6UUfIU32Mf+rUSNKpWHxw","kid":"DFiL0UoQSe6gTbnuqA5saA"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="631.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F3362D9E-20F0-483D-BA25-B3305233657A/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV" group-logo="https://bv83.short.gy/gilatvpng", UnifiTV Bernama
 https://sghost.mobileads.uno/uni5/uni5.mpd?id=bernama
