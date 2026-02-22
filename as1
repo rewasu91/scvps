@@ -3,16 +3,6 @@
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTINF:-1 tvg-id="101.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F01074B2-F6DD-441B-9477-1DF50C081978/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng",101 TV1 FHD 2
-https://sghost.mobileads.uno/uni5/uni5.mpd?id=TV1
-
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTINF:-1 tvg-id="102.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/907F5B90-0688-4EC2-ABEF-A69F7C842287/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng",102 TV2 FHD 2
-https://sghost.mobileads.uno/uni5/uni5.mpd?id=TV2
-
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"PWOFXKXN/Pt2XzBrmLzGRg","kid":"zkNkGgYaRPudldmGz8mmjw"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="103.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/AED0C736-D2D2-4E97-B2F6-4FF4A0ACE765/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng",103 TV3 FHD
@@ -58,35 +48,35 @@ https://sghost.mobileads.uno/uni5/uni5.mpd?id=TVAL
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"7batvjFgkibnN+UVuoExaQ","kid":"a6JwAm8KSymVas5RM1+xrA"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="116.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8F641B7A-CC55-497E-9C73-B1F10ADA7541/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng", UnifiTV Sensasi
-https://unifi.whacat.tech/Sensasi
+https://sghost.mobileads.uno/uni5/uni5.mpd?id=Sensasi
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"G8S9Z5Q9qerhQq9x4xcnrw","kid":"lL+qUc48Ss+4qNWnIpMWtg"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="118.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/571B75B0-7857-425F-BB88-9D8E12E7903B/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng",UnifiTV Inspirasi
-https://unifi.whacat.tech/Inspirasi	
+https://sghost.mobileads.uno/uni5/uni5.mpd?id=Inspirasi	
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"whs2mRspkoqA3AoUa+6skA","kid":"oWI7dm5LSOuIzqKeHDCcxw"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="120.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/07A79742-0FA2-4DD8-8F98-929157AE96DF/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng", UnifiTV DEGUP
-https://unifi.whacat.tech/DEGUP
+https://sghost.mobileads.uno/uni5/uni5.mpd?id=DEGUP
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"JKzUn6iqalUy3QRbqx9T5A","kid":"VIn1jGStQNukccixwmk+Kg"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="121.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F101B330-8D9C-4670-9DE3-2C53E8866EA0/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV;Malaysia" group-logo="https://bv83.short.gy/gilatvpng", UnifiTV SIAR
-https://unifi.whacat.tech/SIAR
+https://sghost.mobileads.uno/uni5/uni5.mpd?id=SIAR
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","k":"uc59xhajmH4riQDORHNbBw","kid":"/mxDlh6oQB6Oi8IRsRl5YQ"}],"type":"temporary"}
 #EXTINF:-1 tvg-id="122.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/2BE028DB-08C8-437F-BB78-93DEC3F03786/0-16x9.png?width=160&updatedTime=0&dt=Web" group-title="UnifiTV" group-logo="https://bv83.short.gy/gilatvpng", UnifiTV TVS
-https://unifi.whacat.tech/TVS
+https://sghost.mobileads.uno/uni5/uni5.mpd?id=TVS
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
